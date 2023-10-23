@@ -1,0 +1,341 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="ReadWeight" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,5860" sap2010:WorkflowViewState.IdRef="ReadWeight_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>System.Security</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.InteropServices</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="ReadWeight" sap:VirtualizedContainerService.HintSize="824,5795" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="762,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Read weight process started&quot;]" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="762,5322" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsCVEnabled="False" OpenMode="IfNotOpen" ScopeGuid="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="728,5105" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="pDashboard_exists" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Dashboard'" sap:VirtualizedContainerService.HintSize="666,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[pDashboard_exists]" ScopeIdentifier="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Version="V3">
+              <uix:NCheckElement.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/" CvTextArea="384, 155, 76, 13" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="385, 153, 74, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl class='selected' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='selected' tag='A' type='' aaname='Dashboard' check:innerText='Dashboard' /&gt;" Guid="7a2b072d-b084-4147-8bfd-2003ef7a9251" InformativeScreenshot="aee46324924e370bb60f8c5511e8ff9f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                      <uix:Target CvTextArea="264, 147, 83, 32" CvTextArgument="fitbit" CvType="Text" DesignTimeRectangle="225, 147, 125, 32" ElementType="Text" FriendlyName="'Fitbit'" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='logo' aaname='                         Fitbit                     ' check:innerText='Fitbit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAkCAYAAACucVkNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUkSURBVHhe7Zg9zxVFFMefL8B3oLDC2saKQhMrGw0xoYBKChoTrTTBJ4GGGCugUoIfQCKJ0UQtMGLjCwRQExIMhATQBC19a54lP7Ln+r/nzszO7s7eOzfsLzm5987Lmdk5/zkze3eamaeeWQQz40Wwe+vXZv+X3zRHr/3U3P3r77Z0ZpsYJYIL9x40O5e+WNjBb39oa2a2iVEiYPerCLBNZYMLn3zW7J473xx9+9QT4/e6uPz9tY2MW4pRIrj86M8lASCKdUMA9r/4SrNz4PklO3jkeNtiehCfjcv3bWOUCNj1HAkcA9wN1s3d+w+XAq8WE8F3N39pv6XBN5bDlCL47dEfWfPoM1/P6IvhJvEZwNIxRobwHD/5/pN2z758uLn38Pe2dBUNak56n0oEF7/6euH3w48/bUtX0fFDz91FERHE7gGWKTg2SoPq7cGxLq5cvbHU/vV3T7c1qyAma7dJETzz0qGF333PvdCWrqLznUwEBJPznpTvA26XQ14TCbjBEaH3hdLHRd+F/+ff/xbtsY8ufd7WrFKLCI7tnl74ffWNd9rSVdYiAg2mvgb6twOEAP7V0epiGWMIQxb+59t3mtfePNGcvxhPrVCLCODEmQ+at9472+zt7bUlq0wuAv8GYIEGv9sxAs2u9+VWV4opF74mEeQwuQgIHIG3QOproN/xVkcfLTcrySyC/5lcBGC7W898sHJ7RdSdrtkAEZW8HHIp1Adn4e0VSW0I9OP10nwjgi6/KRHQnjIMX0OClAL/Ol/861yxLrJEMBREUTr49rBdFvqfQIXjF6ePbx/IkAi0LGTWLgXjxNprXZd1CaGICDQDKGQDjgifQRAG2YMMwWesv6fPg4dEoP8r+IXp4zslAoSmOzNlzMf7Usgc1ha/itZ1WbYILLVjHsosYLqz+W73BT61r7808hvoo+UYfXOEwMOwcGb6oFqOhXaa9vELE/PNd4Kq5vumdj3tqTfjt9bjPyaELhHkzNf3C7EQgb7u6eWP4PiAGdpH60KviJiKxltIfCl04fmegy5WanfoscFid6FzMWOsWHBNcNo2REoEis439VwxFiLQ4GigQwG1Xet3u9URUF+OxcSBqfByqF0EXTC+ZoXQM6xdBBog3ZU+E2iwfFBTKR/DV0g4GL76ULMIcvqA3kNC2WDtIgDb4R7b3T5lWzmZg0/tz+9QkGnjjwQTTx9qFkEfNBt4NiKC0hBwvUgalCOKkLByqVUEBLUP2tffIbZKBJoBFALM8dE31edQqwhSwQqxNSKw1E4a14Dr2W9HguHP/r4Xvy5qEoEGK3cuhvb1Y1UlAg2mnt9DXhFLUZMI9ILX9zjQsarNBKGbvhG66dt578utrhQ1iQBf1p4x+qAXQz+nqjKB7njdzV4glvIJtpZjliVKUZMIQH37HR1DMwjmqUoEENvFlBN8f8un3DKFv0uUYEoRqO/c9K6ByM0GmgVCQR4igty1ULJFUBtTikAX3/x37TDqtQ9jpfqoALAQuSLQdozL7675KkVEUHqX5zClCEDbeov19eLBB8GzoJD+mav3HTs+ckWA79h8Kfdc+fH60jOMFgGp3lL+FP8HxJhaBAQmtrCpvjqvHCPQMXJFACFxmSnM3fsaJQL7/2Cqy18KXaAhIsiBBSNt069PX+tn7UOGv64LZB8RAP5svjqOh3Y69igR+P8JsHXCYqd2pccevk+fMTAOgSSAGGLFhsx5SkaJgLuACsC/IcxsB0UuhjPbzSyCp56meQyZ8Da2sobCHQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckElement.Target>
+            </uix:NCheckElement>
+            <If Condition="[pDashboard_exists]" DisplayName="If dashboard exists" sap:VirtualizedContainerService.HintSize="666,4793" sap2010:WorkflowViewState.IdRef="If_1">
+              <If.Then>
+                <Sequence sap:VirtualizedContainerService.HintSize="632,4611" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence.Variables>
+                    <Variable x:TypeArguments="x:Boolean" Name="pWeight_exists" />
+                  </Sequence.Variables>
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NGoToUrl DisplayName="Go To URL - Weight Page" sap:VirtualizedContainerService.HintSize="590,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="https://www.fitbit.com/weight" Version="V3" />
+                  <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Weight'" sap:VirtualizedContainerService.HintSize="590,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[pWeight_exists]" ScopeIdentifier="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Version="V3">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/weight" CvTextArea="365, 193, 49, 16" CvTextArgument="Weight" CvType="Text" DesignTimeRectangle="367, 176, 46, 48" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Weight'" FullSelectorArgument="&lt;webctrl parentid='ember244' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember244' tag='SPAN' type='' class='link-text' aaname='                                 Weight                             ' check:innerText='Weight' /&gt;" Guid="6e266242-6294-4178-8002-60c528113534" InformativeScreenshot="3e36241ef11ae242a6b78d14f05abe0a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                        <uix:TargetAnchorable.Anchors>
+                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                            <uix:Target CvTextArea="247, 139, 74, 13" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="248, 122, 72, 48" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl class='text-label' parentid='header-nav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='text-label' parentid='header-nav' tag='SPAN' type='' aaname='                             Dashboard                         ' check:innerText='Dashboard' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAA0CAYAAAAg5t6HAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAPbSURBVGhD7ZbNSxtBGIf9szzpxUOgoYcg6CVemkuolBLWmNVoNGApBAIJhfQipVKRNlQkBGFBiJdAYaEQS6mhtKIYKhJEohQWAr/ObGbjbLQ2bxp6KO8DQzI7O1/PvDOzI/Pz8zBN002JRALxeNxNc3NzMAzD/fWeySTf95KXl/Vk8tpaWFjA4uJit10vn0wm3bS0tNT91dPy8jJSqVQ3raysuCmdTmN1ddWXvDJZR6/3u7xsv/dZb5me95Icpxy7THIeIwlzEZz6TyNgSLAwIiyMCAsjwsKIsDAiLIwICyPCwoiwMCIsjAgLI8LCiLAwIiyMCAsjwsKIsDAiLIyIJuwMpXgQo+NaehjG47UN2OfqlWFwUMBovIymyt6mhvy4gdIw+xyYjpP8gcoKbgmL7Z6pvKB9gaNqAZFAWFS6Vg//kv9amMIRk5wOrKByqR7gGkd7OcQmQ24kjk0aePXxQpUJfn7BZjKMCRmlgSnEChaOfqoyV9g2Ptnrqn4ID8wN1L1yT9jHfWRmpzAm2piIZlD67l+w1tcyMlGv/ygyu9/gqDKJ891C3uzUd8fw2kazrQpVH0Xbcvvozlkbd2dOtcGEARewUlrZ6TYSz8uoK4EtWwgdF0KvZM6BnQthumCjJQcoorS+m8PmZzUdKWw8jDUxQbfcOUHR16+cTBDTsn23PaBZzYgFM2B5Ufd13c0XD9UinQu54RBilteGaDP1DCWv/NJGPhzEcsWTfrsPOX/L7B33M8wEBhIG1N9MYbRQU7le9NAVck1/Jz7u2JLNXUNr+64t2VmEmfcn4v81KukgEntaREsO1xEKFPCpG0V+/tiHWITQ1DrqvvoDbkmJT1j7DJVstLPlxMWQ2Cpj8+lNw03LwMRsAdbhCVr6PpEMJEy988IW/2p4GXiE4nHn+Q3+eo1KBpGH8vISUZPcgLX15N4+5Jg77esMLMy/JRs7UYyZ2zhSMlqHbxHrCd3mQRkv16J4EJBnVA7VH6rgXwgTR0ZEbNnSsRrg5RcUxXa7V1i3fZ0BhfkPfQfVbBAZX9u3G9Zp7IjBpPfRkpkhbcnIjvyvIbek2lLOhwxGc/7J/7GPoWxJR3xWiNtwpuez4v4IE9G4Jm4Y+wyOe3heo/7OwPTWN1nYp7C/PPQHiDC0xUURFf1SD/2+Plx9Z5i80vexqa/E6T7y2mdFJGuh4a1cnxHmXfn9fVYYyFf9EaefYZFsGVWxaPdHseCqRvmsYPqBhRFhYURYGBEWRoSFEWFhRFgYERZGhIURYWFEWBgRFkaEhRFhYURYGBEWRoSFEWFhRFgYERZGAvgFzP3x0YOjmJQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                          </scg:List>
+                        </uix:TargetAnchorable.Anchors>
+                      </uix:TargetAnchorable>
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                  <If Condition="[pWeight_exists]" DisplayName="If weight exists" sap:VirtualizedContainerService.HintSize="590,4204" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="556,4022" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <Sequence.Variables>
+                          <Variable x:TypeArguments="x:Boolean" Name="pLoadMore_exists" />
+                          <Variable x:TypeArguments="x:Int32" Name="pClickCounter" />
+                          <Variable x:TypeArguments="sd:DataTable" Name="dt_WeightData" />
+                        </Sequence.Variables>
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="514,389" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,310" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <uix:NKeyboardShortcuts ActivateBefore="True" ClickBeforeMode="None" DisplayName="Keyboard Shortcuts 'Dashboard'" sap:VirtualizedContainerService.HintSize="388,199" sap2010:WorkflowViewState.IdRef="NKeyboardShortcuts_1" ScopeIdentifier="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Shortcuts="[d(hk)][k(PgDn)][u(hk)][d(hk)][k(pgdn)][u(hk)]" Version="V3">
+                                <uix:NKeyboardShortcuts.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/weight" DesignTimeRectangle="8, 122, 1572, 12592" DesignTimeScaleFactor="1" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl id='ember225' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl id='ember225' tag='DIV' type='' class='ember-view' aaname='                     ' check:innerText='Dashboard&amp;#xD;&amp;#xA;Log&amp;#xD;&amp;#xA;Community&amp;#xD;&amp;#xA;Labs&amp;#xD;&amp;#xA;Logout&amp;#xD;&amp;#xA;Food&amp;#xD;&amp;#xA;Activities&amp;#xD;&amp;#xA;Weight&amp;#xD;&amp;#xA;Sleep&amp;#xD;&amp;#xA;Weight&amp;#xD;&amp;#xA;Today&amp;#xD;&amp;#xA;1 wk&amp;#xD;&amp;#xA;30 days&amp;#xD;&amp;#xA;1 yr&amp;#xD;&amp;#xA;All' /&gt;" Guid="cd415982-6683-40b4-a888-af722bcba12b" ImageBase64="" InformativeScreenshot="f42fda6575a307680c8e9d961e85b7a1.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                                </uix:NKeyboardShortcuts.Target>
+                              </uix:NKeyboardShortcuts>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                        <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Load More' button" sap:VirtualizedContainerService.HintSize="514,157" sap2010:WorkflowViewState.IdRef="NCheckElement_3" Result="[pLoadMore_exists]" ScopeIdentifier="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Version="V3">
+                          <uix:NCheckElement.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/weight" DesignTimeRectangle="209, 773, 870, 43" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember279' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember279' tag='BUTTON' type='button' class='button weight-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="b6e28a63-7081-4545-82cf-828092d184aa" InformativeScreenshot="06b4244b1b6878cb507a3b80849acfe7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target DesignTimeRectangle="194, 818, 1200, 69" FriendlyName="'BLOG'" FullSelectorArgument="&lt;webctrl parentid='ember430' tag='SECTION' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember430' tag='SECTION' type='' class='social expanded row align-center' aaname='              ' /&gt;" ImageBase64="" SearchSteps="FuzzySelector" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckElement.Target>
+                        </uix:NCheckElement>
+                        <Assign DisplayName="Assign - Create and initialize click counter" sap:VirtualizedContainerService.HintSize="514,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Int32">[pClickCounter]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                        <ui:InterruptibleWhile CurrentIndex="{x:Null}" Condition="[pLoadMore_exists]" DisplayName="While - 'Load More' button exists" sap:VirtualizedContainerService.HintSize="514,2044" sap2010:WorkflowViewState.IdRef="InterruptibleWhile_1">
+                          <ui:InterruptibleWhile.Body>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="480,1908" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                              <Sequence.Variables>
+                                <Variable x:TypeArguments="x:Boolean" Name="pRecheckLoad" />
+                              </Sequence.Variables>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="438,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Button found: &quot;+pLoadMore_exists.ToString]" />
+                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Load More' button" sap:VirtualizedContainerService.HintSize="438,157" sap2010:WorkflowViewState.IdRef="NClick_1" InteractionMode="Simulate" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Version="V3">
+                                <uix:NClick.Target>
+                                  <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/weight" DesignTimeRectangle="209, 773, 870, 43" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember284' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember284' tag='BUTTON' type='button' class='button weight-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="cfba839b-f15e-4f49-ad44-4dab2d4a3c13" InformativeScreenshot="1c704487e2e1a1c47856946d4f225843.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                    <uix:TargetAnchorable.Anchors>
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                        <uix:Target DesignTimeRectangle="194, 818, 1200, 69" FriendlyName="'BLOG'" FullSelectorArgument="&lt;webctrl parentid='ember435' tag='SECTION' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember435' tag='SECTION' type='' class='social expanded row align-center' aaname='              ' check:innerText='BLOG' /&gt;" SearchSteps="FuzzySelector" />
+                                      </scg:List>
+                                    </uix:TargetAnchorable.Anchors>
+                                  </uix:TargetAnchorable>
+                                </uix:NClick.Target>
+                              </uix:NClick>
+                              <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                <TryCatch.Try>
+                                  <uix:NCheckElement DelayBefore="0" DisplayName="Recheck - if 'Load More' button exists" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheckElement_4" Result="[pRecheckLoad]" ScopeIdentifier="2ca7bea9-a5d8-43b2-8a4f-5469bce25433" Timeout="5" Version="V3">
+                                    <uix:NCheckElement.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/weight" CvTextArea="606, 787, 76, 14" CvTextArgument="Load More" CvType="Text" DesignTimeRectangle="209, 773, 870, 43" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember279' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember279' tag='BUTTON' type='button' class='button weight-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="e208f780-e2fe-437d-8f4a-62806466b02d" InformativeScreenshot="aac38fdb1bcad5d2013522086b4f0d82.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvElementArea="663, 833, 30, 28" CvType="Icon" DesignTimeRectangle="667, 836, 23, 25" FriendlyName="'I'" FullSelectorArgument="&lt;webctrl idx='2' tag='I' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' tag='I' class='fitglyph fitglyph-twitter' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABsAAAAdCAYAAABbjRdIAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAHESURBVEhL7ZX9S8JAHMb7//+OQJBmG9fGShMtzTUbDmSi9mIUS/QHFRNFGTzd6tS77XQpEhR94Plh7L7Ps3vZ947wg/yHHYTfEhZg9OTANAjSWigTpvOMUcBeY4FBb4g5ewoRwoL7axC7S22SmKB1RXB8kolLL6Nk5aGcEpjtGRv/hRDWuQkNNBDHF74oyrRdQEoWtJIG1WriwXPgvi5YVSSsnl8XpC8cvKzHcQSoX/LGm0Q/uiaukhA2qJligUKgW234M76kj9IZN0YqDbo3jm2HeECmTZinsuIMUiRLg124dGl0TT5mLQOlHvPkEMK6j220WmWoisxgFxmo9JkphxDm3xqSwn1UQIN58ojL2KtCkRbvqIs6psySRwyjW+rfRQ7JHlJrQ+YnEgkLWXYGTWqUrDxc2bQo8bDgBUUiM/meFFtyMhiSmdG8tz33jljobOl10rCQed9DTt9lKem/9ba9q24M+yQY48HOIi0152Wg2Jmwos1IwhZ4H/po2NdQEzsFlZZFxZc20RirsGDWhVs0Ero5p7Bv2vz9lUx8ZoshOl4VuXMDaVUMSNFLUs1ZsB+7mO4QsmT7nh2Y/7CD8FfDgA+VEz5UjvuokgAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NCheckElement.Target>
+                                  </uix:NCheckElement>
+                                </TryCatch.Try>
+                                <TryCatch.Catches>
+                                  <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ActivityAction x:TypeArguments="s:Exception">
+                                      <ActivityAction.Argument>
+                                        <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                      </ActivityAction.Argument>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Expanding page operation complete.&quot;]" />
+                                    </ActivityAction>
+                                  </Catch>
+                                </TryCatch.Catches>
+                              </TryCatch>
+                              <ui:Comment sap:VirtualizedContainerService.HintSize="438,209" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// Recheck Element doesn't find its element and throws an error instead of returning false. &#xA;Possible solutions:&#xA;&#xA;1. Surround if with try catch and handle the error&#xA;&#xA;2. Get to know haw to return false&#xA;&#xA;3. Surround it with try/catch and assign value false.&#xA;" />
+                              <Assign DisplayName="Assign - update if 'Load More' button exists" sap:VirtualizedContainerService.HintSize="438,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[pLoadMore_exists]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">[pRecheckLoad]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                              <If Condition="[pRecheckLoad]" DisplayName="If 'Load More' button found" sap:VirtualizedContainerService.HintSize="438,644" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Repeat&quot;]" />
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Complete&quot;]" />
+                                  </Sequence>
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ui:InterruptibleWhile.Body>
+                        </ui:InterruptibleWhile>
+                        <ui:InvokeWorkflowFile ArgumentsVariable="{x:Null}" ContinueOnError="{x:Null}" DisplayName="Processes\ReadWeightData.xaml - Invoke Workflow File" sap:VirtualizedContainerService.HintSize="514,113" sap2010:WorkflowViewState.IdRef="InvokeWorkflowFile_1" UnSafe="False" WorkflowFileName="Processes\ReadWeightData.xaml">
+                          <ui:InvokeWorkflowFile.Arguments>
+                            <OutArgument x:TypeArguments="sd:DataTable" x:Key="out_dt_WeightData">
+                              <VisualBasicReference x:TypeArguments="sd:DataTable" ExpressionText="dt_WeightData" />
+                            </OutArgument>
+                          </ui:InvokeWorkflowFile.Arguments>
+                        </ui:InvokeWorkflowFile>
+                        <Sequence DisplayName="SaveToExcel" sap:VirtualizedContainerService.HintSize="514,766" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:Boolean" Name="pExcelFound" />
+                            <Variable x:TypeArguments="sd:DataTable" Name="in_weightData" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Save To Excel Process Started&quot;]" />
+                          <ui:FileExistsX DisplayName="File Exists" Exists="[pExcelFound]" sap:VirtualizedContainerService.HintSize="388,133" sap2010:WorkflowViewState.IdRef="FileExistsX_1" Path="Data\Fitbit Data.xlsx" />
+                          <ui:WriteRange StartingCell="{x:Null}" AddHeaders="False" DataTable="[dt_WeightData]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="388,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="sheet1" WorkbookPath="Data\Fitbit Data.xlsx" />
+                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Save To Excel Process Complete&quot;]" />
+                        </Sequence>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="514,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Page Expanded. 'Load More' button clicked: &quot;+pClickCounter.ToString+&quot; times.&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap2010:WorkflowViewState.IdRef="Sequence_6" />
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </If.Then>
+              <If.Else>
+                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_7" />
+              </If.Else>
+            </If>
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="50, 111, 1605, 982" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAo9JREFUWEflVztrFUEUXkVEUBsFUQTZ2dxEYyB2KhZio6WCjSBipaAEtFC0EnygRToL9Q8Yd+bM7uJFRG91BSEogqIpxICNhQ+00MIHKKzfmT2ruzeQ670huwE/GBa+b+fMmXPOvLx+0IiiERXSIxWaL35ob40QrRCpGvianvmhSQvtikjzj/Npulhp+llyQJu7IlcDpc39sgN0UqRqsClJViP3N1AHD1AHpzkqIv1HGCJar0y8c2OzuVIohwbRZmXsZbSLQRQNCt07smIz1xDij8hxOyDaIJKnjDmaFyL09yqKRpkfCO0O8D8KtfFV6WSL69QrgpAO/jHkBrKGeaz5pTD8raRpusMaf4u8a5omWOsZXFxFQyi4h8zDgVVFXrTHrPkhTc7QNLVY6xkuxyF9cIY0/YLxAyLxQPdKAxlzIuPN2RKPFmg67jr1A15ugbb7B3UyLJTDaKu1HBE6x+FFPRwS2tvVbi/BjMfh4Cd2HoNfSNN0kcj1gx3kc2QgSdYINTvQYZkfRds6O2QztUd4topot9DZyjH2FGb/HFF4iuiMieTxf4jYuzw16Ks5kqhcuwcdpkG8wE9b5X8utrUw8lo6fIe2VySu9tu5IW6BMceY9409U+RzbTiO16HP504NK+sq7+tv/hL0xI0AIMeXSj9rM8X8UBwHRV60V6zB4ZczNKwQTPJwJ581ersQHMhTYKY432yIwWErpsDXdp9IcI6aRUNzSsFs4CJs6Hh7X0WIS8s/FWGV6HkZdtuIkLab87YR1b4V134Y1X4c5xcSzieMVH8h6YauVzJsZHO6ki1ouGu5puucGi7Wyq/lqI36HiZZcdb8NMOM63ucMuR5PolI4ISjCewNfT7PPe83EbQvxsHAXhIAAAAASUVORK5CYII=" InformativeScreenshot="21cbadd8767569fedf769cccffa3b9e6.jpg" Selector="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" Title="Fitbit Dashboard" Url="https://www.fitbit.com/" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="762,141" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Read weight process completed&quot;]" />
+  </Sequence>
+</Activity>
