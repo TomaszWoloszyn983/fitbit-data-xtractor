@@ -97,6 +97,9 @@
       "Path": "Processes/GetData/GetActivityData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "arrActivityData&Sequence_8",
+        "DataCollection&Sequence_1",
+        "pActivityData&Sequence_8",
         "pCheckedDate&Sequence_4",
         "pConvertedDate&Sequence_4",
         "pStartData&Sequence_4",
