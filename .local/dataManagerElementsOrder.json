@@ -74,9 +74,10 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Processes/ReadWeightData.xaml",
+      "Path": "Processes/GetData/ReadWeightData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "exist_LoadMore&Sequence_2",
         "pDate&Sequence_2",
         "pWeightOutput&Sequence_2",
         "pSplitRow&Sequence_2",
@@ -96,6 +97,7 @@
       "Path": "Processes/GetData/GetActivityData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "pCheckedDate&Sequence_4",
         "pConvertedDate&Sequence_4",
         "pStartData&Sequence_4",
         "exists_activityPage&Sequence_2"
@@ -103,6 +105,17 @@
       "ArgumentsSectionElementsOrder": [
         "in_DayFirst"
       ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Processes/OpenApplication.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "p_DashboardExists&Sequence_5",
+        "p_SeeMoreBtn_exists&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
