@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetActivityData" this:GetActivityData.in_DayFirst="2023/10/23" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetActivityData" this:GetActivityData.in_DayFirst="2017/05/17" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_DayFirst" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>973,6844</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1010,8071</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetActivityData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -50,6 +50,10 @@
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
       <x:String>UiPath.Activities.System.Arrays</x:String>
       <x:String>UiPath.Activities.System.Collections</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.Excel</x:String>
+      <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -115,25 +119,30 @@
       <AssemblyReference>System.Linq.Parallel</AssemblyReference>
       <AssemblyReference>System.Collections.Immutable</AssemblyReference>
       <AssemblyReference>System.Linq.Queryable</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="918,6779" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="994,8006" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:ICollection(x:Object)" Name="DataCollection" />
+      <Variable x:TypeArguments="sd:DataTable" Name="dt_Activities" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="856,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process started&quot;]" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="856,5670" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="932,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process started&quot;]" />
+    <ui:BuildDataTable DataTable="[dt_Activities]" DisplayName="Build Data Table for the activitiy statistics" sap:VirtualizedContainerService.HintSize="932,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Distance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="932,6822" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="822,5453" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="898,6605" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exists_activityPage" />
             </Sequence.Variables>
@@ -142,26 +151,27 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Today'" sap:VirtualizedContainerService.HintSize="760,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exists_activityPage]" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Today'" sap:VirtualizedContainerService.HintSize="836,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exists_activityPage]" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="339, 355, 59, 32" CvTextArea="348, 364, 43, 16" CvTextArgument="Today" CvType="Button" DesignTimeRectangle="342, 357, 55, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Today'" FullSelectorArgument="&lt;webctrl parentid='dateSelector' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateSelector' tag='A' type='' class='fitbit-date-button-active fitbit-date-day' aaname='Today' check:innerText='Today' /&gt;" Guid="bbaa888b-5491-40b6-829b-357f167fe715" InformativeScreenshot="68864d81ebf5790310d883cbcd3fb5b7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[exists_activityPage]" sap:VirtualizedContainerService.HintSize="760,5141" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[exists_activityPage]" sap:VirtualizedContainerService.HintSize="836,6293" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="726,4728" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="802,5880" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="s:DateTime" Name="pStartData" />
                     <Variable x:TypeArguments="x:String" Name="pConvertedDate" />
                     <Variable x:TypeArguments="x:String" Name="pCheckedDate" />
+                    <Variable x:TypeArguments="x:String" Name="pActivityData" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Page Open: &quot;+exists_activityPage.ToString]" />
-                  <Assign sap:VirtualizedContainerService.HintSize="684,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="760,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Page Open: &quot;+exists_activityPage.ToString]" />
+                  <Assign DisplayName="Assign - the extracting start data" sap:VirtualizedContainerService.HintSize="760,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                     <Assign.To>
                       <OutArgument x:TypeArguments="s:DateTime">[pStartData]</OutArgument>
                     </Assign.To>
@@ -169,16 +179,20 @@
                       <InArgument x:TypeArguments="s:DateTime">[convert.ToDateTime(in_DayFirst)]</InArgument>
                     </Assign.Value>
                   </Assign>
-                  <Assign sap:VirtualizedContainerService.HintSize="684,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                  <Assign sap2010:Annotation.AnnotationText="The I want to type into diagram must be the right format. So i convert it to string." DisplayName="Assign - convert date to the right string format" sap:VirtualizedContainerService.HintSize="760,124" sap2010:WorkflowViewState.IdRef="Assign_2">
                     <Assign.To>
                       <OutArgument x:TypeArguments="x:String">[pConvertedDate]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[pStartData.ToString("dd-MM-yyyy")]</InArgument>
                     </Assign.Value>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </Assign>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Convert &quot;+pStartData.ToString+&quot; to &quot;+pConvertedDate]" />
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click  Date selection box" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click  Date selection box" sap:VirtualizedContainerService.HintSize="760,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="921, 356, 154, 31" CvTextArea="956, 364, 40, 16" CvTextArgument="Today" CvType="InputBox" DesignTimeRectangle="922, 356, 152, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Today'" FullSelectorArgument="&lt;webctrl parentid='dateSelector' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateSelector' tag='DIV' type='' class='date fitbit-calendar-day' aaname='Today' check:innerText='Today' /&gt;" Guid="6069dc41-82c6-4ad8-961a-adabebbc280c" InformativeScreenshot="cba627adfbebcbb2d08286fd37722b77.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -189,7 +203,7 @@
                       </uix:TargetAnchorable>
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - the start date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="684,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Text="[pConvertedDate]" Version="V3">
+                  <uix:NTypeInto ActivateBefore="True" ClickBeforeMode="Single" DisplayName="Type Into - the start date" EmptyFieldMode="SingleLine" sap:VirtualizedContainerService.HintSize="760,218" sap2010:WorkflowViewState.IdRef="NTypeInto_1" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Text="[pConvertedDate]" Version="V3">
                     <uix:NTypeInto.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="929, 440, 152, 38" CvTextArea="972, 451, 61, 13" CvTextArgument="Start Date" CvType="Button" DesignTimeRectangle="929, 484, 152, 38" DesignTimeScaleFactor="1" ElementType="InputBox" FriendlyName="'Start Date'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl tableRow='1' tag='INPUT' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl type='text' tag='INPUT' class='startDate before-first-focus' aaname='' /&gt;" Guid="768bf98c-a2b4-464e-8289-c2af5b4ab179" InformativeScreenshot="5931a0fc8d5f3b13f40a13e758fafbf2.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -200,35 +214,40 @@
                       </uix:TargetAnchorable>
                     </uix:NTypeInto.Target>
                   </uix:NTypeInto>
-                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go' to submit" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+                  <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Go' to submit" sap:VirtualizedContainerService.HintSize="760,157" sap2010:WorkflowViewState.IdRef="NClick_2" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
                     <uix:NClick.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="931, 590, 148, 38" CvTextArea="994, 602, 21, 13" CvTextArgument="Go" CvType="Button" DesignTimeRectangle="932, 592, 146, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Go'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='calendar-tooltip' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='calendar-tooltip' type='' tag='SPAN' class='fitbit-date-go' aaname='Go' check:innerText='Go' /&gt;" Guid="61dec6f5-f93e-433f-bd71-64c83bb7e179" InformativeScreenshot="59b53d5033e13318163271f19f5a5335.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[pCheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While until the date is equals to 'Today'" sap:VirtualizedContainerService.HintSize="684,3378" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[pCheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While until the date is equals to 'Today'" sap:VirtualizedContainerService.HintSize="760,4671" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                     <ui:InterruptibleDoWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="650,3242" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="726,4504" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <Sequence.Variables>
-                          <Variable x:TypeArguments="x:String" Name="pActivityData" />
                           <Variable x:TypeArguments="s:String[]" Name="arrActivityData" />
+                          <Variable x:TypeArguments="x:String" Name="arrFilteredData" />
+                          <Variable x:TypeArguments="x:String" Name="pCals" />
+                          <Variable x:TypeArguments="x:String" Name="pFloors" />
+                          <Variable x:TypeArguments="x:String" Name="pDistance" />
+                          <Variable x:TypeArguments="x:String" Name="pSteps" />
+                          <Variable x:TypeArguments="x:String" Name="pDate" />
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <uix:NGetText DisplayName="Get Text Calories number" sap:VirtualizedContainerService.HintSize="608,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[pActivityData]" Version="V3">
+                        <uix:NGetText DisplayName="Get Text a row of data from the page" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[pActivityData]" Version="V3">
                           <uix:NGetText.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" DesignTimeRectangle="356, 766, 875, 60" DesignTimeScaleFactor="1" FriendlyName="'Totals 8,567'" FullSelectorArgument="&lt;webctrl class='summary' parentid='summaryChartSection' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='summary' parentid='summaryChartSection' tag='DIV' type='' aaname=' ' /&gt;" Guid="1419ee15-df35-428a-ba04-9bd035e2910c" InformativeScreenshot="55e904cf05e2f10117cbebd527bf7b63.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                   <uix:Target CvElementArea="405, 239, 114, 42" CvTextArea="414, 248, 96, 22" CvTextArgument="Activities" CvType="Button" DesignTimeRectangle="407, 241, 111, 39" ElementType="Text" FriendlyName="'Activities'" FullSelectorArgument="&lt;webctrl aaname='                     Activities                 ' parentid='trackerNav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                     Activities                 ' parentid='trackerNav' tag='SPAN' type='' class='' check:innerText='Activities' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAArCAYAAABLnrd8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATnSURBVHhe7VjPa1QxEPZ/6j+y/0DBkwdvXgs9iJ4KFSrCHhTBw5ZCodhDoVhQBAWloKCIFFYKhRWKhUWhh5aF+M3bfOm8NHnd96PFjRn4WDaZl2Tmm0wmuXV+fm4y0kAmMyE4Ms3CnYw5RSYzIWQyE0ImMyFkMhNCJjMhZDITQiYzIWQyE0ImMyF0T+buL+Nk91FYpykW140Z/jRm1Ws/tPNte+2zYvX79Ps/+NXtvWfG7MOeLdUmaDvfNaFjMmH8iTVU5OhjQKcpQORYBj29OTKH0+ZL4/4XZN7/OjVydFT43JjfaAvoNcImnC1jBsi8LvyjpMXQLZn7BYP4heM/YyyRzy/DurWRybwKHZIJ0gouMUYf//s/Cj+YCXZpUJ9YMmaAHT225IucYaBvSNGLVmcb52RI6OSS03FOY8pC9iJnNtPqKdao/zPN8r8vEqTSX0XyCtZ9jPVPrM4Edh3CviXY6euGbK/Ur0Z3ZA6sB+kgt5MgG7GFPca5pAwZgbQhCg464g/G6kGv/6ncfiR6gASNjOM7l0XYCN+V5rNgBmHW8Mlcfjcd36qZYzvfFmoC6Y+RqYNujDXIN8U5D5ngyFnz/PAabUUffFDYrvRlcl//CnREJiY9sGt4/+Ki/b1dbKwQotPPYISOxB6KndG06yJNV6RZ37k9kFEIxr+r9ApwHNjKYIgVQDHSQu1uN2N9LxCkTh927dFOBLwEZ9H+ygYn+u6xzeoz2GoWkN2Q6ZznFTwsiIKFEEhn5RvauZKmJWJP6OAaZOrg8lMtne4yiGprTKaaj6m4BJDL4OR1LTan4C4yishYrXEGdEMmd9gJyCv1YeGXdpgFF2ywK120VqEOmcCGTft+dOsijW2tyeQuw9hrSk/jrc1SQwR+0cZvpA2+eBg532ugAzIVYaGCg0TrnSCoiswgapLZe3ORxlyqZTbwxmhL5jIzEPwn514Ix+gT0XPwGKJMsK4h+p9jnTMFeBntyXSpdAbR6ZTFwnWRKWDq27bzcq1+BmlLJr+fRUpzYF1PsSul+vVFiN3QZ+/VaE8mo0vOt9MIXBWqUt5170wBK+xDm9q4Vl2kCdqSuWK/lyND69VBD1ntCbLJN6yR/qr56NKSTN4tIVXvsDy/9OJcaoo5AGfKGbpP0X9b/jcgc2HHrg9j9JhiAw5qS+YCC8DA2pqgR1shsbtyAO3I5MPAlUUMnQpxu0ItOFTNPrVjOwc3IRP4AptEdiMpVtCaTDic8foFtmpdQl7EJHsd2Cwhx4wEK7OGD85xY2TyTDpAegj1a/B5TxdCsXvmInY8L897PDfQT4cNrB5RRSYDTtK9yFt78deIkcnK1/8mNB+DT4Jt09Pv2/GlQBp457fo9x+U9ZdY6d9UmnXVIiT6wqNAh4k4fRB1wC0L8V+A/KhlQJzBSKkQYy9AJaijIPiIAMTIZLAVVSbmq3wBgk28fojwBYhVrEjpDgp9BosI9UeqLXhnjaM5mc5QbJeZymieWZDS3Q9GbcKJ/tvszrrSsbiHc3Sk9D5YnUoyATot9rwXI1NeoobKubwjVs3nv82KjEHSIJARxHb/bVYkql+N5mRm/HPIZCaETGZCyGQmhExmQshkJoRMZkLIZCaETGZCyGQmhExmQshkJoRLZM4rQsY1RWj8ecLckykIEVMXoXHnC+fmL4HdK9TzaeIsAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
                                 </scg:List>
                               </uix:TargetAnchorable.Anchors>
                             </uix:TargetAnchorable>
                           </uix:NGetText.Target>
                         </uix:NGetText>
-                        <Assign sap:VirtualizedContainerService.HintSize="608,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign DisplayName="Assign - Split extracted data row into an array of strings" sap:VirtualizedContainerService.HintSize="684,82" sap2010:WorkflowViewState.IdRef="Assign_6">
                           <Assign.To>
                             <OutArgument x:TypeArguments="s:String[]">[arrActivityData]</OutArgument>
                           </Assign.To>
@@ -236,7 +255,7 @@
                             <InArgument x:TypeArguments="s:String[]">[pActivityData.Split(" "C)]</InArgument>
                           </Assign.Value>
                         </Assign>
-                        <Assign sap2010:Annotation.AnnotationText="This collection contains the values fo Steps, Floors, Distance and Caloris burned.&#xD;&#xA;" DisplayName="Assign - Collection of captured data" sap:VirtualizedContainerService.HintSize="608,139" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign sap2010:Annotation.AnnotationText="This collection contains the values fo Date, Steps, Floors, Distance and Caloris burned. This data are going to be converted into data row.&#xA;" DisplayName="Assign - Collection for captured data" sap:VirtualizedContainerService.HintSize="684,139" sap2010:WorkflowViewState.IdRef="Assign_5">
                           <Assign.To>
                             <OutArgument x:TypeArguments="scg:ICollection(x:Object)">[DataCollection]</OutArgument>
                           </Assign.To>
@@ -249,55 +268,54 @@
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
                         </Assign>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;New Iteration&quot;]" />
-                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="608,1626" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrActivityData]">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Next Day&quot;]" />
+                        <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - element in the array of extracted data." sap:VirtualizedContainerService.HintSize="684,1180" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrActivityData]">
                           <ui:ForEach.Body>
                             <ActivityAction x:TypeArguments="x:String">
                               <ActivityAction.Argument>
                                 <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                               </ActivityAction.Argument>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="574,1440" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="650,994" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <Sequence.Variables>
+                                  <Variable x:TypeArguments="s:String[]" Name="arrData" />
+                                </Sequence.Variables>
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_15">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
-                                        <Assign.To>
-                                          <OutArgument x:TypeArguments="x:String">[ListOfItems]</OutArgument>
-                                        </Assign.To>
-                                        <Assign.Value>
-                                          <InArgument x:TypeArguments="scg:List(x:String)">[new List(Of String)]</InArgument>
-                                        </Assign.Value>
-                                      </Assign>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                </ui:CommentOut>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,143" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Element &quot;+currentItem]" />
-                                <If Condition="[isNumeric(currentItem)]" sap:VirtualizedContainerService.HintSize="532,674" sap2010:WorkflowViewState.IdRef="If_3">
+                                <If Condition="[isNumeric(currentItem)]" DisplayName="If - filter if the element from the array is a numeric value" sap:VirtualizedContainerService.HintSize="608,906" sap2010:WorkflowViewState.IdRef="If_3">
                                   <If.Then>
-                                    <Sequence sap:VirtualizedContainerService.HintSize="376,412" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                    <Sequence sap:VirtualizedContainerService.HintSize="574,724" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                       <sap:WorkflowViewStateService.ViewState>
                                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                         </scg:Dictionary>
                                       </sap:WorkflowViewStateService.ViewState>
-                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Good &quot;+currentItem]" />
-                                      <uasc:AppendItemToCollection x:TypeArguments="x:Object" Collection="[DataCollection]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,143" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Captures &quot;+currentItem]" />
+                                      <uasc:AppendItemToCollection x:TypeArguments="x:Object" Collection="[DataCollection]" DisplayName="Append Items to Collection" sap:VirtualizedContainerService.HintSize="532,141" sap2010:WorkflowViewState.IdRef="AppendItemToCollection`1_2">
                                         <uasc:AppendItemToCollection.Items>
                                           <scg:List x:TypeArguments="InArgument(x:Object)" Capacity="4">
                                             <InArgument x:TypeArguments="x:Object">[currentItem]</InArgument>
                                           </scg:List>
                                         </uasc:AppendItemToCollection.Items>
                                       </uasc:AppendItemToCollection>
+                                      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+                                        <ui:CommentOut.Body>
+                                          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                            <sap:WorkflowViewStateService.ViewState>
+                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                              </scg:Dictionary>
+                                            </sap:WorkflowViewStateService.ViewState>
+                                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                                              <Assign.To>
+                                                <OutArgument x:TypeArguments="x:String">[arrFilteredData]</OutArgument>
+                                              </Assign.To>
+                                            </Assign>
+                                          </Sequence>
+                                        </ui:CommentOut.Body>
+                                      </ui:CommentOut>
                                     </Sequence>
                                   </If.Then>
                                   <If.Else>
@@ -310,17 +328,185 @@
                                     </Sequence>
                                   </If.Else>
                                 </If>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Collection: &quot;+DataCollection.ToString]" />
                               </Sequence>
                             </ActivityAction>
                           </ui:ForEach.Body>
                         </ui:ForEach>
-                        <uix:NGetText DisplayName="Get Text From the Calendar" sap:VirtualizedContainerService.HintSize="608,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[pCheckedDate]" Version="V3">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Collection lenght: &quot;+DataCollection.Count.ToString]" />
+                        <TryCatch DisplayName="Try Catch if error occured during assinging data" sap:VirtualizedContainerService.HintSize="684,1076" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch.Try>
+                            <If sap2010:Annotation.AnnotationText="If the number of Steps on the website is zero then the number of Floors doesn't not appear. &#xD;&#xA;This causes an error because there were not enough data in the collection to assign all the variables.&#xD;&#xA;In this case the number of Flooors will be assigned to 0 by the bot." Condition="[DataCollection.Count = 4]" DisplayName="If - all data were extracted properly" sap:VirtualizedContainerService.HintSize="555,848" sap2010:WorkflowViewState.IdRef="If_4">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="521,297" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,209" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                                    <ui:MultipleAssign.AssignOperations>
+                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pSteps]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(0).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pFloors]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(1).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pDistance]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(2).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pCals]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(3).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                      </scg:List>
+                                    </ui:MultipleAssign.AssignOperations>
+                                  </ui:MultipleAssign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="521,297" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,209" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                                    <ui:MultipleAssign.AssignOperations>
+                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pSteps]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(0).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pFloors]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">["0"]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pDistance]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(1).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pCals]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">[DataCollection(2).ToString]</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                      </scg:List>
+                                    </ui:MultipleAssign.AssignOperations>
+                                  </ui:MultipleAssign>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="559,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="541,503" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,143" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;An error occured during assigning Activity Data. To prevent the application from crashing all the data were assigned to 0&quot;]" />
+                                  <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,209" sap2010:WorkflowViewState.IdRef="MultipleAssign_3">
+                                    <ui:MultipleAssign.AssignOperations>
+                                      <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pSteps]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pFloors]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pDistance]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                        <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
+                                          <ui:AssignOperation.To>
+                                            <OutArgument x:TypeArguments="x:String">[pCals]</OutArgument>
+                                          </ui:AssignOperation.To>
+                                          <ui:AssignOperation.Value>
+                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                          </ui:AssignOperation.Value>
+                                        </ui:AssignOperation>
+                                      </scg:List>
+                                    </ui:MultipleAssign.AssignOperations>
+                                  </ui:MultipleAssign>
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                        <uix:NGetText DisplayName="Get Text From the Calendar" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[pCheckedDate]" Version="V3">
                           <uix:NGetText.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="914, 355, 160, 32" CvTextArea="950, 364, 69, 13" CvTextArgument="Sat 21 Oct" CvType="InputBox" DesignTimeRectangle="916, 356, 158, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Sat 21 Oct'" FullSelectorArgument="&lt;webctrl parentid='dateSelector' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateSelector' tag='DIV' type='' class='date fitbit-calendar-day' /&gt;" Guid="455fe20a-fdce-4c71-9ba0-4a0255c4acba" InformativeScreenshot="57aed378396d23a0e08c5c79347fe71a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                           </uix:NGetText.Target>
                         </uix:NGetText>
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="608,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Result: &quot;+pCals.ToString+&quot;, &quot;+pCals.ToString]" />
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{pCheckedDate, pCals, pSteps, pFloors, pDistance}]" DataTable="[dt_Activities]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="684,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="1075, 355, 34, 32" CvType="Button" DesignTimeRectangle="1077, 357, 30, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl class='fitbit-calendar-next' parentid='dateSelector' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='fitbit-calendar-next' parentid='dateSelector' tag='A' type='' aaname='Next' check:innerText='Next' /&gt;" Guid="4e796840-574e-4540-a306-c4246ad35754" InformativeScreenshot="b67a584303efc30b13bfb79d11cd5a7a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
@@ -331,7 +517,7 @@
                             </uix:TargetAnchorable>
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <If Condition="[pCheckedDate = &quot;Today&quot;]" sap:VirtualizedContainerService.HintSize="608,413" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[pCheckedDate = &quot;Today&quot;]" sap:VirtualizedContainerService.HintSize="684,413" sap2010:WorkflowViewState.IdRef="If_2">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
@@ -348,6 +534,11 @@
                         </If>
                       </Sequence>
                     </ui:InterruptibleDoWhile.Body>
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                   </ui:InterruptibleDoWhile>
                 </Sequence>
               </If.Then>
@@ -369,7 +560,7 @@
         <uix:TargetApp Area="61, 266, 1605, 982" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAo9JREFUWEflVztrFUEUXkVEUBsFUQTZ2dxEYyB2KhZio6WCjSBipaAEtFC0EnygRToL9Q8Yd+bM7uJFRG91BSEogqIpxICNhQ+00MIHKKzfmT2ruzeQ670huwE/GBa+b+fMmXPOvLx+0IiiERXSIxWaL35ob40QrRCpGvianvmhSQvtikjzj/Npulhp+llyQJu7IlcDpc39sgN0UqRqsClJViP3N1AHD1AHpzkqIv1HGCJar0y8c2OzuVIohwbRZmXsZbSLQRQNCt07smIz1xDij8hxOyDaIJKnjDmaFyL09yqKRpkfCO0O8D8KtfFV6WSL69QrgpAO/jHkBrKGeaz5pTD8raRpusMaf4u8a5omWOsZXFxFQyi4h8zDgVVFXrTHrPkhTc7QNLVY6xkuxyF9cIY0/YLxAyLxQPdKAxlzIuPN2RKPFmg67jr1A15ugbb7B3UyLJTDaKu1HBE6x+FFPRwS2tvVbi/BjMfh4Cd2HoNfSNN0kcj1gx3kc2QgSdYINTvQYZkfRds6O2QztUd4topot9DZyjH2FGb/HFF4iuiMieTxf4jYuzw16Ks5kqhcuwcdpkG8wE9b5X8utrUw8lo6fIe2VySu9tu5IW6BMceY9409U+RzbTiO16HP504NK+sq7+tv/hL0xI0AIMeXSj9rM8X8UBwHRV60V6zB4ZczNKwQTPJwJ581ersQHMhTYKY432yIwWErpsDXdp9IcI6aRUNzSsFs4CJs6Hh7X0WIS8s/FWGV6HkZdtuIkLab87YR1b4V134Y1X4c5xcSzieMVH8h6YauVzJsZHO6ki1ouGu5puucGi7Wyq/lqI36HiZZcdb8NMOM63ucMuR5PolI4ISjCewNfT7PPe83EbQvxsHAXhIAAAAASUVORK5CYII=" InformativeScreenshot="cc52265b460eef7634a8189bc35d3f33.jpg" Selector="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" Title="Track My Activities on Fitbit" Url="https://www.fitbit.com/activities" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="856,415" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DataCollection]">
+    <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="932,415" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[DataCollection]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -386,7 +577,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="856,141" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Steps: &quot;+DataCollection(0).ToString+&quot; Calories: &quot;+DataCollection(3).ToString]" />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="856,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process Complete&quot;]" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_Activities]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="932,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Activities Data.xlsx" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="932,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process Complete&quot;]" />
   </Sequence>
 </Activity>
