@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetActivityData" this:GetActivityData.in_DayFirst="2017/05/17" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetActivityData" this:GetActivityData.in_DayFirst="2023/10/24" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_DayFirst" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1010,8071</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1010,8625</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetActivityData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -124,7 +124,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="994,8006" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="994,8560" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:ICollection(x:Object)" Name="DataCollection" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Activities" />
@@ -135,14 +135,14 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="932,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process started&quot;]" />
-    <ui:BuildDataTable DataTable="[dt_Activities]" DisplayName="Build Data Table for the activitiy statistics" sap:VirtualizedContainerService.HintSize="932,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Distance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="932,6822" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">
+    <ui:BuildDataTable DataTable="[dt_Activities]" DisplayName="Build Data Table for the activitiy statistics" sap:VirtualizedContainerService.HintSize="932,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Distance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="932,7134" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="898,6605" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="898,6917" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exists_activityPage" />
             </Sequence.Variables>
@@ -156,9 +156,9 @@
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="339, 355, 59, 32" CvTextArea="348, 364, 43, 16" CvTextArgument="Today" CvType="Button" DesignTimeRectangle="342, 357, 55, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Today'" FullSelectorArgument="&lt;webctrl parentid='dateSelector' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateSelector' tag='A' type='' class='fitbit-date-button-active fitbit-date-day' aaname='Today' check:innerText='Today' /&gt;" Guid="bbaa888b-5491-40b6-829b-357f167fe715" InformativeScreenshot="68864d81ebf5790310d883cbcd3fb5b7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[exists_activityPage]" sap:VirtualizedContainerService.HintSize="836,6293" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[exists_activityPage]" sap:VirtualizedContainerService.HintSize="836,6605" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="802,5880" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="802,6192" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="s:DateTime" Name="pStartData" />
                     <Variable x:TypeArguments="x:String" Name="pConvertedDate" />
@@ -219,17 +219,18 @@
                       <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="931, 590, 148, 38" CvTextArea="994, 602, 21, 13" CvTextArgument="Go" CvType="Button" DesignTimeRectangle="932, 592, 146, 36" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Go'" FullSelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='calendar-tooltip' tableRow='1' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='TABLE' /&gt;&lt;webctrl parentid='calendar-tooltip' type='' tag='SPAN' class='fitbit-date-go' aaname='Go' check:innerText='Go' /&gt;" Guid="61dec6f5-f93e-433f-bd71-64c83bb7e179" InformativeScreenshot="59b53d5033e13318163271f19f5a5335.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                     </uix:NClick.Target>
                   </uix:NClick>
-                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[pCheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While until the date is equals to 'Today'" sap:VirtualizedContainerService.HintSize="760,4671" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[pCheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While until the date is equals to 'Today'" sap:VirtualizedContainerService.HintSize="760,4983" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                     <ui:InterruptibleDoWhile.Body>
-                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="726,4504" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                      <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="726,4816" sap2010:WorkflowViewState.IdRef="Sequence_8">
                         <Sequence.Variables>
                           <Variable x:TypeArguments="s:String[]" Name="arrActivityData" />
                           <Variable x:TypeArguments="x:String" Name="arrFilteredData" />
-                          <Variable x:TypeArguments="x:String" Name="pCals" />
-                          <Variable x:TypeArguments="x:String" Name="pFloors" />
-                          <Variable x:TypeArguments="x:String" Name="pDistance" />
-                          <Variable x:TypeArguments="x:String" Name="pSteps" />
+                          <Variable x:TypeArguments="x:Int32" Name="pCals" />
+                          <Variable x:TypeArguments="x:Int32" Name="pFloors" />
+                          <Variable x:TypeArguments="x:Double" Name="pDistance" />
+                          <Variable x:TypeArguments="x:Int32" Name="pSteps" />
                           <Variable x:TypeArguments="x:String" Name="pDate" />
+                          <Variable x:TypeArguments="x:String" Name="arrObject" />
                         </Sequence.Variables>
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -334,8 +335,14 @@
                         </ui:ForEach>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Collection lenght: &quot;+DataCollection.Count.ToString]" />
                         <TryCatch DisplayName="Try Catch if error occured during assinging data" sap:VirtualizedContainerService.HintSize="684,1076" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
                           <TryCatch.Try>
-                            <If sap2010:Annotation.AnnotationText="If the number of Steps on the website is zero then the number of Floors doesn't not appear. &#xD;&#xA;This causes an error because there were not enough data in the collection to assign all the variables.&#xD;&#xA;In this case the number of Flooors will be assigned to 0 by the bot." Condition="[DataCollection.Count = 4]" DisplayName="If - all data were extracted properly" sap:VirtualizedContainerService.HintSize="555,848" sap2010:WorkflowViewState.IdRef="If_4">
+                            <If sap2010:Annotation.AnnotationText="If the number of Steps on the website is zero then the number of Floors does not appear. &#xD;&#xA;This causes an error because there were not enough data in the collection to assign all the variables.&#xD;&#xA;In this case the number of Flooors will be assigned to 0 by the bot." Condition="[DataCollection.Count = 4]" DisplayName="If - all data were extracted properly" sap:VirtualizedContainerService.HintSize="555,848" sap2010:WorkflowViewState.IdRef="If_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -353,34 +360,34 @@
                                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pSteps]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pSteps]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(0).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[CInt(DataCollection(0))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pFloors]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pFloors]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(1).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[CInt(DataCollection(1))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pDistance]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Double">[pDistance]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(2).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(DataCollection(2))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pCals]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pCals]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(3).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[CInt(DataCollection(3))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                       </scg:List>
@@ -400,34 +407,34 @@
                                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pSteps]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pSteps]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(0).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[CInt(DataCollection(0))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pFloors]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pFloors]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">["0"]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pDistance]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Double">[pDistance]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(1).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(DataCollection(1))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pCals]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pCals]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">[DataCollection(2).ToString]</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">[CInt(DataCollection(2))]</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                       </scg:List>
@@ -461,34 +468,34 @@
                                       <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pSteps]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pSteps]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_11">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pFloors]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pFloors]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_12">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pDistance]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Double">[pDistance]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                            <InArgument x:TypeArguments="x:Double">0</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                         <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_13">
                                           <ui:AssignOperation.To>
-                                            <OutArgument x:TypeArguments="x:String">[pCals]</OutArgument>
+                                            <OutArgument x:TypeArguments="x:Int32">[pCals]</OutArgument>
                                           </ui:AssignOperation.To>
                                           <ui:AssignOperation.Value>
-                                            <InArgument x:TypeArguments="x:String">0</InArgument>
+                                            <InArgument x:TypeArguments="x:Int32">0</InArgument>
                                           </ui:AssignOperation.Value>
                                         </ui:AssignOperation>
                                       </scg:List>
@@ -505,8 +512,27 @@
                           </uix:NGetText.Target>
                         </uix:NGetText>
                         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,143" sap2010:WorkflowViewState.IdRef="LogMessage_14" Message="[&quot;Result: &quot;+pCals.ToString+&quot;, &quot;+pCals.ToString]" />
-                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{pCheckedDate, pCals, pSteps, pFloors, pDistance}]" DataTable="[dt_Activities]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="684,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next'" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="684,272" sap2010:WorkflowViewState.IdRef="CommentOut_4">
+                          <ui:CommentOut.Body>
+                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:String">[arrObject]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:String">[{pCheckedDate, pCals, pSteps, pFloors, pDistance}]</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </ui:CommentOut.Body>
+                        </ui:CommentOut>
+                        <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new Object(){pCheckedDate, pCals, pSteps, pFloors, pDistance}]" DataTable="[dt_Activities]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="684,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                        <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next' to go to the next page/day" sap:VirtualizedContainerService.HintSize="684,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
                           <uix:NClick.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="1075, 355, 34, 32" CvType="Button" DesignTimeRectangle="1077, 357, 30, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl class='fitbit-calendar-next' parentid='dateSelector' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='fitbit-calendar-next' parentid='dateSelector' tag='A' type='' aaname='Next' check:innerText='Next' /&gt;" Guid="4e796840-574e-4540-a306-c4246ad35754" InformativeScreenshot="b67a584303efc30b13bfb79d11cd5a7a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
@@ -517,7 +543,7 @@
                             </uix:TargetAnchorable>
                           </uix:NClick.Target>
                         </uix:NClick>
-                        <If Condition="[pCheckedDate = &quot;Today&quot;]" sap:VirtualizedContainerService.HintSize="684,413" sap2010:WorkflowViewState.IdRef="If_2">
+                        <If Condition="[pCheckedDate = &quot;Today&quot;]" DisplayName="If currently checked data is today display log message" sap:VirtualizedContainerService.HintSize="684,413" sap2010:WorkflowViewState.IdRef="If_2">
                           <If.Then>
                             <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_9">
                               <sap:WorkflowViewStateService.ViewState>
@@ -577,6 +603,13 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
+    <ui:Comment sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="932,202" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// It would be good to change the order the data are written in the data table to descending, so the todays date would be on the top.&#xD;&#xA;&#xD;&#xA;This change would have to be applied to all the data tables">
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+    </ui:Comment>
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_Activities]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="932,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Activities Data.xlsx" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="932,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process Complete&quot;]" />
   </Sequence>
