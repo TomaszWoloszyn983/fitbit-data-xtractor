@@ -97,6 +97,8 @@
       "Path": "Processes/GetData/GetActivityData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "pDaysCounter&Sequence_4",
+        "arrObject&Sequence_8",
         "pDate&Sequence_8",
         "pSteps&Sequence_8",
         "pDistance&Sequence_8",
@@ -125,6 +127,17 @@
       "VariablesSectionElementsOrder": [
         "p_DashboardExists&Sequence_5",
         "p_SeeMoreBtn_exists&Sequence_6"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Processes/GetData/GetActivityTypes.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "existsButton&Sequence_3",
+        "exists_History&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
