@@ -77,6 +77,7 @@
       "Path": "Processes/GetData/ReadWeightData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "ExtractDataTable&Sequence_2",
         "exist_LoadMore&Sequence_2",
         "pDate&Sequence_2",
         "pWeightOutput&Sequence_2",

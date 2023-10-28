@@ -1,0 +1,224 @@
+<Activity mc:Ignorable="sap sap2010" x:Class="GetSleepData" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1152,2317" sap2010:WorkflowViewState.IdRef="GetSleepData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <TextExpression.NamespacesForImplementation>
+    <sco:Collection x:TypeArguments="x:String">
+      <x:String>System.Activities</x:String>
+      <x:String>System.Activities.Statements</x:String>
+      <x:String>System.Activities.Expressions</x:String>
+      <x:String>System.Activities.Validation</x:String>
+      <x:String>System.Activities.XamlIntegration</x:String>
+      <x:String>Microsoft.VisualBasic</x:String>
+      <x:String>Microsoft.VisualBasic.Activities</x:String>
+      <x:String>System</x:String>
+      <x:String>System.Collections</x:String>
+      <x:String>System.Collections.Generic</x:String>
+      <x:String>System.Collections.ObjectModel</x:String>
+      <x:String>System.Data</x:String>
+      <x:String>System.Diagnostics</x:String>
+      <x:String>System.Drawing</x:String>
+      <x:String>System.IO</x:String>
+      <x:String>System.Linq</x:String>
+      <x:String>System.Net.Mail</x:String>
+      <x:String>System.Xml</x:String>
+      <x:String>System.Xml.Linq</x:String>
+      <x:String>UiPath.Core</x:String>
+      <x:String>UiPath.Core.Activities</x:String>
+      <x:String>System.Windows.Markup</x:String>
+      <x:String>GlobalVariablesNamespace</x:String>
+      <x:String>GlobalConstantsNamespace</x:String>
+      <x:String>UiPath.UIAutomationNext.Enums</x:String>
+      <x:String>System.Runtime.Serialization</x:String>
+      <x:String>UiPath.UIAutomationCore.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities</x:String>
+      <x:String>UiPath.Shared.Activities</x:String>
+      <x:String>UiPath.Platform.ObjectLibrary</x:String>
+      <x:String>System.Reflection</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.ExtractData</x:String>
+      <x:String>UiPath.Shared.Activities.Business</x:String>
+      <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Contracts</x:String>
+      <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+    </sco:Collection>
+  </TextExpression.NamespacesForImplementation>
+  <TextExpression.ReferencesForImplementation>
+    <sco:Collection x:TypeArguments="AssemblyReference">
+      <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
+      <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>System</AssemblyReference>
+      <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Core</AssemblyReference>
+      <AssemblyReference>System.Data</AssemblyReference>
+      <AssemblyReference>System.Data.Common</AssemblyReference>
+      <AssemblyReference>System.Data.DataSetExtensions</AssemblyReference>
+      <AssemblyReference>System.Drawing</AssemblyReference>
+      <AssemblyReference>System.Drawing.Common</AssemblyReference>
+      <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
+      <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Net.Mail</AssemblyReference>
+      <AssemblyReference>System.ObjectModel</AssemblyReference>
+      <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Xaml</AssemblyReference>
+      <AssemblyReference>System.Xml</AssemblyReference>
+      <AssemblyReference>System.Xml.Linq</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Platform</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Workflow</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+    </sco:Collection>
+  </TextExpression.ReferencesForImplementation>
+  <Sequence DisplayName="GetSleepData" sap:VirtualizedContainerService.HintSize="748,2252" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <sap:WorkflowViewStateService.ViewState>
+      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+      </scg:Dictionary>
+    </sap:WorkflowViewStateService.ViewState>
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit - Sleep" sap:VirtualizedContainerService.HintSize="686,2141" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="759b6297-2fef-4efe-af97-c533f2523c03" Version="V2">
+      <uix:NApplicationCard.Body>
+        <ActivityAction x:TypeArguments="x:Object">
+          <ActivityAction.Argument>
+            <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
+          </ActivityAction.Argument>
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="652,1924" sap2010:WorkflowViewState.IdRef="Sequence_2">
+            <Sequence.Variables>
+              <Variable x:TypeArguments="x:Boolean" Name="exist_SleepPage" />
+              <Variable x:TypeArguments="x:Boolean" Name="exist_LoadMore" />
+            </Sequence.Variables>
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Hours Slept'" sap:VirtualizedContainerService.HintSize="590,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exist_SleepPage]" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
+              <uix:NCheckElement.Target>
+                <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="118, 250, 142, 18" CvTextArgument="Sleep I Hours Slept" CvType="Text" DesignTimeRectangle="169, 250, 90, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Hours Slept'" FullSelectorArgument="&lt;webctrl class='chart-title' parentid='hours-slept-chart' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='chart-title' parentid='hours-slept-chart' tag='SPAN' type='' aaname=' | Hours Slept' check:innerText='| Hours Slept' /&gt;" Guid="0c8d9f74-a12f-4935-93db-c6100cd2c276" InformativeScreenshot="f637e6ce922f384c0a86709f1146a18d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                  <uix:TargetAnchorable.Anchors>
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                      <uix:Target CvTextArea="344, 193, 40, 16" CvTextArgument="Sleep" CvType="Text" DesignTimeRectangle="346, 176, 38, 48" ElementType="Text" FriendlyName="'Sleep'" FullSelectorArgument="&lt;webctrl parentid='ember125' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember125' tag='SPAN' type='' class='link-text' aaname='                                 Sleep                             ' check:innerText='Sleep' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAA0CAYAAAD8H6qwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANrSURBVGhD7ZXNSxtBGMb73xWKIKEglIAg9CB46lF6KUhKPYhiqEViICgaCCwN4gdKEEVUDIkopIQEg0raGOIm2S/PT5/J7ibZmPY0tQhzeGB33p2Z3/u5rxoPDbwEKVDZUqCypUBlS4HKlgKVLQUqWwpUthSobClQ2Xq5oPr1JYy9fVjJHZi7xzAKd3jot51k0b657649l7qgD/UKjPgSHl9/fqrYMVr1e7S0Zb7PwTmoQO875DnUBW2dpVyo8DIs7RBmJgNrdQ2Pb7k2noBV/In2/wdltDZXXNB4Hs2+D/SbAoxilakeFtEqWif7sL8mYEfWWC4ZGKVqd6+7/5KOa3AiK3AW0zAPCsyOZ7vOwkxuwTzKs9y2YH9Zgb2gwbzolZuvQEQdAToahZM8Ret2sA4HQOt3MFb9UpmFE551n8MJmAXhWAPNYgbOe2EX69z3xnuOZ9EkrJ5Le/s9vfPOGInCOqoE7u/VaK0MM7HswnpypujhOqNE6EHQ9rmGR3Hxxy3aPUeOWD4j3Bfhnl9lWBFx8TzsvWInS3qV0Z2Z4z6CnFd7oJMbsK5EFMUZPJdnPE6mvHMHQH3pxVNYsQQj4XkngD/toF3tBy3CXI269pkUrESa9UzFN+CMcS28BvPqELZ4frsEJ6a59oTGEpl3z0wW0BagwtkYI+wz1D0HR5ZgX7iZEetPQHsimLhsSsASLlOG0QX9AfObe+FQhVZgne3BCQ2x+SLccNAKzAVGnZkQUfd5eqm/ycPaznYL3RXrsAM0C3u72Nf1PrRYLwcmgF6777zrN6ewJwgxqQVSKALQrPE+8c0wUJaH/YFro5w+hV6feKAEinkpmU5xNJ3COMvC2GTNjXJTJw23gfHUKh3CGactRNvuJS8XEyANZ2Iezp6Ar8JYd5vNibCOi3do3hZgzrFZp9Md+G6NhqKwNQbpmvZVt09EnbfpkO9gX0SzsGeGpZMdnRQjK9hMunjP7bPhBr4PswHPvI6tsZbjwQbtaDGDVrUPdEykumd3pjmiSsGp86RGm2JuHnDYr6fp5WEnEv6G4b9QRjJ3DFPjLzfDqDwZa9zHSBq7O7C+Zzgjy90096e+VcrD3KY9FywlX39ppn+voTX6BylQ2VKgsqVAZUuBypYClS0FKlsKVLYUqGwpUNl6IaAN/AZTLUC5cSG46gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                    </scg:List>
+                  </uix:TargetAnchorable.Anchors>
+                </uix:TargetAnchorable>
+              </uix:NCheckElement.Target>
+            </uix:NCheckElement>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sleep Data Page Open - &quot;+exist_SleepPage.ToString]" />
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="590,1246" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="556,1110" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Load More'" sap:VirtualizedContainerService.HintSize="514,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[exist_LoadMore]" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
+                    <uix:NCheckElement.Target>
+                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="460, 839, 69, 13" CvTextArgument="Load More" CvType="Text" DesignTimeRectangle="110, 827, 770, 39" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' class='button sleep-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="cd36bcc9-8c2c-473a-a2e7-e6decc75ff09" InformativeScreenshot="d0a6521cbf27bf9bc1947b84b82666ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                    </uix:NCheckElement.Target>
+                  </uix:NCheckElement>
+                  <If Condition="[exist_LoadMore]" sap:VirtualizedContainerService.HintSize="514,825" sap2010:WorkflowViewState.IdRef="If_1">
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="480,473" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                          <TryCatch.Try>
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Load More'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
+                              <uix:NClick.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="460, 839, 69, 13" CvTextArgument="Load More" CvType="Text" DesignTimeRectangle="110, 827, 770, 39" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' class='button sleep-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="e98be735-8421-4265-a4ab-db8c86a22dbf" InformativeScreenshot="15be7914e8ab1a9c74bd85b284bc7e19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NClick.Target>
+                            </uix:NClick>
+                          </TryCatch.Try>
+                          <TryCatch.Catches>
+                            <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ActivityAction x:TypeArguments="s:Exception">
+                                <ActivityAction.Argument>
+                                  <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                </ActivityAction.Argument>
+                                <Sequence sap:VirtualizedContainerService.HintSize="496,374" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Boolean">[exist_LoadMore]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Load More button not found&quot;]" />
+                                </Sequence>
+                              </ActivityAction>
+                            </Catch>
+                          </TryCatch.Catches>
+                        </TryCatch>
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                          <Assign.To>
+                            <OutArgument x:TypeArguments="x:Boolean">[exist_LoadMore]</OutArgument>
+                          </Assign.To>
+                          <Assign.Value>
+                            <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                          </Assign.Value>
+                        </Assign>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="exist_LoadMore" />
+              </ui:InterruptibleDoWhile.Condition>
+            </ui:InterruptibleDoWhile>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Data Table fully expanded&quot;]" />
+          </Sequence>
+        </ActivityAction>
+      </uix:NApplicationCard.Body>
+      <uix:NApplicationCard.TargetApp>
+        <uix:TargetApp Area="23, 66, 1406, 1051" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAo9JREFUWEflVztrFUEUXkVEUBsFUQTZ2dxEYyB2KhZio6WCjSBipaAEtFC0EnygRToL9Q8Yd+bM7uJFRG91BSEogqIpxICNhQ+00MIHKKzfmT2ruzeQ670huwE/GBa+b+fMmXPOvLx+0IiiERXSIxWaL35ob40QrRCpGvianvmhSQvtikjzj/Npulhp+llyQJu7IlcDpc39sgN0UqRqsClJViP3N1AHD1AHpzkqIv1HGCJar0y8c2OzuVIohwbRZmXsZbSLQRQNCt07smIz1xDij8hxOyDaIJKnjDmaFyL09yqKRpkfCO0O8D8KtfFV6WSL69QrgpAO/jHkBrKGeaz5pTD8raRpusMaf4u8a5omWOsZXFxFQyi4h8zDgVVFXrTHrPkhTc7QNLVY6xkuxyF9cIY0/YLxAyLxQPdKAxlzIuPN2RKPFmg67jr1A15ugbb7B3UyLJTDaKu1HBE6x+FFPRwS2tvVbi/BjMfh4Cd2HoNfSNN0kcj1gx3kc2QgSdYINTvQYZkfRds6O2QztUd4topot9DZyjH2FGb/HFF4iuiMieTxf4jYuzw16Ks5kqhcuwcdpkG8wE9b5X8utrUw8lo6fIe2VySu9tu5IW6BMceY9409U+RzbTiO16HP504NK+sq7+tv/hL0xI0AIMeXSj9rM8X8UBwHRV60V6zB4ZczNKwQTPJwJ581ersQHMhTYKY432yIwWErpsDXdp9IcI6aRUNzSsFs4CJs6Hh7X0WIS8s/FWGV6HkZdtuIkLab87YR1b4V134Y1X4c5xcSzieMVH8h6YauVzJsZHO6ki1ouGu5puucGi7Wyq/lqI36HiZZcdb8NMOM63ucMuR5PolI4ISjCewNfT7PPe83EbQvxsHAXhIAAAAASUVORK5CYII=" InformativeScreenshot="5def2d5d1738314564023e14e1b8a4b1.jpg" Selector="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" Title="Fitbit - Sleep" Url="https://www.fitbit.com/sleep" />
+      </uix:NApplicationCard.TargetApp>
+    </uix:NApplicationCard>
+  </Sequence>
+</Activity>
