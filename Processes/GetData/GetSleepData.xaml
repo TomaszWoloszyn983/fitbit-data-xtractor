@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetSleepData" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="1152,2317" sap2010:WorkflowViewState.IdRef="GetSleepData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetSleepData" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,2877" sap2010:WorkflowViewState.IdRef="GetSleepData_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -38,6 +38,11 @@
       <x:String>System.Activities.Runtime.Collections</x:String>
       <x:String>UiPath.UIAutomationNext.Contracts</x:String>
       <x:String>UiPath.UIAutomationNext.Models.CV</x:String>
+      <x:String>System.ComponentModel</x:String>
+      <x:String>System.Xml.Serialization</x:String>
+      <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
+      <x:String>UiPath.Activities.System.Arrays</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -89,21 +94,38 @@
       <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.EventBasedAsync</AssemblyReference>
+      <AssemblyReference>PresentationFramework</AssemblyReference>
+      <AssemblyReference>WindowsBase</AssemblyReference>
+      <AssemblyReference>Microsoft.Win32.Primitives</AssemblyReference>
+      <AssemblyReference>System.ComponentModel.Primitives</AssemblyReference>
+      <AssemblyReference>System.Private.Xml</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>System.Data.SqlClient</AssemblyReference>
+      <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.CodeDom</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetSleepData" sap:VirtualizedContainerService.HintSize="748,2252" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetSleepData" sap:VirtualizedContainerService.HintSize="775,2812" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="dt_SleepData" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit - Sleep" sap:VirtualizedContainerService.HintSize="686,2141" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="759b6297-2fef-4efe-af97-c533f2523c03" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit - Sleep" sap:VirtualizedContainerService.HintSize="713,2701" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="759b6297-2fef-4efe-af97-c533f2523c03" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="652,1924" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="679,2484" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exist_SleepPage" />
               <Variable x:TypeArguments="x:Boolean" Name="exist_LoadMore" />
@@ -111,34 +133,70 @@
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                <x:Boolean x:Key="IsPinned">False</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Hours Slept'" sap:VirtualizedContainerService.HintSize="590,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exist_SleepPage]" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Hours Slept'" sap:VirtualizedContainerService.HintSize="617,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exist_SleepPage]" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="118, 250, 142, 18" CvTextArgument="Sleep I Hours Slept" CvType="Text" DesignTimeRectangle="169, 250, 90, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Hours Slept'" FullSelectorArgument="&lt;webctrl class='chart-title' parentid='hours-slept-chart' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='chart-title' parentid='hours-slept-chart' tag='SPAN' type='' aaname=' | Hours Slept' check:innerText='| Hours Slept' /&gt;" Guid="0c8d9f74-a12f-4935-93db-c6100cd2c276" InformativeScreenshot="f637e6ce922f384c0a86709f1146a18d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvTextArea="344, 193, 40, 16" CvTextArgument="Sleep" CvType="Text" DesignTimeRectangle="346, 176, 38, 48" ElementType="Text" FriendlyName="'Sleep'" FullSelectorArgument="&lt;webctrl parentid='ember125' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember125' tag='SPAN' type='' class='link-text' aaname='                                 Sleep                             ' check:innerText='Sleep' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACoAAAA0CAYAAAD8H6qwAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAANrSURBVGhD7ZXNSxtBGMb73xWKIKEglIAg9CB46lF6KUhKPYhiqEViICgaCCwN4gdKEEVUDIkopIQEg0raGOIm2S/PT5/J7ibZmPY0tQhzeGB33p2Z3/u5rxoPDbwEKVDZUqCypUBlS4HKlgKVLQUqWwpUthSobClQ2Xq5oPr1JYy9fVjJHZi7xzAKd3jot51k0b657649l7qgD/UKjPgSHl9/fqrYMVr1e7S0Zb7PwTmoQO875DnUBW2dpVyo8DIs7RBmJgNrdQ2Pb7k2noBV/In2/wdltDZXXNB4Hs2+D/SbAoxilakeFtEqWif7sL8mYEfWWC4ZGKVqd6+7/5KOa3AiK3AW0zAPCsyOZ7vOwkxuwTzKs9y2YH9Zgb2gwbzolZuvQEQdAToahZM8Ret2sA4HQOt3MFb9UpmFE551n8MJmAXhWAPNYgbOe2EX69z3xnuOZ9EkrJ5Le/s9vfPOGInCOqoE7u/VaK0MM7HswnpypujhOqNE6EHQ9rmGR3Hxxy3aPUeOWD4j3Bfhnl9lWBFx8TzsvWInS3qV0Z2Z4z6CnFd7oJMbsK5EFMUZPJdnPE6mvHMHQH3pxVNYsQQj4XkngD/toF3tBy3CXI269pkUrESa9UzFN+CMcS28BvPqELZ4frsEJ6a59oTGEpl3z0wW0BagwtkYI+wz1D0HR5ZgX7iZEetPQHsimLhsSsASLlOG0QX9AfObe+FQhVZgne3BCQ2x+SLccNAKzAVGnZkQUfd5eqm/ycPaznYL3RXrsAM0C3u72Nf1PrRYLwcmgF6777zrN6ewJwgxqQVSKALQrPE+8c0wUJaH/YFro5w+hV6feKAEinkpmU5xNJ3COMvC2GTNjXJTJw23gfHUKh3CGactRNvuJS8XEyANZ2Iezp6Ar8JYd5vNibCOi3do3hZgzrFZp9Md+G6NhqKwNQbpmvZVt09EnbfpkO9gX0SzsGeGpZMdnRQjK9hMunjP7bPhBr4PswHPvI6tsZbjwQbtaDGDVrUPdEykumd3pjmiSsGp86RGm2JuHnDYr6fp5WEnEv6G4b9QRjJ3DFPjLzfDqDwZa9zHSBq7O7C+Zzgjy90096e+VcrD3KY9FywlX39ppn+voTX6BylQ2VKgsqVAZUuBypYClS0FKlsKVLYUqGwpUNl6IaAN/AZTLUC5cSG46gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
                 </uix:TargetAnchorable>
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sleep Data Page Open - &quot;+exist_SleepPage.ToString]" />
-            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="590,1246" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Sleep Data Page Open - &quot;+exist_SleepPage.ToString]" />
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Click the 'Load More' button.&#xA;Repeat as long as the button appears on the page." Condition="[exist_LoadMore]" DisplayName="Do While click 'Load More' btn" sap:VirtualizedContainerService.HintSize="617,109" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
               <ui:InterruptibleDoWhile.Body>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="556,1110" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="578,1561" sap2010:WorkflowViewState.IdRef="Sequence_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Load More'" sap:VirtualizedContainerService.HintSize="514,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[exist_LoadMore]" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
-                    <uix:NCheckElement.Target>
-                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="460, 839, 69, 13" CvTextArgument="Load More" CvType="Text" DesignTimeRectangle="110, 827, 770, 39" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' class='button sleep-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="cd36bcc9-8c2c-473a-a2e7-e6decc75ff09" InformativeScreenshot="d0a6521cbf27bf9bc1947b84b82666ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
-                    </uix:NCheckElement.Target>
-                  </uix:NCheckElement>
-                  <If Condition="[exist_LoadMore]" sap:VirtualizedContainerService.HintSize="514,825" sap2010:WorkflowViewState.IdRef="If_1">
+                  <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="536,608" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch.Try>
+                      <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Load More'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[exist_LoadMore]" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Timeout="10" Version="V3">
+                        <uix:NCheckElement.Target>
+                          <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="460, 839, 69, 13" CvTextArgument="Load More" CvType="Text" DesignTimeRectangle="110, 827, 770, 39" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' class='button sleep-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="cd36bcc9-8c2c-473a-a2e7-e6decc75ff09" InformativeScreenshot="d0a6521cbf27bf9bc1947b84b82666ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                        </uix:NCheckElement.Target>
+                      </uix:NCheckElement>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="502,445" sap2010:WorkflowViewState.IdRef="Catch`1_2">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Sequence - Check element Try/Catch" sap:VirtualizedContainerService.HintSize="496,376" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[exist_LoadMore]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Check element acitivity didn't find the 'Load More' buttom&quot;]" />
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <If Condition="[exist_LoadMore]" sap:VirtualizedContainerService.HintSize="536,825" sap2010:WorkflowViewState.IdRef="If_1">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="480,473" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
@@ -148,7 +206,7 @@
                         </sap:WorkflowViewStateService.ViewState>
                         <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="438,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                           <TryCatch.Try>
-                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Load More'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
+                            <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Load More'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Timeout="10" Version="V3">
                               <uix:NClick.Target>
                                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/sleep" CvTextArea="460, 839, 69, 13" CvTextArgument="Load More" CvType="Text" DesignTimeRectangle="110, 827, 770, 39" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember143' tag='BUTTON' type='button' class='button sleep-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="e98be735-8421-4265-a4ab-db8c86a22dbf" InformativeScreenshot="15be7914e8ab1a9c74bd85b284bc7e19.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                               </uix:NClick.Target>
@@ -208,11 +266,132 @@
                   </If>
                 </Sequence>
               </ui:InterruptibleDoWhile.Body>
-              <ui:InterruptibleDoWhile.Condition>
-                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="exist_LoadMore" />
-              </ui:InterruptibleDoWhile.Condition>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
             </ui:InterruptibleDoWhile>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="590,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Data Table fully expanded&quot;]" />
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="617,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Data Table fully expanded&quot;]" />
+            <Sequence DisplayName="Extract Data from the table" sap:VirtualizedContainerService.HintSize="617,1659" sap2010:WorkflowViewState.IdRef="Sequence_7">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:String" Name="str_SleepData" />
+                <Variable x:TypeArguments="sd:DataTable" Name="dtdt_FinalTable" />
+              </Sequence.Variables>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <ui:BuildDataTable DataTable="[dtdt_FinalTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="555,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xD;&#xA;                  &lt;xs:simpleType&gt;&#xD;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xD;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xD;&#xA;                    &lt;/xs:restriction&gt;&#xD;&#xA;                  &lt;/xs:simpleType&gt;&#xD;&#xA;                &lt;/xs:element&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Start_x0020_Time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;End_x0020_Time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Sleep_x0020_Duration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:duration&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;  &lt;TableName&gt;&#xD;&#xA;    &lt;Date&gt;text&lt;/Date&gt;&#xD;&#xA;  &lt;/TableName&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+              <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_SleepData]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Date' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Start-End time' ReferenceName='Column1'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Sleep Duration' ReferenceName='Column2'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;true&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;row exact='1'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;/row&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column1' attr='fulltext'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;/column&gt;&lt;column exact='1' name='Column2' attr='fulltext'&gt;&lt;webctrl tag='a' /&gt;&lt;webctrl tag='div' idx='1' /&gt;&lt;webctrl tag='span' idx='2' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="555,157" sap2010:WorkflowViewState.IdRef="NExtractData_1" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="759b6297-2fef-4efe-af97-c533f2523c03" Version="V3">
+                <uix:NExtractData.Target>
+                  <uix:TargetAnchorable DesignTimeRectangle="110, 566, 770, 111753" DesignTimeScaleFactor="1" FriendlyName="'This Week'" FullSelectorArgument="&lt;webctrl id='ember143' tag='DIV' /&gt;" Guid="ff761c94-2aa3-4a30-af2a-e1ddffcd27a1" InformativeScreenshot="659414b62197e82e75d7c75ff8be713e.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Sleep' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
+                </uix:NExtractData.Target>
+              </uix:NExtractData>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="555,143" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_SleepData.RowCount.ToString+&quot; data rows extracted.&quot;]" />
+              <ui:OutputDataTable DataTable="[dt_SleepData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="555,80" sap2010:WorkflowViewState.IdRef="OutputDataTable_1" Text="[str_SleepData]" />
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="555,333" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Display Extracted Data&quot;+Environment.NewLine+str_SleepData]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+              <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_SleepData]" DisplayName="For Each Row in Data Table - Process extracted data" sap:VirtualizedContainerService.HintSize="631,1693" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+                <ui:ForEachRow.Body>
+                  <ActivityAction x:TypeArguments="sd:DataRow">
+                    <ActivityAction.Argument>
+                      <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                    </ActivityAction.Argument>
+                    <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="726,2075" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                      <Sequence.Variables>
+                        <Variable x:TypeArguments="x:String" Name="temp_Start" />
+                        <Variable x:TypeArguments="x:String" Name="temp_EndTime" />
+                        <Variable x:TypeArguments="x:String" Name="temp_Duration" />
+                        <Variable x:TypeArguments="s:String[]" Name="temp_arrTime" />
+                        <Variable x:TypeArguments="scg:List(x:String)" Name="arr_StartEndTime" />
+                      </Sequence.Variables>
+                      <sap:WorkflowViewStateService.ViewState>
+                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        </scg:Dictionary>
+                      </sap:WorkflowViewStateService.ViewState>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,141" sap2010:WorkflowViewState.IdRef="LogMessage_7" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Date: &quot;+CurrentRow.Item(0).ToString+&quot;. Start-End time: &quot;+CurrentRow.Item(1).ToString+&quot;. Duration: &quot;+CurrentRow.Item(2).ToString]" />
+                      <Assign sap:VirtualizedContainerService.HintSize="684,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="s:String[]">[temp_arrTime]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="s:String[]">[split(CurrentRow(1).ToString)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="684,141" sap2010:WorkflowViewState.IdRef="LogMessage_9" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Split word&quot;]" />
+                      <ui:Comment sap:VirtualizedContainerService.HintSize="684,171" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// What I'm trying to do is to create an array that will store filtered numeric values from the CuttentItem(1).&#xD;&#xA;&#xD;&#xA;There will be only two numeric values Start time and End time.&#xD;&#xA;I want to assign them to the proper variables." />
+                      <Assign sap:VirtualizedContainerService.HintSize="684,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                        <Assign.To>
+                          <OutArgument x:TypeArguments="scg:List(x:String)">[arr_StartEndTime]</OutArgument>
+                        </Assign.To>
+                        <Assign.Value>
+                          <InArgument x:TypeArguments="scg:List(x:String)">[new List(of String)]</InArgument>
+                        </Assign.Value>
+                      </Assign>
+                      <ui:ForEach x:TypeArguments="x:Object" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="684,1170" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[temp_arrTime]">
+                        <ui:ForEach.Body>
+                          <ActivityAction x:TypeArguments="x:Object">
+                            <ActivityAction.Argument>
+                              <DelegateInArgument x:TypeArguments="x:Object" Name="currentWord" />
+                            </ActivityAction.Argument>
+                            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="650,984" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="608,141" sap2010:WorkflowViewState.IdRef="LogMessage_8" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[currentWord]" />
+                              <If Condition="[IsNumeric(currentWord)]" sap:VirtualizedContainerService.HintSize="608,715" sap2010:WorkflowViewState.IdRef="If_2">
+                                <If.Then>
+                                  <Sequence sap:VirtualizedContainerService.HintSize="574,533" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="532,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[currentWord.ToString]" List="[arr_StartEndTime]" />
+                                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_2">
+                                      <ui:CommentOut.Body>
+                                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_14">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7" />
+                                        </Sequence>
+                                      </ui:CommentOut.Body>
+                                    </ui:CommentOut>
+                                  </Sequence>
+                                </If.Then>
+                                <If.Else>
+                                  <Sequence sap2010:WorkflowViewState.IdRef="Sequence_13" />
+                                </If.Else>
+                              </If>
+                            </Sequence>
+                          </ActivityAction>
+                        </ui:ForEach.Body>
+                      </ui:ForEach>
+                    </Sequence>
+                  </ActivityAction>
+                </ui:ForEachRow.Body>
+              </ui:ForEachRow>
+            </Sequence>
           </Sequence>
         </ActivityAction>
       </uix:NApplicationCard.Body>

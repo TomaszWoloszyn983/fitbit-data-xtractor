@@ -143,6 +143,17 @@
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
+    },
+    {
+      "Path": "Processes/GetData/GetSleepData.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "exist_LoadMore&Sequence_2",
+        "exist_SleepPage&Sequence_2"
+      ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
     }
   ]
 }
