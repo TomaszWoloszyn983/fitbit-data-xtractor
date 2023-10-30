@@ -148,6 +148,14 @@
       "Path": "Processes/GetData/GetSleepData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "arr_StartEndTime&Sequence_9",
+        "temp_arrTime&Sequence_9",
+        "temp_Duration&Sequence_9",
+        "temp_EndTime&Sequence_9",
+        "temp_Start&Sequence_9",
+        "dtdt_FinalTable&Sequence_7",
+        "dt_SleepData&Sequence_1",
+        "str_SleepData&Sequence_7",
         "exist_LoadMore&Sequence_2",
         "exist_SleepPage&Sequence_2"
       ],
