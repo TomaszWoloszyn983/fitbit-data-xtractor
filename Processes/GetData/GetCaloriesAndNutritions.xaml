@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetCaloriesAndNutritions" this:GetCaloriesAndNutritions.in_StartDate="2023/10/28" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetCaloriesAndNutritions" this:GetCaloriesAndNutritions.in_StartDate="2023/10/27" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasa="clr-namespace:UiPath.Activities.System.Arrays;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_StartDate" Type="InArgument(x:String)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
@@ -7,7 +7,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1032,9323</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>932,5650</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetCaloriesAndNutritions_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -52,6 +52,7 @@
       <x:String>UiPath.Activities.System.Arrays</x:String>
       <x:String>UiPath.Excel</x:String>
       <x:String>UiPath.Excel.Activities</x:String>
+      <x:String>System.Text.RegularExpressions</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -117,9 +118,10 @@
       <AssemblyReference>System.Collections.NonGeneric</AssemblyReference>
       <AssemblyReference>System.Collections</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
+      <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Retrieve data from the 'Foot' page.&#xA;&#xA;It is to consider if the data should be sent as argument or written to the excel file in this sequence." DisplayName="GetCaloriesAndNutritions" sap:VirtualizedContainerService.HintSize="1042,9258" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Retrieve data from the 'Foot' page.&#xA;&#xA;It is to consider if the data should be sent as argument or written to the excel file in this sequence." DisplayName="GetCaloriesAndNutritions" sap:VirtualizedContainerService.HintSize="920,5585" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_calsAndNutritions" />
     </Sequence.Variables>
@@ -129,16 +131,16 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="980,190" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This process isn't completed.&#xA;It doesn't write data to excel, intead it only assignes the extracted data to out argument.&#xA;&#xA;Olso there is no Date extracted, bacause It si not displayed anywhere on the page. But the precise date is displayed in the URL, so this may be a clue." />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="980,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start reading calories and nutritions sequence. &quot;]" />
-    <ui:BuildDataTable DataTable="[dt_calsAndNutritions]" DisplayName="Build Data Table for Calories and Nutrition data" sap:VirtualizedContainerService.HintSize="980,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Fat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fiber&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Carbs&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sodium&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Protein&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Water&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Composition&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="980,8120" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V2">
+    <ui:Comment sap:VirtualizedContainerService.HintSize="858,190" sap2010:WorkflowViewState.IdRef="Comment_1" Text="This process isn't completed.&#xA;It doesn't write data to excel, intead it only assignes the extracted data to out argument.&#xA;&#xA;Olso there is no Date extracted, bacause It si not displayed anywhere on the page. But the precise date is displayed in the URL, so this may be a clue." />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="858,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start reading calories and nutritions sequence. &quot;]" />
+    <ui:BuildDataTable DataTable="[dt_calsAndNutritions]" DisplayName="Build Data Table for Calories and Nutrition data" sap:VirtualizedContainerService.HintSize="858,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Calories&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Fat_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Fiber_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Carbs_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Sodium_x0020__x0028_mg_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Protein_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Water_x0020__x0028_ml_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Energy_x0020_From_x0020_Carbs&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Energy_x0020_From_x0020_Fat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Energy_x0020_From_x0020_Protein&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;" />
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="858,4447" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="946,7903" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="824,4230" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exists_FoodTab" />
               <Variable x:TypeArguments="x:String" Name="pOutputDate" />
@@ -148,35 +150,38 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NGoToUrl DisplayName="Go To URL - Calories and Nutrition page" sap:VirtualizedContainerService.HintSize="884,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[&quot;https://www.fitbit.com/foods/log/&quot;+in_StartDate]" Version="V3" />
-            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Food'" sap:VirtualizedContainerService.HintSize="884,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exists_FoodTab]" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V3">
+            <uix:NGoToUrl DisplayName="Go To URL - Calories and Nutrition page" sap:VirtualizedContainerService.HintSize="762,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_1" Url="[&quot;https://www.fitbit.com/foods/log/&quot;+in_StartDate]" Version="V3" />
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Food'" sap:VirtualizedContainerService.HintSize="762,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exists_FoodTab]" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V3">
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvElementArea="334, 250, 75, 42" CvTextArea="344, 258, 53, 21" CvTextArgument="Food" CvType="Button" DesignTimeRectangle="335, 251, 72, 39" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Food'" FullSelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' type='' class='' aaname='                         Food                     ' check:innerText='Food' /&gt;" Guid="c8e6c450-2ed1-4923-bbad-f9ec7b5cb852" InformativeScreenshot="369741ed384a2190b51ae17d8b5f4be9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[exists_FoodTab]" sap:VirtualizedContainerService.HintSize="884,7469" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[exists_FoodTab]" sap:VirtualizedContainerService.HintSize="762,3796" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="850,7287" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="728,3614" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
-                    <Variable x:TypeArguments="x:String" Name="pCals" />
+                    <Variable x:TypeArguments="x:Int32" Name="pCals" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="808,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Food tab: &quot;+exists_FoodTab.ToString]" />
-                  <Sequence sap2010:Annotation.AnnotationText="Extract all data from Daily Total panel. " DisplayName="Read Calories and all the Nutrition statistics" sap:VirtualizedContainerService.HintSize="808,6833" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="686,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Food tab: &quot;+exists_FoodTab.ToString]" />
+                  <Sequence sap2010:Annotation.AnnotationText="Extract all data from Daily Total panel. " DisplayName="Read Calories and all the Nutrition statistics" sap:VirtualizedContainerService.HintSize="686,3160" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
-                      <Variable x:TypeArguments="x:String" Name="pFat" />
+                      <Variable x:TypeArguments="x:Double" Name="pFat" />
                       <Variable x:TypeArguments="x:String" Name="pComposition" />
-                      <Variable x:TypeArguments="x:String" Name="pWater" />
-                      <Variable x:TypeArguments="x:String" Name="pProtein" />
-                      <Variable x:TypeArguments="x:String" Name="pSodium" />
-                      <Variable x:TypeArguments="x:String" Name="pCarbs" />
-                      <Variable x:TypeArguments="x:String" Name="pFiber" />
+                      <Variable x:TypeArguments="x:Double" Name="pWater" />
+                      <Variable x:TypeArguments="x:Double" Name="pProtein" />
+                      <Variable x:TypeArguments="x:Double" Name="pSodium" />
+                      <Variable x:TypeArguments="x:Double" Name="pCarbs" />
+                      <Variable x:TypeArguments="x:Double" Name="pFiber" />
                       <Variable x:TypeArguments="x:String" Name="CheckedDate" />
                       <Variable x:TypeArguments="x:Int32" Name="pCounter" />
+                      <Variable x:TypeArguments="x:String" Name="pFromCarbs" />
+                      <Variable x:TypeArguments="x:String" Name="pFromFat" />
+                      <Variable x:TypeArguments="x:String" Name="pFromProtein" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -184,7 +189,7 @@
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="746,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign sap:VirtualizedContainerService.HintSize="624,82" sap2010:WorkflowViewState.IdRef="Assign_1">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[pCounter]</OutArgument>
                       </Assign.To>
@@ -192,9 +197,9 @@
                         <InArgument x:TypeArguments="x:Int32">0</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the food page. &#xA;Read all data from the page and click 'Next' button skip to next date, until &quot;Today' keyword is displayed. That causes finishing loop." Condition="[CheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While - Iterate through data untill 'Today' keyword is reached" sap:VirtualizedContainerService.HintSize="746,6569" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the food page. &#xA;Read all data from the page and click 'Next' button skip to next date, until &quot;Today' keyword is displayed. That causes finishing loop." Condition="[CheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While - Iterate through data untill 'Today' keyword is reached" sap:VirtualizedContainerService.HintSize="624,2896" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="712,6391" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="590,2703" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="pUrl" />
                           </Sequence.Variables>
@@ -203,7 +208,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Update the iteration counter" sap:VirtualizedContainerService.HintSize="670,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                          <Assign DisplayName="Update the iteration counter" sap:VirtualizedContainerService.HintSize="548,82" sap2010:WorkflowViewState.IdRef="Assign_2">
                             <Assign.To>
                               <OutArgument x:TypeArguments="x:Int32">[pCounter]</OutArgument>
                             </Assign.To>
@@ -211,7 +216,7 @@
                               <InArgument x:TypeArguments="x:Int32">[pCounter + 1]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <uix:NGetText DisplayName="Get Text - Checked Date" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[CheckedDate]" Version="V3">
+                          <uix:NGetText DisplayName="Get Text - Checked Date" sap:VirtualizedContainerService.HintSize="548,157" sap2010:WorkflowViewState.IdRef="NGetText_9" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[CheckedDate]" Version="V3">
                             <uix:NGetText.Target>
                               <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/23" CvElementArea="718, 338, 64, 35" CvTextArea="729, 349, 40, 16" CvTextArgument="Today" CvType="Button" DesignTimeRectangle="720, 340, 59, 32" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Today'" FullSelectorArgument="&lt;webctrl parentid='dateNavHeader' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateNavHeader' tag='SPAN' type='' class='' /&gt;" Guid="efe517ad-c987-4123-8430-c2dd8c1150e6" InformativeScreenshot="746475110b86b46fd6b08a6378e2efcc.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
@@ -223,7 +228,7 @@
                               </uix:TargetAnchorable>
                             </uix:NGetText.Target>
                           </uix:NGetText>
-                          <If Condition="[CheckedDate = &quot;Today&quot;]" sap:VirtualizedContainerService.HintSize="670,644" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[CheckedDate = &quot;Today&quot;]" sap:VirtualizedContainerService.HintSize="548,644" sap2010:WorkflowViewState.IdRef="If_2">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -245,19 +250,20 @@
                               </Sequence>
                             </If.Else>
                           </If>
-                          <Sequence sap2010:Annotation.AnnotationText="Extracts Date from the URL address.&#xA;Demanded format mm/dd/yyyy&#xA;Example: 10/22/2023" DisplayName="Get Date" sap:VirtualizedContainerService.HintSize="670,2890" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                          <Sequence sap2010:Annotation.AnnotationText="Extracts Date from the URL address.&#xA;Demanded format mm/dd/yyyy&#xA;Example: 10/22/2023" DisplayName="Extract Date" sap:VirtualizedContainerService.HintSize="548,138" sap2010:WorkflowViewState.IdRef="Sequence_11">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="arrUrl" />
                               <Variable x:TypeArguments="scg:List(x:String)" Name="arrNumbers" />
                             </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <uix:NGetUrl CurrentUrl="[pUrl]" DisplayName="Get URL - To extract the Date" sap:VirtualizedContainerService.HintSize="608,87" sap2010:WorkflowViewState.IdRef="NGetUrl_1" Version="V3" />
-                            <Assign sap:VirtualizedContainerService.HintSize="608,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                            <uix:NGetUrl CurrentUrl="[pUrl]" DisplayName="Get URL - To extract the Date" sap:VirtualizedContainerService.HintSize="510,87" sap2010:WorkflowViewState.IdRef="NGetUrl_1" Version="V3" />
+                            <Assign sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_4">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:String[]">[arrUrl]</OutArgument>
                               </Assign.To>
@@ -265,7 +271,7 @@
                                 <InArgument x:TypeArguments="s:String[]">[pUrl.Split("/")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <Assign DisplayName="Assign - List of exctracted numbers" sap:VirtualizedContainerService.HintSize="608,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                            <Assign DisplayName="Assign - List of exctracted numbers" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_5">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="scg:List(x:String)">[arrNumbers]</OutArgument>
                               </Assign.To>
@@ -273,28 +279,27 @@
                                 <InArgument x:TypeArguments="scg:List(x:String)">[new List(Of String)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="608,1043" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrUrl]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="510,677" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrUrl]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,857" sap2010:WorkflowViewState.IdRef="Sequence_12">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,491" sap2010:WorkflowViewState.IdRef="Sequence_12">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[IsNumeric(currentItem)]" sap:VirtualizedContainerService.HintSize="410,586" sap2010:WorkflowViewState.IdRef="If_3">
+                                    <If Condition="[IsNumeric(currentItem)]" sap:VirtualizedContainerService.HintSize="410,403" sap2010:WorkflowViewState.IdRef="If_3">
                                       <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_13">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
                                           <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_1" ItemToAppend="[currentItem]" List="[arrNumbers]" />
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Captured element: &quot;+currentItem]" />
                                         </Sequence>
                                       </If.Then>
                                       <If.Else>
@@ -307,12 +312,11 @@
                                         </Sequence>
                                       </If.Else>
                                     </If>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="410,143" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Captures and stored data number: &quot;+arrNumbers.Count .ToString]" />
                                   </Sequence>
                                 </ActivityAction>
                               </ui:ForEach.Body>
                             </ui:ForEach>
-                            <If Condition="[arrNumbers.Count &gt; 2]" sap:VirtualizedContainerService.HintSize="608,1268" sap2010:WorkflowViewState.IdRef="If_4">
+                            <If Condition="[arrNumbers.Count = 3]" DisplayName="If three values captured and stored in the list" sap:VirtualizedContainerService.HintSize="510,352" sap2010:WorkflowViewState.IdRef="If_4">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -320,7 +324,7 @@
                                 </scg:Dictionary>
                               </sap:WorkflowViewStateService.ViewState>
                               <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="574,665" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_16">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="x:String" Name="pDate" />
                                   </Sequence.Variables>
@@ -329,7 +333,7 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <Assign DisplayName="Assign - The final Date" sap:VirtualizedContainerService.HintSize="532,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                                  <Assign DisplayName="Assign - The final Date" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
                                     <Assign.To>
                                       <OutArgument x:TypeArguments="x:String">[pOutputDate]</OutArgument>
                                     </Assign.To>
@@ -337,177 +341,412 @@
                                       <InArgument x:TypeArguments="x:String">[arrNumbers(1)+"/"+arrNumbers(2)+"/"+arrNumbers(0)]</InArgument>
                                     </Assign.Value>
                                   </Assign>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,143" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Final formated Date: &quot;+pOutputDate]" />
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_3">
-                                    <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_19">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_7">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:String">[pDate]</OutArgument>
-                                          </Assign.To>
-                                        </Assign>
-                                      </Sequence>
-                                    </ui:CommentOut.Body>
-                                  </ui:CommentOut>
                                 </Sequence>
                               </If.Then>
                               <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="528,421" sap2010:WorkflowViewState.IdRef="Sequence_17">
+                                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_17">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,333" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                    <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_18">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;No numeric values found &quot;]" />
-                                      </Sequence>
-                                    </ui:CommentOut.Body>
-                                  </ui:CommentOut>
                                 </Sequence>
                               </If.Else>
                             </If>
                           </Sequence>
-                          <uix:NGetText DisplayName="Get Text 'Calories'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pCals]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/29" CvTextArea="259, 790, 43, 17" CvType="AnyWordGroup" DesignTimeRectangle="260, 786, 48, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'1492'" FullSelectorArgument="&lt;webctrl class='amount' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' parentid='dailyTotals' tag='DIV' type='' /&gt;" Guid="ef334869-0096-4581-8233-8968abb4eaac" InformativeScreenshot="d313704d5abb709637cb2d7c0532a0ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="259, 769, 49, 13" CvTextArgument="Calories" CvType="Text" DesignTimeRectangle="260, 768, 48, 18" ElementType="Text" FriendlyName="'Calories'" FullSelectorArgument="&lt;webctrl class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='substance' parentid='dailyTotals' tag='DIV' type='' aaname='Calories' check:innerText='Calories' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAWCAYAAACPHL/WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVFhH7ZTbDcMgDEU7LWOUMVD2aNZgjHQMl9jEYAN5KP2gFVdCCjIBH1/DA/5MA6h3DaDeVQAtLwvGGB72tcTIgd4zWGNhfsf5BfkpnDX5OLsnAYQbGwdpaw/uLFR3QK2EvFOQDd0A+qYYCFvtOcOhF5h4akmubAFE7m7rHFdkgfkZ5tNaKPpfOyTaXuRE/3Ks4ioDnbM9JrMtyyEEEK3jVkWXZSxPVJytOiKPISjnqHKJugiklCfahFuVAyrYoPzs9VvcWdyLAMm5fN9Sl1sOD+d2sHWI4t6dBaIY788jQYh2rMAdPwp7lW/Fir1uOLQj/E+ZkICCqPplZbkVMdHUt7S+BqGSrtyhFpB2lxyhuVgXJO8USQCtkpaW1SIIGs7TS4aAhSv7r1wTKKjdVrHAHMuLTyqAfl0DqHcNoN41gPoWwAeUHcqGrWv3ZwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Fat'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pFat]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="445, 496, 10, 14" CvType="AnyWordGroup" DesignTimeRectangle="431, 486, 24, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' parentid='dailyTotals' tag='DIV' type='' /&gt;" Guid="7788f811-9884-4c94-8d62-0ecd74bf5029" InformativeScreenshot="79364cffd8967b2d1a9a1433157699e5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="430, 469, 20, 13" CvTextArgument="Fat" CvType="Text" DesignTimeRectangle="431, 468, 24, 18" ElementType="Text" FriendlyName="'Fat'" FullSelectorArgument="&lt;webctrl aaname='Fat' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fat' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Fat' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAWCAYAAADTlvzyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVEhL7ZLtDQARDIZvWmPoGF2ENYzBGD2E1H0kFxd698OT+KPVJ142EmYJh/OhMFgCpUhdFpANpWcAJ+HL4R1nfy50eIgbjE+bhB3xP74hulLPg5uBWY5xNyIRqTcwW+jJar456NnCNsLE9EizoNbrbcUijX2u7ecaf7J7WCjEEg5nCQdDtAMBhCviYUnIEQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Fiber'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pFiber]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="478, 490, 26, 20" CvType="AnyWordGroup" DesignTimeRectangle="479, 486, 30, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='2' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="ac0fbe66-dc13-4867-9538-0690d78d9ca8" InformativeScreenshot="9ad3550b02b6f2db896a233c9eea987b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="478, 469, 32, 13" CvTextArgument="Fiber" CvType="Text" DesignTimeRectangle="479, 468, 30, 18" ElementType="Text" FriendlyName="'Fiber'" FullSelectorArgument="&lt;webctrl aaname='Fiber' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fiber' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Fiber' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAWCAYAAAClrE55AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC/SURBVEhL7ZNRDoMgDEB3Wo4hxyDcw16DY+gxuoIKbec2k0nGR19ipKm0LwUfOAgmojERDRNJGJxDd/KElNOB1oG+UuubeBEpTc8YRoQz2kRg9vRmx1eRx9xyC8JEccz7KRfbpq93xM/LntYirFCJPcKag61Z3bcCepVzE9BK8sNEjuIZ1rw0lseW4iGmJBm3XdbarOTkVNv0uot8nkijiwgrWOI3d2Svu8WdJnL1r2l/xyWR/2IiGhPRmIgE8QnLAfqQQsraEQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Carbs'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pCarbs]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="531, 490, 26, 20" CvType="AnyWordGroup" DesignTimeRectangle="533, 486, 35, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='3' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="23b54e4d-61ab-49ec-8fcc-8639a7fa7f31" InformativeScreenshot="50780dde51a3029d051c26d4202d15f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="532, 469, 36, 13" CvTextArgument="Carbs" CvType="Text" DesignTimeRectangle="533, 468, 35, 18" ElementType="Text" FriendlyName="'Carbs'" FullSelectorArgument="&lt;webctrl aaname='Carbs' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Carbs' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Carbs' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAWCAYAAABDhYU9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEVSURBVEhL7ZTtDYQgDIZvWsaQMYh7yBqMoWP0sAUpFE/h/OEP3oREsGmffsAHXqwB16sB1ysBty4alFLH0ssa/rTLzd7H7MKuXRkcOlMGkjsH5g/A5+A2C1ppsFvYRzlTAN/XY3DYzsnCZY0wCWo5riP4CnZSYOY9GTonOIvnZM+TJHvpJ+mAu5dlAIhmWbVDMJYgjUmyx334j8UoEyvCN8IVwpbncHw+OQyKJUMXrzJGTM1tjdXANWlROQGXJbxfsASUvwwS9PpC8PPSptLWn3BnMbxElb0SnBdVpTK0MQA6L2boCo7BcAD8ZuD5DJIyuF15qeUbRwFpGUfvIMGeVe7mba08VwLuTRpwvRpwvRpwfQL4Aj5Mnvev1wHVAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Sodium'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pSodium]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="590, 490, 38, 20" CvType="AnyWordGroup" DesignTimeRectangle="591, 486, 44, 29" DesignTimeScaleFactor="1" FriendlyName="'0 mg'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='4' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="22d68d26-128c-49f0-8f85-da666f6fcd16" InformativeScreenshot="8c967e733b887c534dc3380848227d3d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="590, 469, 46, 13" CvTextArgument="Sodium" CvType="Text" DesignTimeRectangle="591, 468, 44, 18" ElementType="Text" FriendlyName="'Sodium'" FullSelectorArgument="&lt;webctrl aaname='Sodium' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sodium' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Sodium' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAWCAYAAACG9x+sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVFhH7ZQNDsIgDIU9LccYx2h2D7kGx9iOUaEFLD/TuUxxCS8hmRu072upN7y4BkBvDYDeqgCWu0al1HPNNnz5VAuaSaG+L8XzucoA2DygtGznoxAdAJpmV4O6gNqn75mWetuBSgQUr5hGs4b3XvLbBAjNDtRgsnD8bGgP5/B+LELKmfsrZoCD80a3JuPeSHEgCBFy4MKYBYpxCCAVJvqJOTi/PFsNcZKsZrxWZEpWQADRftmRLdM7AMQ1zn/XZ7cBogKIN0kVz7oiACo4Tv5DAG+muNOkVyb/rAO0uahifs+FYafWDKRkoXMt05QndZJjngLgxabcobjKQZazUXUsmKHl/oVc8hZAHgPQ+JxnAVxNA6C3BkBvDYC+QnwA8x90OxgADGQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Protein'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pProtein]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="658, 490, 26, 20" CvType="AnyWordGroup" DesignTimeRectangle="659, 486, 41, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='5' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="df1e08c0-e1e0-4d5a-8bb9-09fc92b519f7" InformativeScreenshot="d69ded3abbb96609174aaafcadc43324.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="658, 469, 43, 13" CvTextArgument="Protein" CvType="Text" DesignTimeRectangle="659, 468, 41, 18" ElementType="Text" FriendlyName="'Protein'" FullSelectorArgument="&lt;webctrl aaname='Protein' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Protein' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Protein' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAWCAYAAABUpxX0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD7SURBVFhH7ZQLDoMgDEB3Wo4hxyDeQ67hMfQYHZ92tJBtMl0TE15iIrXIsxQfcEOGtBZDWgshvc4GjKkvC37HhL+xgZ8M2GXD8Wda6XnFUWZbbBB3IKPHSHMnH5S+cbF0iIILFXc/WB+X7qNPevdgQ9UdthF9iGgrmr+6EnuJ53dRvBSCVxrvZxfWoly5033tkaTlNspqZil6Lp9VLZDeReellS6iOGZefQdRLBSpRAJcVEjjLvGSxPW4aHufqYt5oD0YjXTb72+lebvwK62nKn2u0gVV6Uqsp6dFrrJ0JM0T242k/BinCsu/R8k9IX0XhrQWQ1qLIa0DwBOZxIHMGzVQ9gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Water'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pWater]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="723, 411, 12, 17" CvType="AnyWordGroup" DesignTimeRectangle="724, 410, 11, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl id='waterAmount' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='waterAmount' tag='SPAN' type='' class='' /&gt;" Guid="4a5b7a93-995f-4d6f-bd43-dd0cd49e9718" InformativeScreenshot="0140644313251fa2c16348547fd1fe2d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="723, 390, 37, 13" CvTextArgument="Water" CvType="Text" DesignTimeRectangle="724, 389, 34, 18" ElementType="Text" FriendlyName="'Water'" FullSelectorArgument="&lt;webctrl aaname='Water' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Water' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Water' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAWCAYAAACsR+4DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE/SURBVEhL7ZTbDcMgDEU7LWOUMVD2SNZgjHQMF7/AJlQNUj/6wZUiBWLM8bWVB/ypFtisFtisGtjrgBgSZFmSaC9A3E/ZYOUtQNhc5M9lHMuQCkSy9+UE4RkhPg9oaIO4gc49lrP23JxcK9EJ6w6uU0YQ4+TI2YF+CkbJaotOOIpbx0sBZZtc1AsxprS1OMiPAGOM7tVYdlr3m+OcI21yRu73w2/dwHdJaoHxXV29FtIc9475b3wPF63fenc9GFUlB7BqvbRCYhJN2IsdGYIN2t/GpoMWdWB8AG127atA3bzZlpWC4ifHXJx5qPCbYNyqfHGGQPdS+YfW9etvjjXdBKMkZRBT13OsOuKvowOp7RZXhmCXy23b74LJoTbUIjewItuiEo+uurmkb+qU5DXxrNtg/6EFNqsFNqsFNieAN1jHPRV4Z0EZAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <uix:NGetText DisplayName="Get Text 'Daily Totals'" sap:VirtualizedContainerService.HintSize="670,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pComposition]" Version="V3">
-                            <uix:NGetText.Target>
-                              <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" DesignTimeRectangle="359, 515, 530, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Daily Calorie'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='dailyTotals' tag='DIV' class='' /&gt;" Guid="1ea395e1-18f8-462b-a5bf-43ae51de124a" InformativeScreenshot="7a0571ce5dd021a52ee1cfff5afe0583.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
-                                <uix:TargetAnchorable.Anchors>
-                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                    <uix:Target CvTextArea="358, 443, 103, 22" CvTextArgument="Daily Totals" CvType="Text" DesignTimeRectangle="359, 443, 530, 20" ElementType="Text" FriendlyName="'Daily Totals'" FullSelectorArgument="&lt;webctrl parentid='dailyTotals' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dailyTotals' tag='H3' type='' class='' aaname='Daily Totals' check:innerText='Daily Totals' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhYAAAAYCAYAAACm0rSKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYLSURBVHhe7d3Na9tIAAXw/WtNQAREEJSYYh9EQQQ2B1EwARNqSnWoe8hCXFgbmhJcisJiWAT1QvDFUJfgUvBBEAzm7YxmJMuO/CHHbezyfjCHjCVZmsu8zIzGf4CIiIhoSxgsiIiIaGsYLIiIiGhrGCyIiIhoa2aCxeCyjEKhkFmMIwv2WQOdu7E+ekPfGijLa551dAXQOZPfUcG0ZnPqWmuW1D2sNBmhe+nh6pv+Oy/93OXLga4gIiL6/WQGC9N2UT2vpkoFzrGhOuMDC9VOqM/YwE8OFv2P6fuWxUFRfp9pw52pF+VjX5+1mmqbMhoMFkRERAtlBotFnV94W4d9IMOFvXkHm2GbweKhDioyWJQaeEyXzmBBRES0Wq5gIYWf3OiYwksfj5wUSTBYEBER/R5yBwtMAtRM0VEfiCAw0XXSeAj/jYOypadMZDmU6zKa6KVnTlZNhUxEEJCjIs/q6EWfzuq+NsWxNpo/dMVKK4LF9wB1twzTkPcgymERzhsfwyQ1DdAo6c+SkgpBoy6aZzaso+lzG0dldY10+2QFC7luo1WBnZxrwCw58G6G+gAiIqL9kj9YYIy2KztBC/W455904VmyzoR93kD7xod/3UDVsVSHeXKFkT50ZbAQglcyPKSuH4tDzYvm9HorLQkWXxtqascow33XhH/TRuOsDEMe/7yGIApEYwwCH82KfBYLlb/Fs9301Pf/uMKpDCQHRZxG54vPWnW4JRUUzNddeZTyIFiMEZzL5zRQPtNt1vLgRO1YgPvpEetYiIiInsgGwSIOAgVUdBIY/1OFdViA3Zrv7kO0/5TH2mjc6ao1ggWCGkxxjPV2LlnoeufD+rFicbDoo34s6uV6ka+6Shtdq+medDDImgoZvHdgGiZqga6ITXrwnslrV5F8NB8sJr66r4qv/o6FbbiGAavSFq1HRES0XzYKFoO/itFxcbBY5kGHvE6wQFeNTMxNh0QjGQcu/HtdsZYFweLLgvAS6aE+FwyygsUyD55pUbAoeejmyUlEREQ7bCsjFolxiFG/q6YU3lThvrBgyKmG3MFCdO1v1dTDdLpFT4PkXjSaHSyG7231DDe6Yo66p+l9Lw0W9yGGvUA8dxN1+WpuyVTTKcuCRTIVIo8rwDh2UL1so/t1W0tiiYiIfr1HrLEo4iKZQgjRuzyFFYUIXQwT5ZMqaq4MCPmDBfr1aP+JZEShU4muu84oyazsYBE/66LrrRUsJkP4r/SajLjIBatuHRVH/r0sWEgh+tfedI+QuFinaNxyIoSIiPZP/mARv7WReitk9MFRHaLtodMfIUz9061GHjYIFvEaCD0dEh1j1hCk37RYy88bsVBvqBRgvmyidxdinNxbHL5WBYuU+yF6/zbhnVgqqOSe8iEiInp6uYNFHCLMV/HqgxGuTmQnmh7BiMUd7CbBQly5JTt/C/VbNQ0y85bF2pavsci+5jprLPQ6EHHf/oOwo89fFiwCL3pFNWsh6nyoISIi2he5gsXov3jnTQdXyT4S09dPvVtdpYWi8462006vlcgRLPCjCVvej+vCSl8jlwXBYp23QpLwFLdNOjzF4eEU7blZi2FLj+AUXLTjUYf5YHHvw5VtWbrAYCaYxG/SiDbmok4iItozmcHi4W+FuLDjja8yfitk3KlE//0Xjmx4LbnPQzPadMooGLBfqGsmaxnyBItkNESU47qIAptYFCyEZftYWFWkH3Osdxw1XzbEcWofi7i9Cs8raFyn9u4QbWTb2VNA6dA2uFTTMUZJny/azdN7f2w2OkNERPS0MoNFVjGsMpzz5sJXI4c3tekOkgcGiicefPlLqL06LFFXfKdjQa5gMe3Ql03PLLckWEjffXgn0503k10z51/OmAxw5er1D8m+HHLRqovioTpXLliVO43KNorv2/2sL5QRLORoz/CzaLfUbqXy7RDv81B8QkREtH9mgsUuUms68mzhTURERE9lt4PFZIAL+TsdW/zBMyIiIvp5djJYhMFFtLZD/eaGidoX/QERERHttN0csQhqasdOw4L7YdO1FURERPSr7fwaCyIiItoXwP9ej0GwMN/qHwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                                  </scg:List>
-                                </uix:TargetAnchorable.Anchors>
-                              </uix:TargetAnchorable>
-                            </uix:NGetText.Target>
-                          </uix:NGetText>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="670,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Date: &quot;+pOutputDate+&quot;, Cals: &quot;+pCals+&quot;, Fat: &quot;+pFat+&quot;, Fiber: &quot;+pFiber+&quot;, Carbs: &quot;+pCarbs+&quot;, Sodium: &quot;+pSodium+&quot;, Protein: &quot;+pProtein+&quot;, Water: &quot;+pWater+Environment.NewLine+&quot;Composition: &quot;+pComposition]" />
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[{pOutputDate ,pCals, pFat, pFiber, pCarbs, pSodium, pProtein, pWater, pComposition}]" DataTable="[dt_calsAndNutritions]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="670,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
-                          <TryCatch DisplayName="Try Catch if click button causes any error." sap:VirtualizedContainerService.HintSize="670,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
-                            <TryCatch.Try>
-                              <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next day button'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V3">
-                                <uix:NClick.Target>
-                                  <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/22" CvElementArea="785, 340, 27, 26" CvType="Button" DesignTimeRectangle="788, 242, 22, 22" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl aaname='                              ' parentid='dateNavHeader' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                              ' parentid='dateNavHeader' tag='IMG' type='' class='' /&gt;" Guid="b1d8c19b-db3e-495f-aebd-4e8f7a55bf70" InformativeScreenshot="023cf8fc626dad26bf59a5ef80efc802.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                                    <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                                        <uix:Target CvElementArea="334, 250, 75, 42" CvTextArea="344, 258, 53, 21" CvTextArgument="Food" CvType="Button" DesignTimeRectangle="335, 151, 72, 39" ElementType="Text" FriendlyName="'Food'" FullSelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' type='' class='' aaname='                         Food                     ' check:innerText='Food' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAArCAYAAADSZm7JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK1SURBVGhD7ZdBaxNRFIX9T/6R/AG3LrpzG3DloisXddNF3HShCEIxi4DoSjBQCbiRIgWlUIgQLBQLXUQC13On5yav42RyX4SZCd4Dh+S9d++bed/cmXlzT0JZCmCZWgG7/zBcZyqAeU0FMK+pAOY1FcC8pgKY11QA85oKYF5TAcxrKoB5TW0H7OlXJnn0o3qO1vxxu/OiApjX1D8C6xoMjwNYpncOWF9k8FlkdsM5oMVvkfMvIn2MVeY8ETnGMa8QZ5oj//STyIOqeLj3XGSM85szfoH40UuM7RQwADn5xVxohvxvsLFbYOygDO0ZYhJQU835iVi252g/SuPh3muRS44rKD3GVA+CeYa4WIXQl+ZsMtUssGPEF8LJH6JqlmP4byAVwF6Sc0Ka2p9WoFbQGUFe4XysXz1hjvanFXiAtlVcO8A26DpdCBZoV/09qiadrzD6phwfH7HvHSsJYAYVt2tvtKrOVzae5ByW4tVjq/CuA9uzWwG3U1pBqUcYU13ieabtwffb9g1+y7Fmq6YzgNK2VpFqXc5jzF2oFWAZB7WcO1VXssXYYoeYX3WBh3s51mwxU1yQqvZf3pWHfg4wm9cWf45FlmPNFmPzbszBC+FaAzLOXU11E1h58Z4Ksxhrr60we+51HVhXnmHL8+g6sJy35AS3TdGX8ZYc2vgb9q3JecuL0n1gcN0+zF73Cywo3YjW7sM4prdwL8n5kOzp0rn6uG3b3YdlHnTTTl//HJWrD+3anT7+75crKckpPruQU+z0tX37syPA1FjcCzyj0u9C/Xw5xbOl7ltydIFKSnL0W3KCN+G6b8llDuNVM7T3UWWFmgT2P5oKYF5TAcxrKoB5TQUwr6kA5jUVwLymApjXVADzmgpgXlMBzGsqgHlNrYA1qaoT2tYNqx1gqqrF57pxifwBTK8SnfzQTFcAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
-                                      </scg:List>
-                                    </uix:TargetAnchorable.Anchors>
-                                  </uix:TargetAnchorable>
-                                </uix:NClick.Target>
-                              </uix:NClick>
-                            </TryCatch.Try>
-                            <TryCatch.Catches>
-                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                          <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="548,271" sap2010:WorkflowViewState.IdRef="CommentOut_1">
+                            <ui:CommentOut.Body>
+                              <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,192" sap2010:WorkflowViewState.IdRef="Sequence_23">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                   </scg:Dictionary>
                                 </sap:WorkflowViewStateService.ViewState>
-                                <ActivityAction x:TypeArguments="s:Exception">
+                                <Sequence DisplayName="Extracting  Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_18">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <uix:NGetText DisplayName="Get Text 'Calories'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pCals]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/29" CvTextArea="259, 790, 43, 17" CvType="AnyWordGroup" DesignTimeRectangle="260, 786, 48, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'1492'" FullSelectorArgument="&lt;webctrl class='amount' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' parentid='dailyTotals' tag='DIV' type='' /&gt;" Guid="ef334869-0096-4581-8233-8968abb4eaac" InformativeScreenshot="d313704d5abb709637cb2d7c0532a0ad.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="259, 769, 49, 13" CvTextArgument="Calories" CvType="Text" DesignTimeRectangle="260, 768, 48, 18" ElementType="Text" FriendlyName="'Calories'" FullSelectorArgument="&lt;webctrl class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='substance' parentid='dailyTotals' tag='DIV' type='' aaname='Calories' check:innerText='Calories' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADQAAAAWCAYAAACPHL/WAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAFGSURBVFhH7ZTbDcMgDEU7LWOUMVD2aNZgjHQMl9jEYAN5KP2gFVdCCjIBH1/DA/5MA6h3DaDeVQAtLwvGGB72tcTIgd4zWGNhfsf5BfkpnDX5OLsnAYQbGwdpaw/uLFR3QK2EvFOQDd0A+qYYCFvtOcOhF5h4akmubAFE7m7rHFdkgfkZ5tNaKPpfOyTaXuRE/3Ks4ioDnbM9JrMtyyEEEK3jVkWXZSxPVJytOiKPISjnqHKJugiklCfahFuVAyrYoPzs9VvcWdyLAMm5fN9Sl1sOD+d2sHWI4t6dBaIY788jQYh2rMAdPwp7lW/Fir1uOLQj/E+ZkICCqPplZbkVMdHUt7S+BqGSrtyhFpB2lxyhuVgXJO8USQCtkpaW1SIIGs7TS4aAhSv7r1wTKKjdVrHAHMuLTyqAfl0DqHcNoN41gPoWwAeUHcqGrWv3ZwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Fat'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_2" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pFat]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="445, 496, 10, 14" CvType="AnyWordGroup" DesignTimeRectangle="431, 486, 24, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' parentid='dailyTotals' tag='DIV' type='' /&gt;" Guid="7788f811-9884-4c94-8d62-0ecd74bf5029" InformativeScreenshot="79364cffd8967b2d1a9a1433157699e5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="430, 469, 20, 13" CvTextArgument="Fat" CvType="Text" DesignTimeRectangle="431, 468, 24, 18" ElementType="Text" FriendlyName="'Fat'" FullSelectorArgument="&lt;webctrl aaname='Fat' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fat' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Fat' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAWCAYAAADTlvzyAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACJSURBVEhL7ZLtDQARDIZvWmPoGF2ENYzBGD2E1H0kFxd698OT+KPVJ142EmYJh/OhMFgCpUhdFpANpWcAJ+HL4R1nfy50eIgbjE+bhB3xP74hulLPg5uBWY5xNyIRqTcwW+jJar456NnCNsLE9EizoNbrbcUijX2u7ecaf7J7WCjEEg5nCQdDtAMBhCviYUnIEQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Fiber'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pFiber]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="478, 490, 26, 20" CvType="AnyWordGroup" DesignTimeRectangle="479, 486, 30, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='2' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="ac0fbe66-dc13-4867-9538-0690d78d9ca8" InformativeScreenshot="9ad3550b02b6f2db896a233c9eea987b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="478, 469, 32, 13" CvTextArgument="Fiber" CvType="Text" DesignTimeRectangle="479, 468, 30, 18" ElementType="Text" FriendlyName="'Fiber'" FullSelectorArgument="&lt;webctrl aaname='Fiber' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Fiber' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Fiber' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACIAAAAWCAYAAAClrE55AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAC/SURBVEhL7ZNRDoMgDEB3Wo4hxyDcw16DY+gxuoIKbec2k0nGR19ipKm0LwUfOAgmojERDRNJGJxDd/KElNOB1oG+UuubeBEpTc8YRoQz2kRg9vRmx1eRx9xyC8JEccz7KRfbpq93xM/LntYirFCJPcKag61Z3bcCepVzE9BK8sNEjuIZ1rw0lseW4iGmJBm3XdbarOTkVNv0uot8nkijiwgrWOI3d2Svu8WdJnL1r2l/xyWR/2IiGhPRmIgE8QnLAfqQQsraEQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Carbs'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pCarbs]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="531, 490, 26, 20" CvType="AnyWordGroup" DesignTimeRectangle="533, 486, 35, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='3' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="23b54e4d-61ab-49ec-8fcc-8639a7fa7f31" InformativeScreenshot="50780dde51a3029d051c26d4202d15f5.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="532, 469, 36, 13" CvTextArgument="Carbs" CvType="Text" DesignTimeRectangle="533, 468, 35, 18" ElementType="Text" FriendlyName="'Carbs'" FullSelectorArgument="&lt;webctrl aaname='Carbs' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Carbs' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Carbs' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACcAAAAWCAYAAABDhYU9AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEVSURBVEhL7ZTtDYQgDIZvWsaQMYh7yBqMoWP0sAUpFE/h/OEP3oREsGmffsAHXqwB16sB1ysBty4alFLH0ssa/rTLzd7H7MKuXRkcOlMGkjsH5g/A5+A2C1ppsFvYRzlTAN/XY3DYzsnCZY0wCWo5riP4CnZSYOY9GTonOIvnZM+TJHvpJ+mAu5dlAIhmWbVDMJYgjUmyx334j8UoEyvCN8IVwpbncHw+OQyKJUMXrzJGTM1tjdXANWlROQGXJbxfsASUvwwS9PpC8PPSptLWn3BnMbxElb0SnBdVpTK0MQA6L2boCo7BcAD8ZuD5DJIyuF15qeUbRwFpGUfvIMGeVe7mba08VwLuTRpwvRpwvRpwfQL4Aj5Mnvev1wHVAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Sodium'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_5" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pSodium]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="590, 490, 38, 20" CvType="AnyWordGroup" DesignTimeRectangle="591, 486, 44, 29" DesignTimeScaleFactor="1" FriendlyName="'0 mg'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='4' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="22d68d26-128c-49f0-8f85-da666f6fcd16" InformativeScreenshot="8c967e733b887c534dc3380848227d3d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="590, 469, 46, 13" CvTextArgument="Sodium" CvType="Text" DesignTimeRectangle="591, 468, 44, 18" ElementType="Text" FriendlyName="'Sodium'" FullSelectorArgument="&lt;webctrl aaname='Sodium' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Sodium' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Sodium' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAADAAAAAWCAYAAACG9x+sAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAEgSURBVFhH7ZQNDsIgDIU9LccYx2h2D7kGx9iOUaEFLD/TuUxxCS8hmRu072upN7y4BkBvDYDeqgCWu0al1HPNNnz5VAuaSaG+L8XzucoA2DygtGznoxAdAJpmV4O6gNqn75mWetuBSgQUr5hGs4b3XvLbBAjNDtRgsnD8bGgP5/B+LELKmfsrZoCD80a3JuPeSHEgCBFy4MKYBYpxCCAVJvqJOTi/PFsNcZKsZrxWZEpWQADRftmRLdM7AMQ1zn/XZ7cBogKIN0kVz7oiACo4Tv5DAG+muNOkVyb/rAO0uahifs+FYafWDKRkoXMt05QndZJjngLgxabcobjKQZazUXUsmKHl/oVc8hZAHgPQ+JxnAVxNA6C3BkBvDYC+QnwA8x90OxgADGQAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Protein'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_6" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pProtein]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="658, 490, 26, 20" CvType="AnyWordGroup" DesignTimeRectangle="659, 486, 41, 29" DesignTimeScaleFactor="1" FriendlyName="'0 g'" FullSelectorArgument="&lt;webctrl aaname='0 ' class='amount' idx='5' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='amount' type='' parentid='dailyTotals' tag='DIV' /&gt;" Guid="df1e08c0-e1e0-4d5a-8bb9-09fc92b519f7" InformativeScreenshot="d69ded3abbb96609174aaafcadc43324.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="658, 469, 43, 13" CvTextArgument="Protein" CvType="Text" DesignTimeRectangle="659, 468, 41, 18" ElementType="Text" FriendlyName="'Protein'" FullSelectorArgument="&lt;webctrl aaname='Protein' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Protein' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Protein' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAC0AAAAWCAYAAABUpxX0AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAD7SURBVFhH7ZQLDoMgDEB3Wo4hxyDeQ67hMfQYHZ92tJBtMl0TE15iIrXIsxQfcEOGtBZDWgshvc4GjKkvC37HhL+xgZ8M2GXD8Wda6XnFUWZbbBB3IKPHSHMnH5S+cbF0iIILFXc/WB+X7qNPevdgQ9UdthF9iGgrmr+6EnuJ53dRvBSCVxrvZxfWoly5033tkaTlNspqZil6Lp9VLZDeReellS6iOGZefQdRLBSpRAJcVEjjLvGSxPW4aHufqYt5oD0YjXTb72+lebvwK62nKn2u0gVV6Uqsp6dFrrJ0JM0T242k/BinCsu/R8k9IX0XhrQWQ1qLIa0DwBOZxIHMGzVQ9gAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Water'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_7" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pWater]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvTextArea="723, 411, 12, 17" CvType="AnyWordGroup" DesignTimeRectangle="724, 410, 11, 21" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'0'" FullSelectorArgument="&lt;webctrl id='waterAmount' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl id='waterAmount' tag='SPAN' type='' class='' /&gt;" Guid="4a5b7a93-995f-4d6f-bd43-dd0cd49e9718" InformativeScreenshot="0140644313251fa2c16348547fd1fe2d.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="723, 390, 37, 13" CvTextArgument="Water" CvType="Text" DesignTimeRectangle="724, 389, 34, 18" ElementType="Text" FriendlyName="'Water'" FullSelectorArgument="&lt;webctrl aaname='Water' class='substance' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Water' class='substance' parentid='dailyTotals' tag='DIV' type='' check:innerText='Water' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAACYAAAAWCAYAAACsR+4DAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAE/SURBVEhL7ZTbDcMgDEU7LWOUMVD2SNZgjHQMF7/AJlQNUj/6wZUiBWLM8bWVB/ypFtisFtisGtjrgBgSZFmSaC9A3E/ZYOUtQNhc5M9lHMuQCkSy9+UE4RkhPg9oaIO4gc49lrP23JxcK9EJ6w6uU0YQ4+TI2YF+CkbJaotOOIpbx0sBZZtc1AsxprS1OMiPAGOM7tVYdlr3m+OcI21yRu73w2/dwHdJaoHxXV29FtIc9475b3wPF63fenc9GFUlB7BqvbRCYhJN2IsdGYIN2t/GpoMWdWB8AG127atA3bzZlpWC4ifHXJx5qPCbYNyqfHGGQPdS+YfW9etvjjXdBKMkZRBT13OsOuKvowOp7RZXhmCXy23b74LJoTbUIjewItuiEo+uurmkb+qU5DXxrNtg/6EFNqsFNqsFNieAN1jHPRV4Z0EZAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <uix:NGetText DisplayName="Get Text 'Daily Totals'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_8" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pComposition]" Version="V3">
+                                    <uix:NGetText.Target>
+                                      <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" DesignTimeRectangle="359, 515, 530, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Daily Calorie'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='dailyTotals' tag='DIV' class='' /&gt;" Guid="1ea395e1-18f8-462b-a5bf-43ae51de124a" InformativeScreenshot="7a0571ce5dd021a52ee1cfff5afe0583.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                        <uix:TargetAnchorable.Anchors>
+                                          <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                            <uix:Target CvTextArea="358, 443, 103, 22" CvTextArgument="Daily Totals" CvType="Text" DesignTimeRectangle="359, 443, 530, 20" ElementType="Text" FriendlyName="'Daily Totals'" FullSelectorArgument="&lt;webctrl parentid='dailyTotals' tag='H3' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dailyTotals' tag='H3' type='' class='' aaname='Daily Totals' check:innerText='Daily Totals' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAhYAAAAYCAYAAACm0rSKAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYLSURBVHhe7d3Na9tIAAXw/WtNQAREEJSYYh9EQQQ2B1EwARNqSnWoe8hCXFgbmhJcisJiWAT1QvDFUJfgUvBBEAzm7YxmJMuO/CHHbezyfjCHjCVZmsu8zIzGf4CIiIhoSxgsiIiIaGsYLIiIiGhrGCyIiIhoa2aCxeCyjEKhkFmMIwv2WQOdu7E+ekPfGijLa551dAXQOZPfUcG0ZnPqWmuW1D2sNBmhe+nh6pv+Oy/93OXLga4gIiL6/WQGC9N2UT2vpkoFzrGhOuMDC9VOqM/YwE8OFv2P6fuWxUFRfp9pw52pF+VjX5+1mmqbMhoMFkRERAtlBotFnV94W4d9IMOFvXkHm2GbweKhDioyWJQaeEyXzmBBRES0Wq5gIYWf3OiYwksfj5wUSTBYEBER/R5yBwtMAtRM0VEfiCAw0XXSeAj/jYOypadMZDmU6zKa6KVnTlZNhUxEEJCjIs/q6EWfzuq+NsWxNpo/dMVKK4LF9wB1twzTkPcgymERzhsfwyQ1DdAo6c+SkgpBoy6aZzaso+lzG0dldY10+2QFC7luo1WBnZxrwCw58G6G+gAiIqL9kj9YYIy2KztBC/W455904VmyzoR93kD7xod/3UDVsVSHeXKFkT50ZbAQglcyPKSuH4tDzYvm9HorLQkWXxtqascow33XhH/TRuOsDEMe/7yGIApEYwwCH82KfBYLlb/Fs9301Pf/uMKpDCQHRZxG54vPWnW4JRUUzNddeZTyIFiMEZzL5zRQPtNt1vLgRO1YgPvpEetYiIiInsgGwSIOAgVUdBIY/1OFdViA3Zrv7kO0/5TH2mjc6ao1ggWCGkxxjPV2LlnoeufD+rFicbDoo34s6uV6ka+6Shtdq+medDDImgoZvHdgGiZqga6ITXrwnslrV5F8NB8sJr66r4qv/o6FbbiGAavSFq1HRES0XzYKFoO/itFxcbBY5kGHvE6wQFeNTMxNh0QjGQcu/HtdsZYFweLLgvAS6aE+FwyygsUyD55pUbAoeejmyUlEREQ7bCsjFolxiFG/q6YU3lThvrBgyKmG3MFCdO1v1dTDdLpFT4PkXjSaHSyG7231DDe6Yo66p+l9Lw0W9yGGvUA8dxN1+WpuyVTTKcuCRTIVIo8rwDh2UL1so/t1W0tiiYiIfr1HrLEo4iKZQgjRuzyFFYUIXQwT5ZMqaq4MCPmDBfr1aP+JZEShU4muu84oyazsYBE/66LrrRUsJkP4r/SajLjIBatuHRVH/r0sWEgh+tfedI+QuFinaNxyIoSIiPZP/mARv7WReitk9MFRHaLtodMfIUz9061GHjYIFvEaCD0dEh1j1hCk37RYy88bsVBvqBRgvmyidxdinNxbHL5WBYuU+yF6/zbhnVgqqOSe8iEiInp6uYNFHCLMV/HqgxGuTmQnmh7BiMUd7CbBQly5JTt/C/VbNQ0y85bF2pavsci+5jprLPQ6EHHf/oOwo89fFiwCL3pFNWsh6nyoISIi2he5gsXov3jnTQdXyT4S09dPvVtdpYWi8462006vlcgRLPCjCVvej+vCSl8jlwXBYp23QpLwFLdNOjzF4eEU7blZi2FLj+AUXLTjUYf5YHHvw5VtWbrAYCaYxG/SiDbmok4iItozmcHi4W+FuLDjja8yfitk3KlE//0Xjmx4LbnPQzPadMooGLBfqGsmaxnyBItkNESU47qIAptYFCyEZftYWFWkH3Osdxw1XzbEcWofi7i9Cs8raFyn9u4QbWTb2VNA6dA2uFTTMUZJny/azdN7f2w2OkNERPS0MoNFVjGsMpzz5sJXI4c3tekOkgcGiicefPlLqL06LFFXfKdjQa5gMe3Ql03PLLckWEjffXgn0503k10z51/OmAxw5er1D8m+HHLRqovioTpXLliVO43KNorv2/2sL5QRLORoz/CzaLfUbqXy7RDv81B8QkREtH9mgsUuUms68mzhTURERE9lt4PFZIAL+TsdW/zBMyIiIvp5djJYhMFFtLZD/eaGidoX/QERERHttN0csQhqasdOw4L7YdO1FURERPSr7fwaCyIiItoXwP9ej0GwMN/qHwAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                          </scg:List>
+                                        </uix:TargetAnchorable.Anchors>
+                                      </uix:TargetAnchorable>
+                                    </uix:NGetText.Target>
+                                  </uix:NGetText>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Date: &quot;+pOutputDate+&quot;, Cals: &quot;+pCals+&quot;, Fat: &quot;+pFat+&quot;, Fiber: &quot;+pFiber+&quot;, Carbs: &quot;+pCarbs+&quot;, Sodium: &quot;+pSodium+&quot;, Protein: &quot;+pProtein+&quot;, Water: &quot;+pWater+Environment.NewLine+&quot;Composition: &quot;+pComposition]" />
+                                </Sequence>
+                              </Sequence>
+                            </ui:CommentOut.Body>
+                          </ui:CommentOut>
+                          <Sequence DisplayName="Extract Nutrition Data" sap:VirtualizedContainerService.HintSize="548,81" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="x:String" Name="pEntirelText" />
+                              <Variable x:TypeArguments="scg:List(x:String)" Name="pNumberList" />
+                              <Variable x:TypeArguments="s:String[]" Name="arrSplitText" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text 'Daily Totals'" sap:VirtualizedContainerService.HintSize="479,157" sap2010:WorkflowViewState.IdRef="NGetText_10" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pEntirelText]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/31" DesignTimeRectangle="241, 539, 570, 121" DesignTimeScaleFactor="1" FriendlyName="'Daily Totals'" FullSelectorArgument="&lt;webctrl parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dailyTotals' tag='DIV' type='' class='content firstBlock' aaname='                                                                                      ' /&gt;" Guid="877b8c52-ca94-4acd-afa1-025e90afbf89" InformativeScreenshot="b10ba324321f9be05a53f665a7f44038.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <Assign sap:VirtualizedContainerService.HintSize="479,82" sap2010:WorkflowViewState.IdRef="Assign_8">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="s:String[]">[arrSplitText]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="s:String[]">[pEntirelText.Split(" "C)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="479,82" sap2010:WorkflowViewState.IdRef="Assign_7">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:List(x:String)">[pNumberList]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:List(x:String)">[new List(of string)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through array of the extracted values and check if those values are a number. &#xD;&#xA;If the value is a number add it into a list of numbers&#xD;&#xA;" DisplayName="For Each - Filter out non-numeric values" sap:VirtualizedContainerService.HintSize="479,154" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[arrSplitText]">
+                              <ui:ForEach.Body>
+                                <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
-                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                                   </ActivityAction.Argument>
-                                  <Sequence sap:VirtualizedContainerService.HintSize="450,319" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,674" sap2010:WorkflowViewState.IdRef="Sequence_20">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Problem occured during clicking the 'Next Day' button. We must have broken the loop.&quot;]" />
-                                    <ui:Break sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                    <If Condition="[IsNumeric(currentItem)]" sap:VirtualizedContainerService.HintSize="410,586" sap2010:WorkflowViewState.IdRef="If_5">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_2" ItemToAppend="[currentItem.ToString]" List="[pNumberList]" />
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[currentItem]" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_22" />
+                                      </If.Else>
+                                    </If>
                                   </Sequence>
                                 </ActivityAction>
-                              </Catch>
-                            </TryCatch.Catches>
-                          </TryCatch>
+                              </ui:ForEach.Body>
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                            </ui:ForEach>
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,302" sap2010:WorkflowViewState.IdRef="MultipleAssign_1">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="8">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_1">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[pCals]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[CInt(pNumberList(0))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_2">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Double">[pFat]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(pNumberList(1))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_3">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Double">[pFiber]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(pNumberList(2))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Double">[pCarbs]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(pNumberList(3))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_5">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Double">[pSodium]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(pNumberList(4))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_6">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Double">[pProtein]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(pNumberList(5))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_7">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:Double">[pWater]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:Double">[Convert.ToDouble(pNumberList(6))]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                            </ui:MultipleAssign>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,143" sap2010:WorkflowViewState.IdRef="LogMessage_21" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;List of numbers: &quot;+pNumberList.Count.ToString]" />
+                          </Sequence>
+                          <Sequence DisplayName="Extract Composition Information" sap:VirtualizedContainerService.HintSize="548,81" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                            <Sequence.Variables>
+                              <Variable x:TypeArguments="s:String[]" Name="aarComposition" />
+                              <Variable x:TypeArguments="scg:List(x:String)" Name="listComposition" />
+                            </Sequence.Variables>
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <uix:NGetText DisplayName="Get Text 'Daily Calorie'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NGetText_11" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" TextString="[pComposition]" Version="V3">
+                              <uix:NGetText.Target>
+                                <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/31" CvTextArea="259, 531, 496, 16" CvType="AnyWordGroup" DesignTimeRectangle="260, 531, 530, 14" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Daily Calorie'" FullSelectorArgument="&lt;webctrl css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' isleaf='1' parentid='dailyTotals' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' isleaf='1' parentid='dailyTotals' tag='DIV' class='' /&gt;" Guid="9cd9530d-e1df-474f-9c0a-61106ecf6fb0" InformativeScreenshot="5248bf164c1f519313ad1a36f9a90ab0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
+                              </uix:NGetText.Target>
+                            </uix:NGetText>
+                            <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="s:String[]">[aarComposition]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="s:String[]">[pComposition.Split(" "C)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="scg:List(x:String)">[listComposition]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="scg:List(x:String)">[new list(of string)]</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - filter composition information" sap:VirtualizedContainerService.HintSize="486,860" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[aarComposition]">
+                              <ui:ForEach.Body>
+                                <ActivityAction x:TypeArguments="x:String">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
+                                  </ActivityAction.Argument>
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,674" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
+                                    <If Condition="[System.Text.RegularExpressions.regex.IsMatch(currentItem.Substring(0),&quot;[0-9]&quot;)]" sap:VirtualizedContainerService.HintSize="410,586" sap2010:WorkflowViewState.IdRef="If_6">
+                                      <If.Then>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[currentItem]" />
+                                          <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_3" ItemToAppend="[currentItem]" List="[listComposition]" />
+                                        </Sequence>
+                                      </If.Then>
+                                      <If.Else>
+                                        <Sequence sap2010:WorkflowViewState.IdRef="Sequence_27" />
+                                      </If.Else>
+                                    </If>
+                                  </Sequence>
+                                </ActivityAction>
+                              </ui:ForEach.Body>
+                            </ui:ForEach>
+                            <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="486,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_2">
+                              <ui:MultipleAssign.AssignOperations>
+                                <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_8">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[pFromCarbs]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[listComposition(0)]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_9">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[pFromFat]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[listComposition(1)]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                  <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_10">
+                                    <ui:AssignOperation.To>
+                                      <OutArgument x:TypeArguments="x:String">[pFromProtein]</OutArgument>
+                                    </ui:AssignOperation.To>
+                                    <ui:AssignOperation.Value>
+                                      <InArgument x:TypeArguments="x:String">[listComposition(2)]</InArgument>
+                                    </ui:AssignOperation.Value>
+                                  </ui:AssignOperation>
+                                </scg:List>
+                              </ui:MultipleAssign.AssignOperations>
+                            </ui:MultipleAssign>
+                          </Sequence>
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new Object(){pOutputDate ,pCals, pFat, pFiber, pCarbs, pSodium, pProtein, pWater, pFromCarbs, pFromFat, pFromProtein}]" DataTable="[dt_calsAndNutritions]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="548,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                          <If Condition="[CheckedDate &lt;&gt; &quot;Today&quot;]" sap:VirtualizedContainerService.HintSize="548,655" sap2010:WorkflowViewState.IdRef="If_7">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="480,473" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <TryCatch DisplayName="Try Catch if click button causes any error." sap:VirtualizedContainerService.HintSize="438,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                                  <TryCatch.Try>
+                                    <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next day button'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_1" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V3">
+                                      <uix:NClick.Target>
+                                        <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2023/10/22" CvElementArea="785, 340, 27, 26" CvType="Button" DesignTimeRectangle="788, 242, 22, 22" DesignTimeScaleFactor="1" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl aaname='                              ' parentid='dateNavHeader' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                              ' parentid='dateNavHeader' tag='IMG' type='' class='' /&gt;" Guid="b1d8c19b-db3e-495f-aebd-4e8f7a55bf70" InformativeScreenshot="023cf8fc626dad26bf59a5ef80efc802.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                          <uix:TargetAnchorable.Anchors>
+                                            <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                              <uix:Target CvElementArea="334, 250, 75, 42" CvTextArea="344, 258, 53, 21" CvTextArgument="Food" CvType="Button" DesignTimeRectangle="335, 151, 72, 39" ElementType="Text" FriendlyName="'Food'" FullSelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' type='' class='' aaname='                         Food                     ' check:innerText='Food' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAEwAAAArCAYAAADSZm7JAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAK1SURBVGhD7ZdBaxNRFIX9T/6R/AG3LrpzG3DloisXddNF3HShCEIxi4DoSjBQCbiRIgWlUIgQLBQLXUQC13On5yav42RyX4SZCd4Dh+S9d++bed/cmXlzT0JZCmCZWgG7/zBcZyqAeU0FMK+pAOY1FcC8pgKY11QA85oKYF5TAcxrKoB5TW0H7OlXJnn0o3qO1vxxu/OiApjX1D8C6xoMjwNYpncOWF9k8FlkdsM5oMVvkfMvIn2MVeY8ETnGMa8QZ5oj//STyIOqeLj3XGSM85szfoH40UuM7RQwADn5xVxohvxvsLFbYOygDO0ZYhJQU835iVi252g/SuPh3muRS44rKD3GVA+CeYa4WIXQl+ZsMtUssGPEF8LJH6JqlmP4byAVwF6Sc0Ka2p9WoFbQGUFe4XysXz1hjvanFXiAtlVcO8A26DpdCBZoV/09qiadrzD6phwfH7HvHSsJYAYVt2tvtKrOVzae5ByW4tVjq/CuA9uzWwG3U1pBqUcYU13ieabtwffb9g1+y7Fmq6YzgNK2VpFqXc5jzF2oFWAZB7WcO1VXssXYYoeYX3WBh3s51mwxU1yQqvZf3pWHfg4wm9cWf45FlmPNFmPzbszBC+FaAzLOXU11E1h58Z4Ksxhrr60we+51HVhXnmHL8+g6sJy35AS3TdGX8ZYc2vgb9q3JecuL0n1gcN0+zF73Cywo3YjW7sM4prdwL8n5kOzp0rn6uG3b3YdlHnTTTl//HJWrD+3anT7+75crKckpPruQU+z0tX37syPA1FjcCzyj0u9C/Xw5xbOl7ltydIFKSnL0W3KCN+G6b8llDuNVM7T3UWWFmgT2P5oKYF5TAcxrKoB5TQUwr6kA5jUVwLymApjXVADzmgpgXlMBzGsqgHlNrYA1qaoT2tYNqx1gqqrF57pxifwBTK8SnfzQTFcAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                                            </scg:List>
+                                          </uix:TargetAnchorable.Anchors>
+                                        </uix:TargetAnchorable>
+                                      </uix:NClick.Target>
+                                    </uix:NClick>
+                                  </TryCatch.Try>
+                                  <TryCatch.Catches>
+                                    <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ActivityAction x:TypeArguments="s:Exception">
+                                        <ActivityAction.Argument>
+                                          <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                        </ActivityAction.Argument>
+                                        <Sequence sap:VirtualizedContainerService.HintSize="450,319" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                                          <sap:WorkflowViewStateService.ViewState>
+                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            </scg:Dictionary>
+                                          </sap:WorkflowViewStateService.ViewState>
+                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_11" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Problem occured during clicking the 'Next Day' button. We must have broken the loop.&quot;]" />
+                                          <ui:Break sap:VirtualizedContainerService.HintSize="388,25" sap2010:WorkflowViewState.IdRef="Break_1" />
+                                        </Sequence>
+                                      </ActivityAction>
+                                    </Catch>
+                                  </TryCatch.Catches>
+                                </TryCatch>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_29" />
+                            </If.Else>
+                          </If>
                         </Sequence>
                       </ui:InterruptibleDoWhile.Body>
                       <sap:WorkflowViewStateService.ViewState>
@@ -517,7 +756,7 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InterruptibleDoWhile>
                   </Sequence>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="808,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Extracting completed. &quot;+dt_calsAndNutritions.RowCount.ToString+&quot; rows extracted.&quot;]" />
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="686,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Extracting completed. &quot;+dt_calsAndNutritions.RowCount.ToString+&quot; rows extracted.&quot;]" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -538,8 +777,8 @@
         <uix:TargetApp Area="149, 127, 1605, 982" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAo9JREFUWEflVztrFUEUXkVEUBsFUQTZ2dxEYyB2KhZio6WCjSBipaAEtFC0EnygRToL9Q8Yd+bM7uJFRG91BSEogqIpxICNhQ+00MIHKKzfmT2ruzeQ670huwE/GBa+b+fMmXPOvLx+0IiiERXSIxWaL35ob40QrRCpGvianvmhSQvtikjzj/Npulhp+llyQJu7IlcDpc39sgN0UqRqsClJViP3N1AHD1AHpzkqIv1HGCJar0y8c2OzuVIohwbRZmXsZbSLQRQNCt07smIz1xDij8hxOyDaIJKnjDmaFyL09yqKRpkfCO0O8D8KtfFV6WSL69QrgpAO/jHkBrKGeaz5pTD8raRpusMaf4u8a5omWOsZXFxFQyi4h8zDgVVFXrTHrPkhTc7QNLVY6xkuxyF9cIY0/YLxAyLxQPdKAxlzIuPN2RKPFmg67jr1A15ugbb7B3UyLJTDaKu1HBE6x+FFPRwS2tvVbi/BjMfh4Cd2HoNfSNN0kcj1gx3kc2QgSdYINTvQYZkfRds6O2QztUd4topot9DZyjH2FGb/HFF4iuiMieTxf4jYuzw16Ks5kqhcuwcdpkG8wE9b5X8utrUw8lo6fIe2VySu9tu5IW6BMceY9409U+RzbTiO16HP504NK+sq7+tv/hL0xI0AIMeXSj9rM8X8UBwHRV60V6zB4ZczNKwQTPJwJ581ersQHMhTYKY432yIwWErpsDXdp9IcI6aRUNzSsFs4CJs6Hh7X0WIS8s/FWGV6HkZdtuIkLab87YR1b4V134Y1X4c5xcSzieMVH8h6YauVzJsZHO6ki1ouGu5puucGi7Wyq/lqI36HiZZcdb8NMOM63ucMuR5PolI4ISjCewNfT7PPe83EbQvxsHAXhIAAAAASUVORK5CYII=" InformativeScreenshot="fe2c19e9fbc33683e9184526ed6b537a.jpg" Selector="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" Title="Fitbit Dashboard" Url="https://www.fitbit.com/" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_calsAndNutritions]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="980,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Nutritions Data.xlsx" />
-    <Assign DisplayName="Assign out agrument extracted data table" sap:VirtualizedContainerService.HintSize="980,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_calsAndNutritions]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="858,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Nutritions Data.xlsx" />
+    <Assign DisplayName="Assign out agrument extracted data table" sap:VirtualizedContainerService.HintSize="858,82" sap2010:WorkflowViewState.IdRef="Assign_3">
       <Assign.To>
         <OutArgument x:TypeArguments="sd:DataTable">[out_CalsAndNutritionData]</OutArgument>
       </Assign.To>
@@ -547,6 +786,6 @@
         <InArgument x:TypeArguments="sd:DataTable">[dt_calsAndNutritions]</InArgument>
       </Assign.Value>
     </Assign>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="980,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading calories and nutritions sequence comlete.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="858,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Reading calories and nutritions sequence complete.&quot;]" />
   </Sequence>
 </Activity>

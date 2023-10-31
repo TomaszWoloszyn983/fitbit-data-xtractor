@@ -41,8 +41,8 @@
       "Path": "Processes/GetData/GetCaloriesAndNutritions.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "pOutputDate&Sequence_3",
         "pDate&Sequence_16",
-        "pOutputDate&Sequence_11",
         "arrNumbers&Sequence_11",
         "arrUrl&Sequence_11",
         "pUrl&Sequence_7",
