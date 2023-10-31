@@ -12,6 +12,7 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_CalsAndNutritionData&Sequence_1",
         "dt_WeightData&Sequence_1",
         "pDayFirst&Sequence_1"
       ],
@@ -41,6 +42,14 @@
       "Path": "Processes/GetData/GetCaloriesAndNutritions.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "pFromProtein&Sequence_6",
+        "pFromFat&Sequence_6",
+        "pFromCarbs&Sequence_6",
+        "listComposition&Sequence_24",
+        "aarComposition&Sequence_24",
+        "arrSplitText&Sequence_19",
+        "pNumberList&Sequence_19",
+        "pEntirelText&Sequence_19",
         "pOutputDate&Sequence_3",
         "pDate&Sequence_16",
         "arrNumbers&Sequence_11",
