@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1277,5152</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1045,8834</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,19 +120,19 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadData" sap:VirtualizedContainerService.HintSize="744,5087" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadData" sap:VirtualizedContainerService.HintSize="1055,8769" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="682,4795" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="993,8477" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="648,4578" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="959,8260" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="pWeightOutput" />
               <Variable x:TypeArguments="s:String[]" Name="pSplitRow" />
@@ -149,7 +149,10 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <Sequence sap2010:Annotation.AnnotationText="Click the 'Load More' button to fully expand the table and display all data. &#xA;The table is fully expanded when then 'Load More' button does not appear." DisplayName="Sequence - Expand the table" sap:VirtualizedContainerService.HintSize="586,123" sap2010:WorkflowViewState.IdRef="Sequence_18">
+            <Sequence sap2010:Annotation.AnnotationText="Click the 'Load More' button to fully expand the table and display all data. &#xA;The table is fully expanded when then 'Load More' button does not appear." DisplayName="Sequence - Expand the table" sap:VirtualizedContainerService.HintSize="897,123" sap2010:WorkflowViewState.IdRef="Sequence_18">
+              <Sequence.Variables>
+                <Variable x:TypeArguments="x:Int32" Name="clickCounter" />
+              </Sequence.Variables>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -157,33 +160,64 @@
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[exist_LoadMore]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="564,625" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <Assign sap:VirtualizedContainerService.HintSize="610,82" sap2010:WorkflowViewState.IdRef="Assign_18">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Int32">[clickCounter]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="x:Int32">0</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="610,143" sap2010:WorkflowViewState.IdRef="LogMessage_43" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Expanding the table process started&quot;]" />
+              <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[exist_LoadMore]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="610,1387" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                 <ui:InterruptibleDoWhile.Body>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="530,489" sap2010:WorkflowViewState.IdRef="Sequence_19">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="576,1251" sap2010:WorkflowViewState.IdRef="Sequence_19">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <TryCatch DisplayName="Try Catch - Check if button exists" sap:VirtualizedContainerService.HintSize="488,309" sap2010:WorkflowViewState.IdRef="TryCatch_2">
+                    <TryCatch DisplayName="Try Catch - Check if button exists" sap:VirtualizedContainerService.HintSize="534,1071" sap2010:WorkflowViewState.IdRef="TryCatch_2">
                       <TryCatch.Try>
-                        <Sequence DisplayName="Check if Load More button exists" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                        <Sequence DisplayName="Check if Load More button exists" sap:VirtualizedContainerService.HintSize="496,843" sap2010:WorkflowViewState.IdRef="Sequence_22">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                               <x:Boolean x:Key="IsPinned">False</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NCheckElement ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'Load More'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exist_LoadMore]" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Timeout="5" Version="V3">
+                          <uix:NCheckElement ContinueOnError="True" DelayBefore="0" DisplayName="Check Element 'Load More'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exist_LoadMore]" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Timeout="5" Version="V3">
                             <uix:NCheckElement.Target>
                               <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/weight" DesignTimeRectangle="209, 773, 870, 43" DesignTimeScaleFactor="1" ElementType="Button" FriendlyName="'Load More'" FullSelectorArgument="&lt;webctrl parentid='ember379' tag='BUTTON' type='button' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember379' tag='BUTTON' type='button' class='button weight-history-more-button' aaname='             Load More         ' check:innerText='Load More' /&gt;" Guid="ba279083-992c-4081-9b1f-00267e3f58b1" InformativeScreenshot="ce232bee3e33948a7bdecdd3a8c5e707.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive" />
                             </uix:NCheckElement.Target>
                           </uix:NCheckElement>
-                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Load More button found: &quot;+exist_LoadMore.ToString]" />
+                          <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_19">
+                            <Assign.To>
+                              <OutArgument x:TypeArguments="x:Int32">[clickCounter]</OutArgument>
+                            </Assign.To>
+                            <Assign.Value>
+                              <InArgument x:TypeArguments="x:Int32">[clickCounter + 1]</InArgument>
+                            </Assign.Value>
+                          </Assign>
+                          <If Condition="[clickCounter MOD 20 = 0]" sap:VirtualizedContainerService.HintSize="434,413" sap2010:WorkflowViewState.IdRef="If_6">
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_56">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_20" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[(clickCounter / 20).ToString+&quot;. I'm stil working: &quot;+exist_LoadMore.ToString]" />
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap2010:WorkflowViewState.IdRef="Sequence_57" />
+                            </If.Else>
+                          </If>
                         </Sequence>
                       </TryCatch.Try>
                       <TryCatch.Catches>
-                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="500,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -194,7 +228,7 @@
                             <ActivityAction.Argument>
                               <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                             </ActivityAction.Argument>
-                            <Sequence sap:VirtualizedContainerService.HintSize="496,375" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                            <Sequence sap:VirtualizedContainerService.HintSize="496,376" sap2010:WorkflowViewState.IdRef="Sequence_27">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -214,7 +248,7 @@
                         </Catch>
                       </TryCatch.Catches>
                     </TryCatch>
-                    <If Condition="[exist_LoadMore]" DisplayName="If - button exists click it" sap:VirtualizedContainerService.HintSize="488,52" sap2010:WorkflowViewState.IdRef="If_2">
+                    <If Condition="[exist_LoadMore]" DisplayName="If - button exists click it" sap:VirtualizedContainerService.HintSize="534,52" sap2010:WorkflowViewState.IdRef="If_2">
                       <sap:WorkflowViewStateService.ViewState>
                         <scg:Dictionary x:TypeArguments="x:String, x:Object">
                           <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -291,14 +325,14 @@
                 </sap:WorkflowViewStateService.ViewState>
               </ui:InterruptibleDoWhile>
             </Sequence>
-            <ui:BuildDataTable sap2010:Annotation.AnnotationText="Build dt_temp data table to store the data extracted from the data table.&#xA;At the end of this sequence values from this data table will be assigned to the out argument." DataTable="[dt_WeightData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="586,132" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Weight&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Date&gt;Date&lt;/Date&gt;&#xA;    &lt;Weight&gt;Fat (%)&lt;/Weight&gt;&#xA;    &lt;Fat&gt;Weight&lt;/Fat&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
+            <ui:BuildDataTable sap2010:Annotation.AnnotationText="Build dt_temp data table to store the data extracted from the data table.&#xA;At the end of this sequence values from this data table will be assigned to the out argument." DataTable="[dt_WeightData]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="897,132" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; minOccurs=&quot;0&quot;&gt;&#xA;                  &lt;xs:simpleType&gt;&#xA;                    &lt;xs:restriction base=&quot;xs:string&quot;&gt;&#xA;                      &lt;xs:maxLength value=&quot;100&quot; /&gt;&#xA;                    &lt;/xs:restriction&gt;&#xA;                  &lt;/xs:simpleType&gt;&#xA;                &lt;/xs:element&gt;&#xA;                &lt;xs:element name=&quot;Weight&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;  &lt;TableName&gt;&#xA;    &lt;Date&gt;Date&lt;/Date&gt;&#xA;    &lt;Weight&gt;Fat (%)&lt;/Weight&gt;&#xA;    &lt;Fat&gt;Weight&lt;/Fat&gt;&#xA;  &lt;/TableName&gt;&#xA;&lt;/NewDataSet&gt;">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:BuildDataTable>
-            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="586,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
+            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="897,52" sap2010:WorkflowViewState.IdRef="CommentOut_3">
               <ui:CommentOut.Body>
                 <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,325" sap2010:WorkflowViewState.IdRef="Sequence_30">
                   <sap:WorkflowViewStateService.ViewState>
@@ -325,7 +359,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="586,979" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="897,4470" sap2010:WorkflowViewState.IdRef="TryCatch_4">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -333,7 +367,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
               <TryCatch.Try>
-                <Sequence sap:VirtualizedContainerService.HintSize="859,5272" sap2010:WorkflowViewState.IdRef="Sequence_34">
+                <Sequence sap:VirtualizedContainerService.HintSize="859,4242" sap2010:WorkflowViewState.IdRef="Sequence_34">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="sd:DataTable" Name="dt_TestingExtraction" />
                   </Sequence.Variables>
@@ -343,7 +377,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,143" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Extracting data from the table&quot;]" />
-                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_TestingExtraction]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Row'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="797,157" sap2010:WorkflowViewState.IdRef="NExtractData_8" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V3">
+                  <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_TestingExtraction]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Row'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="797,157" sap2010:WorkflowViewState.IdRef="NExtractData_8" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V3">
                     <uix:NExtractData.Target>
                       <uix:TargetAnchorable DesignTimeRectangle="110, -84151, 870, 86134" DesignTimeScaleFactor="1" FriendlyName="'This Week 72.8 kg Today'" FullSelectorArgument="&lt;webctrl id='ember269' tag='DIV' /&gt;" Guid="ff9f9891-eee9-4100-968f-b3d54128e073" InformativeScreenshot="2efc34254c02fd6bb1d4a4a9c83fd276.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                     </uix:NExtractData.Target>
@@ -369,13 +403,13 @@
                     </ui:CommentOut.Body>
                   </ui:CommentOut>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="797,143" sap2010:WorkflowViewState.IdRef="LogMessage_34" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Testing: &quot;+dt_TestingExtraction.RowCount.ToString+&quot; rows extracted&quot;]" />
-                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_TestingExtraction]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="797,4207" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
+                  <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_TestingExtraction]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="797,3177" sap2010:WorkflowViewState.IdRef="ForEachRow_2">
                     <ui:ForEachRow.Body>
                       <ActivityAction x:TypeArguments="sd:DataRow">
                         <ActivityAction.Argument>
                           <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                         </ActivityAction.Argument>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="763,4021" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="763,2991" sap2010:WorkflowViewState.IdRef="Sequence_37">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="s:String[]" Name="arrRow" />
                             <Variable x:TypeArguments="x:String" Name="strRow" />
@@ -385,7 +419,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <If Condition="[CurrentRow is Nothing]" sap:VirtualizedContainerService.HintSize="721,3933" sap2010:WorkflowViewState.IdRef="If_4">
+                          <If Condition="[CurrentRow is Nothing]" sap:VirtualizedContainerService.HintSize="721,2903" sap2010:WorkflowViewState.IdRef="If_4">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_44">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -397,7 +431,7 @@
                               </Sequence>
                             </If.Then>
                             <If.Else>
-                              <Sequence sap:VirtualizedContainerService.HintSize="687,3520" sap2010:WorkflowViewState.IdRef="Sequence_45">
+                              <Sequence sap:VirtualizedContainerService.HintSize="687,2490" sap2010:WorkflowViewState.IdRef="Sequence_45">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -431,31 +465,41 @@
                                     <InArgument x:TypeArguments="s:String[]">[strRow.Split(Environment.NewLine.ToArray,StringSplitOptions.RemoveEmptyEntries)]</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="645,143" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Extracted row contains &quot;+arrRow.Length.ToString+&quot; informations.&quot;]" />
-                                <ui:IfElseIf sap2010:Annotation.AnnotationText="Depends on the the extracted rows element we can assign extracted values Date, Fat and Weight to pDate, pFat and pWeight variables.&#xD;&#xA;&#xD;&#xA;But if the number of informtaions from the row is different than 3 we can assign an average weekly weight.&#xD;&#xA;&#xD;&#xA;" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="645,1534" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
+                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="645,333" sap2010:WorkflowViewState.IdRef="CommentOut_16">
+                                  <ui:CommentOut.Body>
+                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_59">
+                                      <sap:WorkflowViewStateService.ViewState>
+                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        </scg:Dictionary>
+                                      </sap:WorkflowViewStateService.ViewState>
+                                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_37" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Extracted row contains &quot;+arrRow.Length.ToString+&quot; informations.&quot;]" />
+                                    </Sequence>
+                                  </ui:CommentOut.Body>
+                                </ui:CommentOut>
+                                <ui:IfElseIf sap2010:Annotation.AnnotationText="Depends on the the extracted rows element we can assign extracted values Date, Fat and Weight to pDate, pFat and pWeight variables.&#xA;&#xA;But if the number of informtaions from the row is different than 3 we can assign an average weekly weight.&#xA;&#xA;" DisplayName="Else If" sap:VirtualizedContainerService.HintSize="645,1412" sap2010:WorkflowViewState.IdRef="IfElseIf_3">
                                   <ui:IfElseIf.ConditionBlocks>
                                     <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                                       <ui:IfElseIfBlock BlockType="If" Condition="[arrRow.Length = 3]">
                                         <ui:IfElseIfBlock.Then>
-                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="594,566" sap2010:WorkflowViewState.IdRef="Sequence_51">
+                                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="548,444" sap2010:WorkflowViewState.IdRef="Sequence_51">
                                             <sap:WorkflowViewStateService.ViewState>
                                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="532,272" sap2010:WorkflowViewState.IdRef="CommentOut_14">
+                                            <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,333" sap2010:WorkflowViewState.IdRef="CommentOut_15">
                                               <ui:CommentOut.Body>
-                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_55">
+                                                <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_58">
                                                   <sap:WorkflowViewStateService.ViewState>
                                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                                     </scg:Dictionary>
                                                   </sap:WorkflowViewStateService.ViewState>
-                                                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_17" />
+                                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Testing section: Item1:&quot;+arrRow(0)+&quot;, Item2: &quot;+arrRow(1)+&quot;, Item3: &quot;+arrRow(2)]" />
                                                 </Sequence>
                                               </ui:CommentOut.Body>
                                             </ui:CommentOut>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="532,143" sap2010:WorkflowViewState.IdRef="LogMessage_40" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Testing section: Item1:&quot;+arrRow(0)+&quot;, Item2: &quot;+arrRow(1)+&quot;, Item3: &quot;+arrRow(2)]" />
                                           </Sequence>
                                         </ui:IfElseIfBlock.Then>
                                       </ui:IfElseIfBlock>
@@ -467,7 +511,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Testing weekly average section: Item1:&quot;+arrRow(0)+&quot;, Item2: &quot;+arrRow(1)]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_41" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Testing weekly average section: Item1:&quot;+arrRow(0)+&quot;, Item2: &quot;+arrRow(1)]" />
                                           </Sequence>
                                         </ui:IfElseIfBlock.Then>
                                       </ui:IfElseIfBlock>
@@ -479,7 +523,7 @@
                                                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                               </scg:Dictionary>
                                             </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Extracted row contains &quot;+arrRow.Length.ToString+&quot; informations.&quot;]" />
+                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_42" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Extracted row contains &quot;+arrRow.Length.ToString+&quot; informations.&quot;]" />
                                           </Sequence>
                                         </ui:IfElseIfBlock.Then>
                                       </ui:IfElseIfBlock>
@@ -491,54 +535,6 @@
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
                                 </ui:IfElseIf>
-                                <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="645,1058" sap2010:WorkflowViewState.IdRef="CommentOut_13">
-                                  <ui:CommentOut.Body>
-                                    <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="572,979" sap2010:WorkflowViewState.IdRef="Sequence_53">
-                                      <sap:WorkflowViewStateService.ViewState>
-                                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                        </scg:Dictionary>
-                                      </sap:WorkflowViewStateService.ViewState>
-                                      <If sap2010:Annotation.AnnotationText="Depends on the the extracted rows element we can assign extracted values Date, Fat and Weight to pDate, pFat and pWeight variables.&#xD;&#xA;&#xD;&#xA;But if the number of informtaions from the row is different than 3 we can assign an average weekly weight.&#xD;&#xA;" Condition="[arrRow.Length = 3]" sap:VirtualizedContainerService.HintSize="510,868" sap2010:WorkflowViewState.IdRef="If_5">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <If.Then>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_48">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                              <Assign.To>
-                                                <OutArgument x:TypeArguments="x:String">[arrRowInfo]</OutArgument>
-                                              </Assign.To>
-                                              <Assign.Value>
-                                                <InArgument x:TypeArguments="x:String">[arrRow(1)]</InArgument>
-                                              </Assign.Value>
-                                            </Assign>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_38" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Testing section: Item1:&quot;+arrRow(0)+&quot;, Item2: &quot;+arrRow(1)+&quot;, Item3: &quot;+arrRow(2)]" />
-                                          </Sequence>
-                                        </If.Then>
-                                        <If.Else>
-                                          <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_49">
-                                            <sap:WorkflowViewStateService.ViewState>
-                                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              </scg:Dictionary>
-                                            </sap:WorkflowViewStateService.ViewState>
-                                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_39" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Testing weekly average section: Item1:&quot;+arrRow(0)+&quot;, Item2: &quot;+arrRow(1)]" />
-                                          </Sequence>
-                                        </If.Else>
-                                      </If>
-                                    </Sequence>
-                                  </ui:CommentOut.Body>
-                                </ui:CommentOut>
                               </Sequence>
                             </If.Else>
                           </If>
@@ -555,7 +551,7 @@
                 </Sequence>
               </TryCatch.Try>
               <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="552,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
+                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="863,21" sap2010:WorkflowViewState.IdRef="Catch`1_3">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -610,39 +606,50 @@
                 </Sequence>
               </TryCatch.Finally>
             </TryCatch>
-            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Date'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Fat'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Weight'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column css-selector='.body-fat-text' name='Column1' attr='fulltext' /&gt;&lt;column css-selector='.column.small-6.weight-list-item-stats.body-weight' name='Column2' attr='fulltext' /&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="586,157" sap2010:WorkflowViewState.IdRef="NExtractData_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V3">
+            <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[ExtractDataTable]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column0' Name='Date'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column1' Name='Fat'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' ReferenceName='Column2' Name='Weight'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;column css-selector='.body-fat-text' name='Column1' attr='fulltext' /&gt;&lt;column css-selector='.column.small-6.weight-list-item-stats.body-weight' name='Column2' attr='fulltext' /&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="897,157" sap2010:WorkflowViewState.IdRef="NExtractData_9" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V3">
               <uix:NExtractData.Target>
                 <uix:TargetAnchorable DesignTimeRectangle="110, 268, 870, 86971" DesignTimeScaleFactor="1" FriendlyName="'This Week 72.8 kg Today'" FullSelectorArgument="&lt;webctrl id='ember*' tag='DIV' class='weight-history-list ember-view' /&gt;" Guid="7786fa1b-16ed-44b4-8d48-1706b5779660" InformativeScreenshot="2fe77e99a4782f85f30b122f6cda9f68.png" IsResponsive="True" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
               </uix:NExtractData.Target>
             </uix:NExtractData>
-            <ui:OutputDataTable sap2010:Annotation.AnnotationText="Creates a string output of the dt_WeightData" DataTable="[dt_WeightData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="586,111" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[pWeightOutput]">
+            <ui:OutputDataTable sap2010:Annotation.AnnotationText="Creates a string output of the dt_WeightData" DataTable="[dt_WeightData]" DisplayName="Output Data Table" sap:VirtualizedContainerService.HintSize="897,111" sap2010:WorkflowViewState.IdRef="OutputDataTable_2" Text="[pWeightOutput]">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:OutputDataTable>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,143" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ExtractDataTable.RowCount.ToString+&quot; rows extracted&quot;]" />
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the  data exctracted from the fitbit data table. " DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1055" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="897,143" sap2010:WorkflowViewState.IdRef="LogMessage_36" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[ExtractDataTable.RowCount.ToString+&quot; rows extracted&quot;]" />
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the  data exctracted from the fitbit data table. " DataTable="[ExtractDataTable]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="897,1246" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
               <ui:ForEachRow.Body>
                 <ActivityAction x:TypeArguments="sd:DataRow">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="521,838" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="528,1029" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage sap2010:Annotation.AnnotationText="Displays each column from the Fitbit data table row. &#xA; Row:number - Date:. Weight:.  Fat: " DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="479,185" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;. Row: &quot;+dt_WeightData.RowCount.ToString+&quot; - Date: &quot;+CurrentRow.Item(0).ToString+&quot;. Weight: &quot;+CurrentRow.Item(1).ToString+&quot;. Fat: &quot;+CurrentRow.Item(2).ToString]">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                    </ui:LogMessage>
-                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="479,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
+                    <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,375" sap2010:WorkflowViewState.IdRef="CommentOut_17">
+                      <ui:CommentOut.Body>
+                        <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,296" sap2010:WorkflowViewState.IdRef="Sequence_60">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <ui:LogMessage sap2010:Annotation.AnnotationText="Displays each column from the Fitbit data table row. &#xA; Row:number - Date:. Weight:.  Fat: " DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,185" sap2010:WorkflowViewState.IdRef="LogMessage_13" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;. Row: &quot;+dt_WeightData.RowCount.ToString+&quot; - Date: &quot;+CurrentRow.Item(0).ToString+&quot;. Weight: &quot;+CurrentRow.Item(1).ToString+&quot;. Fat: &quot;+CurrentRow.Item(2).ToString]">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:LogMessage>
+                        </Sequence>
+                      </ui:CommentOut.Body>
+                    </ui:CommentOut>
+                    <ui:MultipleAssign DisplayName="Multiple Assign" sap:VirtualizedContainerService.HintSize="486,178" sap2010:WorkflowViewState.IdRef="MultipleAssign_4">
                       <ui:MultipleAssign.AssignOperations>
                         <scg:List x:TypeArguments="ui:AssignOperation" Capacity="4">
                           <ui:AssignOperation sap2010:WorkflowViewState.IdRef="AssignOperation_4">
@@ -672,7 +679,7 @@
                         </scg:List>
                       </ui:MultipleAssign.AssignOperations>
                     </ui:MultipleAssign>
-                    <Assign sap:VirtualizedContainerService.HintSize="479,81" sap2010:WorkflowViewState.IdRef="Assign_3">
+                    <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_3">
                       <Assign.To>
                         <OutArgument x:TypeArguments="s:String[]">[pSplitRow]</OutArgument>
                       </Assign.To>
@@ -680,7 +687,7 @@
                         <InArgument x:TypeArguments="s:String[]">[{CurrentRow.Item(0).ToString, CurrentRow.Item(1).ToString, CurrentRow.Item(2).ToString}]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[pSplitRow]" DataTable="[dt_WeightData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="479,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
+                    <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[pSplitRow]" DataTable="[dt_WeightData]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="486,186" sap2010:WorkflowViewState.IdRef="AddDataRow_1" />
                   </Sequence>
                 </ActivityAction>
               </ui:ForEachRow.Body>
@@ -692,7 +699,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:ForEachRow>
-            <Assign sap:VirtualizedContainerService.HintSize="586,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+            <Assign sap:VirtualizedContainerService.HintSize="897,82" sap2010:WorkflowViewState.IdRef="Assign_5">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[out_DayFirst]</OutArgument>
               </Assign.To>
@@ -700,7 +707,7 @@
                 <InArgument x:TypeArguments="x:String">[pDate]</InArgument>
               </Assign.Value>
             </Assign>
-            <If sap2010:Annotation.AnnotationText="If any data extracted assign out_ProcessSuccess to True, otherwise assign it to False&#xA;" Condition="[dt_WeightData.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="586,1269" sap2010:WorkflowViewState.IdRef="If_3">
+            <If sap2010:Annotation.AnnotationText="If any data extracted assign out_ProcessSuccess to True, otherwise assign it to False&#xA;" Condition="[dt_WeightData.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="897,1269" sap2010:WorkflowViewState.IdRef="If_3">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
