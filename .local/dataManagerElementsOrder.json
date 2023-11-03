@@ -12,29 +12,11 @@
       "Path": "Main.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "dt_CalsAndNutritionData&Sequence_1",
-        "dt_WeightData&Sequence_1",
-        "pDayFirst&Sequence_1"
+        "pWeightProcessSuccess&Flowchart_1",
+        "pDayFirst&Flowchart_1",
+        "pPageOpen&Flowchart_1"
       ],
       "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
-      "Path": "Processes/ReadWeightData(Autosaved).xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "pWeightOutput&Sequence_2",
-        "pSplitRow&Sequence_2",
-        "dt_WeightData&Sequence_2",
-        "pDate&Sequence_2",
-        "pFat&Sequence_2",
-        "pWeight&Sequence_2",
-        "dt_temp&Sequence_2"
-      ],
-      "ArgumentsSectionElementsOrder": [
-        "out_dt_WeightData"
-      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -76,21 +58,12 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Processes/GoToWeightPage.xaml",
-      "SortBy": 0,
-      "VariablesSectionElementsOrder": [
-        "p_Dashboard_exists&Sequence_7",
-        "p_LoadMore_exists&Sequence_7",
-        "ClickMoreCounter&Sequence_7"
-      ],
-      "ArgumentsSectionElementsOrder": [],
-      "ConstantsSectionElementsOrder": [],
-      "AddedNamespaces": null
-    },
-    {
       "Path": "Processes/GetData/ReadWeightData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_TestingExtraction&Sequence_34",
+        "strRow&Sequence_37",
+        "arrRow&Sequence_37",
         "ExtractDataTable&Sequence_2",
         "exist_LoadMore&Sequence_2",
         "pDate&Sequence_2",
@@ -98,12 +71,11 @@
         "pSplitRow&Sequence_2",
         "dt_WeightData&Sequence_2",
         "pFat&Sequence_2",
-        "pWeight&Sequence_2",
-        "dt_temp&Sequence_2"
+        "pWeight&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
-        "out_DayFirst",
-        "out_dt_WeightData"
+        "out_ProcessSuccess",
+        "out_DayFirst"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -143,7 +115,9 @@
         "p_DashboardExists&Sequence_5",
         "p_SeeMoreBtn_exists&Sequence_6"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "out_PageOpen"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },
@@ -181,6 +155,14 @@
         "exist_LoadMore&Sequence_2",
         "exist_SleepPage&Sequence_2"
       ],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Processes/MergeTables.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null

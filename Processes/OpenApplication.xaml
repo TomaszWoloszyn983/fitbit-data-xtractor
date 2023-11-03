@@ -1,4 +1,12 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="OpenApplication" VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="896,2147" sap2010:WorkflowViewState.IdRef="OpenApplication_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="OpenApplication" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+  <x:Members>
+    <x:Property Name="out_PageOpen" Type="OutArgument(x:Boolean)" />
+  </x:Members>
+  <VisualBasic.Settings>
+    <x:Null />
+  </VisualBasic.Settings>
+  <sap:VirtualizedContainerService.HintSize>964,2622</sap:VirtualizedContainerService.HintSize>
+  <sap2010:WorkflowViewState.IdRef>OpenApplication_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
       <x:String>System.Activities</x:String>
@@ -95,19 +103,19 @@
       <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenApplication" sap:VirtualizedContainerService.HintSize="644,2082" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="OpenApplication" sap:VirtualizedContainerService.HintSize="668,2557" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="582,1971" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" IsCVEnabled="True" OpenMode="Always" ScopeGuid="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="606,2446" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="Always" ScopeGuid="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="548,1754" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,2229" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="p_DashboardExists" />
             </Sequence.Variables>
@@ -116,7 +124,7 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Dashboard'" sap:VirtualizedContainerService.HintSize="486,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[p_DashboardExists]" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Dashboard'" sap:VirtualizedContainerService.HintSize="510,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[p_DashboardExists]" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/" CvTextArea="384, 155, 76, 13" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="385, 153, 74, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl class='selected' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='selected' tag='A' type='' aaname='Dashboard' check:innerText='Dashboard' /&gt;" Guid="b9eef60d-117d-4741-8cdc-fa9b2e62d5b6" InformativeScreenshot="aee46324924e370bb60f8c5511e8ff9f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
@@ -127,9 +135,9 @@
                 </uix:TargetAnchorable>
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[p_DashboardExists]" DisplayName="If - Dashboard exists" sap:VirtualizedContainerService.HintSize="486,1442" sap2010:WorkflowViewState.IdRef="If_2">
+            <If Condition="[p_DashboardExists]" DisplayName="If - Dashboard exists" sap:VirtualizedContainerService.HintSize="510,1917" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="452,1260" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                <Sequence sap:VirtualizedContainerService.HintSize="476,1382" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="p_SeeMoreBtn_exists" />
                   </Sequence.Variables>
@@ -138,7 +146,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <uix:NHover DisplayName="Hover 'Fitbit'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
+                  <uix:NHover DisplayName="Hover 'Fitbit'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NHover_1" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
                     <uix:NHover.Target>
                       <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/" DesignTimeRectangle="514, 288, 845, 275" DesignTimeScaleFactor="1" FriendlyName="'Calories ?'" FullSelectorArgument="&lt;webctrl class='main' parentid='dash' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='main' parentid='dash' tag='DIV' type='' aaname='           ' /&gt;" Guid="b3772a6f-051c-4c79-af4a-8aec7fd2ddbc" InformativeScreenshot="040cbead65616fcfb85781ae17c0a16b.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -149,7 +157,7 @@
                       </uix:TargetAnchorable>
                     </uix:NHover.Target>
                   </uix:NHover>
-                  <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'See More'" sap:VirtualizedContainerService.HintSize="410,157" sap2010:WorkflowViewState.IdRef="NCheckElement_3" Result="[p_SeeMoreBtn_exists]" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
+                  <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'See More'" sap:VirtualizedContainerService.HintSize="434,157" sap2010:WorkflowViewState.IdRef="NCheckElement_3" Result="[p_SeeMoreBtn_exists]" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
                     <uix:NCheckElement.Target>
                       <uix:TargetAnchorable CvTextArea="1265, 580, 54, 11" CvTextArgument="See More" CvType="Text" DesignTimeRectangle="1137, 570, 204, 24" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'See More'" FullSelectorArgument="&lt;ctrl name='Fitbit Dashboard' role='document' /&gt;&lt;ctrl idx='2' name=' See More' role='link' /&gt;" FuzzySelectorArgument="&lt;ctrl name='Fitbit Dashboard' role='document' /&gt;&lt;ctrl automationid='' name=' See More' role='link' check:text='See More' /&gt;" Guid="70778990-1825-4445-99b1-28091c2874ba" InformativeScreenshot="36f7e89eea8ef0710f1e16f111bfad41.png" ScopeSelectorArgument="&lt;wnd app='chrome.exe' cls='Chrome_WidgetWin_1' title='Fitbit Dashboard - Google Chrome' /&gt;" SearchSteps="FuzzySelector, CV" SelectionStrategy="AA" Version="V2" Visibility="Interactive">
                         <uix:TargetAnchorable.Anchors>
@@ -160,7 +168,7 @@
                       </uix:TargetAnchorable>
                     </uix:NCheckElement.Target>
                   </uix:NCheckElement>
-                  <If Condition="[p_SeeMoreBtn_exists]" sap:VirtualizedContainerService.HintSize="410,778" sap2010:WorkflowViewState.IdRef="If_3">
+                  <If Condition="[p_SeeMoreBtn_exists]" sap:VirtualizedContainerService.HintSize="434,778" sap2010:WorkflowViewState.IdRef="If_3">
                     <If.Then>
                       <Sequence sap:VirtualizedContainerService.HintSize="376,365" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -183,10 +191,33 @@
                       </Sequence>
                     </If.Else>
                   </If>
+                  <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_1">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_PageOpen]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                    </Assign.Value>
+                  </Assign>
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_9" />
+                <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_9">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign out_PageOpen To False" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_2">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:Boolean">[out_PageOpen]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Page hasn't been opened properly.&quot;]" />
+                </Sequence>
               </If.Else>
             </If>
           </Sequence>
