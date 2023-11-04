@@ -1,5 +1,9 @@
 # fitbit-data-xtractor
-Application created to extract data and statistics from Fitbit website.
+A Bot created to extract data and statistics from Fitbit website.
+
+The  application uses Robotic Process Automation to extract data and statistics from Fitbit website and write retrieved data into an excel file.
+
+
 
 ![AmIResponsive](documentation/images/fitbit_dashboard.png)
 
@@ -8,9 +12,9 @@ Application created to extract data and statistics from Fitbit website.
 
 ## Features
 
-#### Read data from chosen sections of the Fitbit.com website.
-#### Write data to Excel files
-#### Synchronize all the extracted data and write them into one final excel table.
+- Extracts data such as Calories consumed and burned, nutritions, activites and sleep, from the Fitbit.com website.
+- Write data to Excel files
+- Synchronize all the extracted data and write them into one final excel table.
 
 ### Page
 
