@@ -42,9 +42,14 @@
     <sco:Collection x:TypeArguments="AssemblyReference">
       <AssemblyReference>Microsoft.VisualBasic</AssemblyReference>
       <AssemblyReference>mscorlib</AssemblyReference>
+      <AssemblyReference>NPOI</AssemblyReference>
       <AssemblyReference>System</AssemblyReference>
       <AssemblyReference>System.Activities</AssemblyReference>
+      <AssemblyReference>System.Collections</AssemblyReference>
+      <AssemblyReference>System.ComponentModel</AssemblyReference>
       <AssemblyReference>System.ComponentModel.TypeConverter</AssemblyReference>
+      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
+      <AssemblyReference>System.Console</AssemblyReference>
       <AssemblyReference>System.Core</AssemblyReference>
       <AssemblyReference>System.Data</AssemblyReference>
       <AssemblyReference>System.Data.Common</AssemblyReference>
@@ -53,50 +58,46 @@
       <AssemblyReference>System.Drawing.Common</AssemblyReference>
       <AssemblyReference>System.Drawing.Primitives</AssemblyReference>
       <AssemblyReference>System.Linq</AssemblyReference>
+      <AssemblyReference>System.Memory</AssemblyReference>
+      <AssemblyReference>System.Memory.Data</AssemblyReference>
       <AssemblyReference>System.Net.Mail</AssemblyReference>
       <AssemblyReference>System.ObjectModel</AssemblyReference>
       <AssemblyReference>System.Private.CoreLib</AssemblyReference>
+      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
+      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
+      <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
+      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
+      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
+      <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Xaml</AssemblyReference>
       <AssemblyReference>System.Xml</AssemblyReference>
       <AssemblyReference>System.Xml.Linq</AssemblyReference>
-      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
-      <AssemblyReference>System.Private.ServiceModel</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Formatters</AssemblyReference>
-      <AssemblyReference>System.Private.DataContractSerialization</AssemblyReference>
-      <AssemblyReference>System.Runtime.Serialization.Primitives</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
-      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
-      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
       <AssemblyReference>UiPath.OCR.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Platform</AssemblyReference>
-      <AssemblyReference>System.Reflection.DispatchProxy</AssemblyReference>
-      <AssemblyReference>System.Reflection.TypeExtensions</AssemblyReference>
-      <AssemblyReference>System.Reflection.Metadata</AssemblyReference>
+      <AssemblyReference>UiPath.Studio.Constants</AssemblyReference>
+      <AssemblyReference>UiPath.System.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.Testing.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UiAutomation.Activities</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationCore</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext</AssemblyReference>
+      <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Workflow</AssemblyReference>
-      <AssemblyReference>NPOI</AssemblyReference>
-      <AssemblyReference>UiPath.Excel.Activities.Design</AssemblyReference>
-      <AssemblyReference>System.Memory.Data</AssemblyReference>
-      <AssemblyReference>System.Console</AssemblyReference>
-      <AssemblyReference>System.Configuration.ConfigurationManager</AssemblyReference>
-      <AssemblyReference>System.Security.Permissions</AssemblyReference>
-      <AssemblyReference>System.ComponentModel</AssemblyReference>
-      <AssemblyReference>System.Memory</AssemblyReference>
-      <AssemblyReference>System.Private.Uri</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="The Activities Hitory section is very huge, and I don't know if I really want to dive into it. &#xD;&#xA;This section contains sub page with activity details.&#xD;&#xA;But what maybe the greatest problem here is that activities weren't loged in every day, and their dates do not contain years. So this may be very confusing.&#xD;&#xA;&#xD;&#xA;I leave it for know.&#xD;&#xA;" DisplayName="GetActivityTypes" sap:VirtualizedContainerService.HintSize="820,2974" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="The Activities Hitory section is very huge, and I don't know if I really want to dive into it. &#xA;This section contains sub page with activity details.&#xA;But what maybe the greatest problem here is that activities weren't loged in every day, and their dates do not contain years. So this may be very confusing.&#xA;&#xA;I leave it for know.&#xA;" DisplayName="GetActivityTypes" sap:VirtualizedContainerService.HintSize="820,2974" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="758,2746" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" IsCVEnabled="False" OpenMode="IfNotOpen" ScopeGuid="f43f06fc-429f-45ce-8b04-a261b4ba5129" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="Never" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="758,2746" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="f43f06fc-429f-45ce-8b04-a261b4ba5129" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
@@ -115,7 +116,7 @@
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvTextArea="354, 296, 178, 25" CvTextArgument="Activity History" CvType="Text" DesignTimeRectangle="356, 893, 875, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Activity History'" FullSelectorArgument="&lt;webctrl parentid='contentBody' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='contentBody' tag='H2' type='' class='' aaname='Activity History' check:innerText='Activity History' /&gt;" Guid="238eef6b-51bb-4db7-9bb6-c284952d407a" InformativeScreenshot="70e903508b4ca2495f6b6c251f7a8878.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                   <uix:TargetAnchorable.Anchors>
-                    <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                    <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                       <uix:Target CvElementArea="405, 239, 114, 42" CvTextArea="414, 248, 96, 22" CvTextArgument="Activities" CvType="Button" DesignTimeRectangle="407, 241, 111, 39" ElementType="Text" FriendlyName="'Activities'" FullSelectorArgument="&lt;webctrl aaname='                     Activities                 ' parentid='trackerNav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='                     Activities                 ' parentid='trackerNav' tag='SPAN' type='' class='' check:innerText='Activities' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHMAAAArCAYAAABLnrd8AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAATnSURBVHhe7VjPa1QxEPZ/6j+y/0DBkwdvXgs9iJ4KFSrCHhTBw5ZCodhDoVhQBAWloKCIFFYKhRWKhUWhh5aF+M3bfOm8NHnd96PFjRn4WDaZl2Tmm0wmuXV+fm4y0kAmMyE4Ms3CnYw5RSYzIWQyE0ImMyFkMhNCJjMhZDITQiYzIWQyE0ImMyF0T+buL+Nk91FYpykW140Z/jRm1Ws/tPNte+2zYvX79Ps/+NXtvWfG7MOeLdUmaDvfNaFjMmH8iTVU5OhjQKcpQORYBj29OTKH0+ZL4/4XZN7/OjVydFT43JjfaAvoNcImnC1jBsi8LvyjpMXQLZn7BYP4heM/YyyRzy/DurWRybwKHZIJ0gouMUYf//s/Cj+YCXZpUJ9YMmaAHT225IucYaBvSNGLVmcb52RI6OSS03FOY8pC9iJnNtPqKdao/zPN8r8vEqTSX0XyCtZ9jPVPrM4Edh3CviXY6euGbK/Ur0Z3ZA6sB+kgt5MgG7GFPca5pAwZgbQhCg464g/G6kGv/6ncfiR6gASNjOM7l0XYCN+V5rNgBmHW8Mlcfjcd36qZYzvfFmoC6Y+RqYNujDXIN8U5D5ngyFnz/PAabUUffFDYrvRlcl//CnREJiY9sGt4/+Ki/b1dbKwQotPPYISOxB6KndG06yJNV6RZ37k9kFEIxr+r9ApwHNjKYIgVQDHSQu1uN2N9LxCkTh927dFOBLwEZ9H+ygYn+u6xzeoz2GoWkN2Q6ZznFTwsiIKFEEhn5RvauZKmJWJP6OAaZOrg8lMtne4yiGprTKaaj6m4BJDL4OR1LTan4C4yishYrXEGdEMmd9gJyCv1YeGXdpgFF2ywK120VqEOmcCGTft+dOsijW2tyeQuw9hrSk/jrc1SQwR+0cZvpA2+eBg532ugAzIVYaGCg0TrnSCoiswgapLZe3ORxlyqZTbwxmhL5jIzEPwn514Ix+gT0XPwGKJMsK4h+p9jnTMFeBntyXSpdAbR6ZTFwnWRKWDq27bzcq1+BmlLJr+fRUpzYF1PsSul+vVFiN3QZ+/VaE8mo0vOt9MIXBWqUt5170wBK+xDm9q4Vl2kCdqSuWK/lyND69VBD1ntCbLJN6yR/qr56NKSTN4tIVXvsDy/9OJcaoo5AGfKGbpP0X9b/jcgc2HHrg9j9JhiAw5qS+YCC8DA2pqgR1shsbtyAO3I5MPAlUUMnQpxu0ItOFTNPrVjOwc3IRP4AptEdiMpVtCaTDic8foFtmpdQl7EJHsd2Cwhx4wEK7OGD85xY2TyTDpAegj1a/B5TxdCsXvmInY8L897PDfQT4cNrB5RRSYDTtK9yFt78deIkcnK1/8mNB+DT4Jt09Pv2/GlQBp457fo9x+U9ZdY6d9UmnXVIiT6wqNAh4k4fRB1wC0L8V+A/KhlQJzBSKkQYy9AJaijIPiIAMTIZLAVVSbmq3wBgk28fojwBYhVrEjpDgp9BosI9UeqLXhnjaM5mc5QbJeZymieWZDS3Q9GbcKJ/tvszrrSsbiHc3Sk9D5YnUoyATot9rwXI1NeoobKubwjVs3nv82KjEHSIJARxHb/bVYkql+N5mRm/HPIZCaETGZCyGQmhExmQshkJoRMZkLIZCaETGZCyGQmhExmQshkJoRLZM4rQsY1RWj8ecLckykIEVMXoXHnC+fmL4HdK9TzaeIsAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
                     </scg:List>
                   </uix:TargetAnchorable.Anchors>
@@ -139,7 +140,7 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="586,1947" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                  <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[existsButton]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="586,1947" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                     <ui:InterruptibleDoWhile.Body>
                       <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1811" sap2010:WorkflowViewState.IdRef="Sequence_7">
                         <sap:WorkflowViewStateService.ViewState>
@@ -163,7 +164,7 @@
                           <uix:NCheckElement.Target>
                             <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" DesignTimeRectangle="638, 393, 164, 23" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Load 10 more'" FullSelectorArgument="&lt;webctrl aaname='Load 10 more' parentid='contentBody' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Load 10 more' parentid='contentBody' tag='SPAN' type='' class='' check:innerText='Load 10 more' /&gt;" Guid="89e56241-f9f4-466f-952a-223989ef0c61" InformativeScreenshot="f47f7de8a3719423df1344c829299dd8.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                               <uix:TargetAnchorable.Anchors>
-                                <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                   <uix:Target DesignTimeRectangle="283, 498, 156, 28" ElementType="Text" FriendlyName="'Log Activities'" FullSelectorArgument="&lt;webctrl idx='2' parentid='contentBody' tag='H2' /&gt;" FuzzySelectorArgument="&lt;webctrl type='' parentid='contentBody' tag='H2' class='' aaname='Log Activities' check:innerText='Log Activities' /&gt;" SearchSteps="FuzzySelector" />
                                 </scg:List>
                               </uix:TargetAnchorable.Anchors>
@@ -184,7 +185,7 @@
                                 <uix:NClick.Target>
                                   <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvTextArea="741, 788, 105, 15" CvTextArgument="Load 10 more" CvType="Text" DesignTimeRectangle="711, 393, 164, 23" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Load 10 more'" FullSelectorArgument="&lt;webctrl aaname='Load 10 more' parentid='contentBody' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl aaname='Load 10 more' parentid='contentBody' tag='SPAN' type='' class='' check:innerText='Load 10 more' /&gt;" Guid="2bc15f9f-2fa3-40de-a32e-0b285c75957c" InformativeScreenshot="6c8070741d11e6825a5f49f095b296e0.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                                     <uix:TargetAnchorable.Anchors>
-                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="4">
+                                      <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
                                         <uix:Target CvTextArea="355, 501, 157, 26" CvTextArgument="Log Activities" CvType="Text" DesignTimeRectangle="355, 501, 157, 25" ElementType="Text" FriendlyName="'Log Activities'" SearchSteps="CV" TargetType="ComputerVisionBased" />
                                       </scg:List>
                                     </uix:TargetAnchorable.Anchors>
@@ -215,9 +216,6 @@
                         </If>
                       </Sequence>
                     </ui:InterruptibleDoWhile.Body>
-                    <ui:InterruptibleDoWhile.Condition>
-                      <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="existsButton" />
-                    </ui:InterruptibleDoWhile.Condition>
                   </ui:InterruptibleDoWhile>
                 </Sequence>
               </If.Then>

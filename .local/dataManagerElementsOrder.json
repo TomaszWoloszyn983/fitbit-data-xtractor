@@ -61,6 +61,7 @@
       "Path": "Processes/GetData/ReadWeightData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "clickCounter&Sequence_18",
         "dt_TestingExtraction&Sequence_34",
         "strRow&Sequence_37",
         "arrRow&Sequence_37",
