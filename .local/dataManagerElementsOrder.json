@@ -51,7 +51,6 @@
         "exists_FoodTab&Sequence_3"
       ],
       "ArgumentsSectionElementsOrder": [
-        "out_CalsAndNutritionData",
         "in_StartDate"
       ],
       "ConstantsSectionElementsOrder": [],
@@ -61,8 +60,8 @@
       "Path": "Processes/GetData/ReadWeightData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_TestingExtraction&Sequence_2",
         "clickCounter&Sequence_18",
-        "dt_TestingExtraction&Sequence_34",
         "strRow&Sequence_37",
         "arrRow&Sequence_37",
         "ExtractDataTable&Sequence_2",
@@ -162,6 +161,14 @@
     },
     {
       "Path": "Processes/MergeTables.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Processes/CloseAllApplication.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
