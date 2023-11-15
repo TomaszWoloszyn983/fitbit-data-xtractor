@@ -160,7 +160,7 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Processes/MergeTables.xaml",
+      "Path": "Processes/CloseAllApplication.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [],
       "ArgumentsSectionElementsOrder": [],
@@ -168,10 +168,28 @@
       "AddedNamespaces": null
     },
     {
-      "Path": "Processes/CloseAllApplication.xaml",
+      "Path": "Processes/MergeTables.xaml",
       "SortBy": 0,
-      "VariablesSectionElementsOrder": [],
-      "ArgumentsSectionElementsOrder": [],
+      "VariablesSectionElementsOrder": [
+        "dt_testDates&Sequence_1",
+        "startDate&Sequence_26",
+        "intNumberOfDays&Sequence_26",
+        "listOfDays&Sequence_26",
+        "CurrentDate&Sequence_26",
+        "dt_ConvertedTable&Sequence_70",
+        "tempCounter&Sequence_70",
+        "tempData&Sequence_71",
+        "tempFat&Sequence_71",
+        "tempWeight&Sequence_71",
+        "counterTemp&Sequence_14",
+        "dt_finalTable&Sequence_1",
+        "listOfDates&Sequence_1",
+        "dt_testWeight&Sequence_1",
+        "dt_joined&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "in_startDate"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     }
