@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,1634</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,1755</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MergeTables_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MergeTables" sap:VirtualizedContainerService.HintSize="512,1569" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MergeTables" sap:VirtualizedContainerService.HintSize="512,1690" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_finalTable" />
       <Variable x:TypeArguments="s:DateTime" Name="date_TodaysDate" />
@@ -166,6 +166,7 @@
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_106" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate and assign Date column sequence started&quot;]" />
       <Assign DisplayName="Assign Start Date" sap:VirtualizedContainerService.HintSize="510,82" sap2010:WorkflowViewState.IdRef="Assign_10">
         <Assign.To>
           <OutArgument x:TypeArguments="s:DateTime">[startDate]</OutArgument>
@@ -331,10 +332,9 @@
           </ui:ForEach.Body>
         </ui:ForEach>
       </Sequence>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;The list of days contains &quot;+listOfDates.Count.ToString+&quot; records.&quot;]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_64" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;The list dt_joined contains &quot;+dt_joined.RowCount.ToString+&quot; records.&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_107" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate and assign Date column sequence Complete. &quot;+dt_Dates.RowCount.ToString+&quot; rows created.&quot;]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Reads data from the Weight Data excel file&#xA;&#xA;Build dt_ConvertedTable data table&#xA;&#xA;Join the Weight data table to the final output excel file.&#xA;&#xA;" DisplayName="Process Weight Data" sap:VirtualizedContainerService.HintSize="450,198" sap2010:WorkflowViewState.IdRef="Sequence_143">
+    <Sequence sap2010:Annotation.AnnotationText="Reads data from the Weight Data excel file&#xA;&#xA;Build dt_ConvertedTable data table&#xA;&#xA;Join the Weight data table to the final output excel file.&#xA;&#xA;" DisplayName="Process Weight Data" sap:VirtualizedContainerService.HintSize="450,198" sap2010:WorkflowViewState.IdRef="Sequence_152">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counterTemp" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_Weight" />
@@ -346,6 +346,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,141" sap2010:WorkflowViewState.IdRef="LogMessage_104" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Weight Data sequence started&quot;]" />
       <Sequence sap2010:Annotation.AnnotationText="Read Weight Data from excel file and assign them to dt_ConvertedTable&#xA;&#xA;Create dt_testWeight data table to assign weight data converted into correct formats.&#xA;&#xA;Returns dt_testWeight" DisplayName="Read Weight Data from file" sap:VirtualizedContainerService.HintSize="496,1365" sap2010:WorkflowViewState.IdRef="Sequence_70">
         <Sequence.Variables>
           <Variable x:TypeArguments="sd:DataTable" Name="dt_ConvertedTable" />
@@ -565,7 +566,7 @@
         </ui:ForEachRow>
         <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_50" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_Weight.RowCount.ToString+&quot; items have been converted and  assigned to dt_Weight data table.&quot;]" />
       </Sequence>
-      <ui:JoinDataTables sap2010:Annotation.AnnotationText="Join dt_test and dt_WeightTest tables&#xA;&#xA;Return dt_joined" DataTable1="[dt_Dates]" DataTable2="[dt_Weight]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="496,117" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Left" OutputDataTable="[dt_joined]">
+      <ui:JoinDataTables sap2010:Annotation.AnnotationText="Join dt_test and dt_WeightTest tables&#xA;&#xA;Return dt_joined" DataTable1="[dt_Dates]" DataTable2="[dt_Weight]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="496,117" sap2010:WorkflowViewState.IdRef="JoinDataTables_1" JoinType="Full" OutputDataTable="[dt_joined]">
         <ui:JoinDataTables.Arguments>
           <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
             <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -592,213 +593,9 @@
         </ui:SortDataTable.ColumnIndex>
       </ui:SortDataTable>
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="496,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,141" sap2010:WorkflowViewState.IdRef="LogMessage_12" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Run the list of date loop to add items to test list&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,141" sap2010:WorkflowViewState.IdRef="LogMessage_105" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Weight Data sequence started&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Process Nutrition Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_142">
-      <Sequence.Variables>
-        <Variable x:TypeArguments="sd:DataTable" Name="dt_NutritionData" />
-        <Variable x:TypeArguments="sd:DataTable" Name="dt_NutritionData2" />
-        <Variable x:TypeArguments="x:Int32" Name="tempCounter" />
-      </Sequence.Variables>
-      <sap:WorkflowViewStateService.ViewState>
-        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-          <x:Boolean x:Key="IsPinned">False</x:Boolean>
-        </scg:Dictionary>
-      </sap:WorkflowViewStateService.ViewState>
-      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_NutritionData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="562,88" sap2010:WorkflowViewState.IdRef="ReadRange_7" SheetName="Sheet1" WorkbookPath="Data\Temp\Nutritions Data.xlsx" />
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,314" sap2010:WorkflowViewState.IdRef="CommentOut_46">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,235" sap2010:WorkflowViewState.IdRef="Sequence_138">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="It's only here to check the Nutrition Date value formats&#xA;&#xA;It can be deleted after" DataTable="[dt_joined]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,124" sap2010:WorkflowViewState.IdRef="ForEachRow_23">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_105">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_71" Message="[&quot;Joined Date format: &quot;+CurrentRow.item(0).ToString]" />
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEachRow.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:ForEachRow>
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_NutritionData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="562,799" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
-        <ui:ForEachRow.Body>
-          <ActivityAction x:TypeArguments="sd:DataRow">
-            <ActivityAction.Argument>
-              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
-            </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="528,541" sap2010:WorkflowViewState.IdRef="Sequence_88">
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-              <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_35">
-                <Assign.To>
-                  <OutArgument x:TypeArguments="x:Object">[CurrentRow(0)]</OutArgument>
-                </Assign.To>
-                <Assign.Value>
-                  <InArgument x:TypeArguments="s:DateTime">[CDate(CurrentRow.item(0).ToString+" 00:00:00")]</InArgument>
-                </Assign.Value>
-              </Assign>
-              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,331" sap2010:WorkflowViewState.IdRef="CommentOut_47">
-                <ui:CommentOut.Body>
-                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_139">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_96" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sample data: &quot;+CurrentRow.item(0).ToString+&quot; - &quot;+CurrentRow.item(1).ToString+&quot; - &quot;+CurrentRow.item(2).ToString+&quot; - &quot;+CurrentRow.item(3).ToString+&quot; - &quot;+CurrentRow.item(4).ToString+&quot; - &quot;+CurrentRow.item(5).ToString+&quot; - &quot;+CurrentRow.item(6).ToString+&quot; - &quot;+CurrentRow.item(7).ToString+&quot; - &quot;+CurrentRow.item(8).ToString+&quot; - &quot;+CurrentRow.item(9).ToString+&quot; - &quot;+CurrentRow.item(10).ToString]" />
-                  </Sequence>
-                </ui:CommentOut.Body>
-              </ui:CommentOut>
-            </Sequence>
-          </ActivityAction>
-        </ui:ForEachRow.Body>
-        <sap:WorkflowViewStateService.ViewState>
-          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-            <x:Boolean x:Key="IsPinned">False</x:Boolean>
-          </scg:Dictionary>
-        </sap:WorkflowViewStateService.ViewState>
-      </ui:ForEachRow>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_61" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_NutritionData.RowCount.ToString+&quot; rows have been extracted from Nutrition Data file&quot;]" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_63" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Joined table contains: &quot;+dt_joined.RowCount.ToString+&quot; rows.&quot;]" />
-      <Assign sap:VirtualizedContainerService.HintSize="562,81" sap2010:WorkflowViewState.IdRef="Assign_32">
-        <Assign.To>
-          <OutArgument x:TypeArguments="x:Int32">[tempCounter]</OutArgument>
-        </Assign.To>
-        <Assign.Value>
-          <InArgument x:TypeArguments="x:Int32">0</InArgument>
-        </Assign.Value>
-      </Assign>
-      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,510" sap2010:WorkflowViewState.IdRef="CommentOut_38">
-        <ui:CommentOut.Body>
-          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,431" sap2010:WorkflowViewState.IdRef="Sequence_118">
-            <sap:WorkflowViewStateService.ViewState>
-              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-              </scg:Dictionary>
-            </sap:WorkflowViewStateService.ViewState>
-            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This function correctly finds matching elements&#xA; But the date in joined dt must be converted, because it contains TIme as well." DataTable="[dt_NutritionData]" DisplayName="For Each Row in Data Table - Find elements matching by dates" sap:VirtualizedContainerService.HintSize="388,139" sap2010:WorkflowViewState.IdRef="ForEachRow_17">
-              <ui:ForEachRow.Body>
-                <ActivityAction x:TypeArguments="sd:DataRow">
-                  <ActivityAction.Argument>
-                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentCals" />
-                  </ActivityAction.Argument>
-                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,894" sap2010:WorkflowViewState.IdRef="Sequence_100">
-                    <sap:WorkflowViewStateService.ViewState>
-                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                      </scg:Dictionary>
-                    </sap:WorkflowViewStateService.ViewState>
-                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_joined]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,806" sap2010:WorkflowViewState.IdRef="ForEachRow_14">
-                      <ui:ForEachRow.Body>
-                        <ActivityAction x:TypeArguments="sd:DataRow">
-                          <ActivityAction.Argument>
-                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentJoin" />
-                          </ActivityAction.Argument>
-                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,620" sap2010:WorkflowViewState.IdRef="Sequence_97">
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_75" Message="[&quot;Comparing cals: &quot;+CurrentCals.item(0).ToString+&quot; and joins: &quot;+ CurrentJoin.item(0).ToString]" />
-                            <If Condition="[CurrentCals.item(0).ToString =  (CurrentJoin.item(0).ToString.Split(&quot; &quot;)(0))]" sap:VirtualizedContainerService.HintSize="510,351" sap2010:WorkflowViewState.IdRef="If_11">
-                              <If.Then>
-                                <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_98">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_33">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Int32">[tempCounter]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Int32">[tempCounter + 1]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                </Sequence>
-                              </If.Then>
-                              <If.Else>
-                                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_99">
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                </Sequence>
-                              </If.Else>
-                            </If>
-                          </Sequence>
-                        </ActivityAction>
-                      </ui:ForEachRow.Body>
-                    </ui:ForEachRow>
-                  </Sequence>
-                </ActivityAction>
-              </ui:ForEachRow.Body>
-              <sap:WorkflowViewStateService.ViewState>
-                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                </scg:Dictionary>
-              </sap:WorkflowViewStateService.ViewState>
-            </ui:ForEachRow>
-            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_66" Message="[tempCounter.ToString+&quot; elements found&quot;]" />
-          </Sequence>
-        </ui:CommentOut.Body>
-      </ui:CommentOut>
-      <ui:JoinDataTables DataTable1="[dt_joined]" DataTable2="[dt_NutritionData]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="510,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Left" OutputDataTable="[dt_joined]">
-        <ui:JoinDataTables.Arguments>
-          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
-            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
-              <ui:JoinOperationArgument.Column1>
-                <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
-              </ui:JoinOperationArgument.Column1>
-              <ui:JoinOperationArgument.Column2>
-                <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
-              </ui:JoinOperationArgument.Column2>
-            </ui:JoinOperationArgument>
-          </scg:List>
-        </ui:JoinDataTables.Arguments>
-      </ui:JoinDataTables>
-      <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" DataTable="[dt_joined]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="510,80" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Decending" OutputDataTable="[dt_joined]" SortOrder="Descending">
-        <ui:SortDataTable.ColumnIndex>
-          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
-            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
-          </InArgument>
-        </ui:SortDataTable.ColumnIndex>
-      </ui:SortDataTable>
-      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="510,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3" />
-    </Sequence>
-    <Sequence DisplayName="Process Activity Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_120">
+    <Sequence DisplayName="Process Activity Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_154">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_ActivityData" />
         <Variable x:TypeArguments="x:Int32" Name="int_StartYear" />
@@ -810,7 +607,7 @@
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699,141" sap2010:WorkflowViewState.IdRef="LogMessage_85" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Merge Activity Table sequence started&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699,141" sap2010:WorkflowViewState.IdRef="LogMessage_85" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Activity Table sequence started&quot;]" />
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_ActivityData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="699,88" sap2010:WorkflowViewState.IdRef="ReadRange_8" SheetName="Sheet1" WorkbookPath="Data\Temp\Activities Data.xlsx" />
       <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="699,52" sap2010:WorkflowViewState.IdRef="CommentOut_39">
         <ui:CommentOut.Body>
@@ -862,7 +659,7 @@
           <InArgument x:TypeArguments="x:Int32">[CInt(startDate.ToString("yyyy"))]</InArgument>
         </Assign.Value>
       </Assign>
-      <Assign sap2010:Annotation.AnnotationText="This flag defines of int_StartDate is allowed to be incremented.&#xD;&#xA;It is set to flase when the year was incemented and set back to True when the month is 'Dec'." sap:VirtualizedContainerService.HintSize="699,139" sap2010:WorkflowViewState.IdRef="Assign_39">
+      <Assign sap2010:Annotation.AnnotationText="This flag defines of int_StartDate is allowed to be incremented.&#xA;It is set to flase when the year was incemented and set back to True when the month is 'Dec'." sap:VirtualizedContainerService.HintSize="699,139" sap2010:WorkflowViewState.IdRef="Assign_39">
         <Assign.To>
           <OutArgument x:TypeArguments="x:Boolean">[flag_January]</OutArgument>
         </Assign.To>
@@ -906,7 +703,7 @@
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:IfElseIf sap2010:Annotation.AnnotationText="This activity genrates the current year.&#xD;&#xA;&#xD;&#xA;int_StartDay represents the year of the first record that was extracted by this application&#xD;&#xA;&#xD;&#xA;flag_January is a boolean variable that defines if the int)StartDate can be incremented&#xD;&#xA;&#xD;&#xA;The year is incremented when two conditions are met. &#xD;&#xA;The month is 'Jan' and the flag is True." DisplayName="Else If first day of January increment the startYear var" sap:VirtualizedContainerService.HintSize="547,1143" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+                    <ui:IfElseIf sap2010:Annotation.AnnotationText="This activity genrates the current year.&#xA;&#xA;int_StartDay represents the year of the first record that was extracted by this application&#xA;&#xA;flag_January is a boolean variable that defines if the int)StartDate can be incremented&#xA;&#xA;The year is incremented when two conditions are met. &#xA;The month is 'Jan' and the flag is True." DisplayName="Else If first day of January increment the startYear var" sap:VirtualizedContainerService.HintSize="547,1143" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
                       <ui:IfElseIf.ConditionBlocks>
                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                           <ui:IfElseIfBlock BlockType="If" Condition="[(arr_Date(2).Trim = &quot;Jan&quot;) And  (flag_January)]">
@@ -1028,7 +825,7 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699,141" sap2010:WorkflowViewState.IdRef="LogMessage_80" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_ActivityData.RowCount.ToString+&quot; rows have been extracted from Nutrition Data file&quot;]" />
-      <ui:JoinDataTables DataTable1="[dt_joined]" DataTable2="[dt_ActivityData]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="699,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_3" JoinType="Left" OutputDataTable="[dt_joined]">
+      <ui:JoinDataTables DataTable1="[dt_joined]" DataTable2="[dt_ActivityData]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="699,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_3" JoinType="Full" OutputDataTable="[dt_joined]">
         <ui:JoinDataTables.Arguments>
           <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
             <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
@@ -1050,7 +847,322 @@
         </ui:SortDataTable.ColumnIndex>
       </ui:SortDataTable>
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="699,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_4" />
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699,141" sap2010:WorkflowViewState.IdRef="LogMessage_86" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Merge Activity Table sequence completed&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699,141" sap2010:WorkflowViewState.IdRef="LogMessage_86" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Activity Table sequence completed&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Process Nutrition Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_153">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_NutritionData" />
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_NutritionData2" />
+        <Variable x:TypeArguments="x:Int32" Name="tempCounter" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_102" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Nutrition Data sequence started&quot;]" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_NutritionData]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="562,88" sap2010:WorkflowViewState.IdRef="ReadRange_7" SheetName="Sheet1" WorkbookPath="Data\Temp\Nutritions Data.xlsx" />
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,314" sap2010:WorkflowViewState.IdRef="CommentOut_46">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,235" sap2010:WorkflowViewState.IdRef="Sequence_138">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="It's only here to check the Nutrition Date value formats&#xA;&#xA;It can be deleted after" DataTable="[dt_joined]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="388,124" sap2010:WorkflowViewState.IdRef="ForEachRow_23">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_105">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_71" Message="[&quot;Joined Date format: &quot;+CurrentRow.item(0).ToString]" />
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_NutritionData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="562,799" sap2010:WorkflowViewState.IdRef="ForEachRow_20">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="528,541" sap2010:WorkflowViewState.IdRef="Sequence_88">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <Assign sap:VirtualizedContainerService.HintSize="486,82" sap2010:WorkflowViewState.IdRef="Assign_35">
+                <Assign.To>
+                  <OutArgument x:TypeArguments="x:Object">[CurrentRow(0)]</OutArgument>
+                </Assign.To>
+                <Assign.Value>
+                  <InArgument x:TypeArguments="s:DateTime">[CDate(CurrentRow.item(0).ToString+" 00:00:00")]</InArgument>
+                </Assign.Value>
+              </Assign>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="486,331" sap2010:WorkflowViewState.IdRef="CommentOut_47">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_139">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_96" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sample data: &quot;+CurrentRow.item(0).ToString+&quot; - &quot;+CurrentRow.item(1).ToString+&quot; - &quot;+CurrentRow.item(2).ToString+&quot; - &quot;+CurrentRow.item(3).ToString+&quot; - &quot;+CurrentRow.item(4).ToString+&quot; - &quot;+CurrentRow.item(5).ToString+&quot; - &quot;+CurrentRow.item(6).ToString+&quot; - &quot;+CurrentRow.item(7).ToString+&quot; - &quot;+CurrentRow.item(8).ToString+&quot; - &quot;+CurrentRow.item(9).ToString+&quot; - &quot;+CurrentRow.item(10).ToString]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_61" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_NutritionData.RowCount.ToString+&quot; rows have been extracted from Nutrition Data file&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_63" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Joined table contains: &quot;+dt_joined.RowCount.ToString+&quot; rows.&quot;]" />
+      <Assign sap:VirtualizedContainerService.HintSize="562,82" sap2010:WorkflowViewState.IdRef="Assign_32">
+        <Assign.To>
+          <OutArgument x:TypeArguments="x:Int32">[tempCounter]</OutArgument>
+        </Assign.To>
+        <Assign.Value>
+          <InArgument x:TypeArguments="x:Int32">0</InArgument>
+        </Assign.Value>
+      </Assign>
+      <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="562,510" sap2010:WorkflowViewState.IdRef="CommentOut_38">
+        <ui:CommentOut.Body>
+          <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,431" sap2010:WorkflowViewState.IdRef="Sequence_118">
+            <sap:WorkflowViewStateService.ViewState>
+              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+              </scg:Dictionary>
+            </sap:WorkflowViewStateService.ViewState>
+            <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="This function correctly finds matching elements&#xA; But the date in joined dt must be converted, because it contains TIme as well." DataTable="[dt_NutritionData]" DisplayName="For Each Row in Data Table - Find elements matching by dates" sap:VirtualizedContainerService.HintSize="388,139" sap2010:WorkflowViewState.IdRef="ForEachRow_17">
+              <ui:ForEachRow.Body>
+                <ActivityAction x:TypeArguments="sd:DataRow">
+                  <ActivityAction.Argument>
+                    <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentCals" />
+                  </ActivityAction.Argument>
+                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,894" sap2010:WorkflowViewState.IdRef="Sequence_100">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_joined]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,806" sap2010:WorkflowViewState.IdRef="ForEachRow_14">
+                      <ui:ForEachRow.Body>
+                        <ActivityAction x:TypeArguments="sd:DataRow">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentJoin" />
+                          </ActivityAction.Argument>
+                          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,620" sap2010:WorkflowViewState.IdRef="Sequence_97">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_75" Message="[&quot;Comparing cals: &quot;+CurrentCals.item(0).ToString+&quot; and joins: &quot;+ CurrentJoin.item(0).ToString]" />
+                            <If Condition="[CurrentCals.item(0).ToString =  (CurrentJoin.item(0).ToString.Split(&quot; &quot;)(0))]" sap:VirtualizedContainerService.HintSize="510,351" sap2010:WorkflowViewState.IdRef="If_11">
+                              <If.Then>
+                                <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_98">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                  <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_33">
+                                    <Assign.To>
+                                      <OutArgument x:TypeArguments="x:Int32">[tempCounter]</OutArgument>
+                                    </Assign.To>
+                                    <Assign.Value>
+                                      <InArgument x:TypeArguments="x:Int32">[tempCounter + 1]</InArgument>
+                                    </Assign.Value>
+                                  </Assign>
+                                </Sequence>
+                              </If.Then>
+                              <If.Else>
+                                <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_99">
+                                  <sap:WorkflowViewStateService.ViewState>
+                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    </scg:Dictionary>
+                                  </sap:WorkflowViewStateService.ViewState>
+                                </Sequence>
+                              </If.Else>
+                            </If>
+                          </Sequence>
+                        </ActivityAction>
+                      </ui:ForEachRow.Body>
+                    </ui:ForEachRow>
+                  </Sequence>
+                </ActivityAction>
+              </ui:ForEachRow.Body>
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                  <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:ForEachRow>
+            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_66" Message="[tempCounter.ToString+&quot; elements found&quot;]" />
+          </Sequence>
+        </ui:CommentOut.Body>
+      </ui:CommentOut>
+      <ui:JoinDataTables DataTable1="[dt_joined]" DataTable2="[dt_NutritionData]" DisplayName="Join Data Tables" sap:VirtualizedContainerService.HintSize="562,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_2" JoinType="Full" OutputDataTable="[dt_joined]">
+        <ui:JoinDataTables.Arguments>
+          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+          </scg:List>
+        </ui:JoinDataTables.Arguments>
+      </ui:JoinDataTables>
+      <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" DataTable="[dt_joined]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="562,80" sap2010:WorkflowViewState.IdRef="SortDataTable_3" Order="Decending" OutputDataTable="[dt_joined]" SortOrder="Descending">
+        <ui:SortDataTable.ColumnIndex>
+          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+          </InArgument>
+        </ui:SortDataTable.ColumnIndex>
+      </ui:SortDataTable>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="562,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_103" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Nutrition Data sequence started&quot;]" />
+    </Sequence>
+    <Sequence DisplayName="Process Sleep Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_157">
+      <Sequence.Variables>
+        <Variable x:TypeArguments="sd:DataTable" Name="dt_SleepDataFromFile" />
+      </Sequence.Variables>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsPinned">False</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_100" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Sleep Data sequence started&quot;]" />
+      <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_SleepDataFromFile]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_9" SheetName="Sheet1" WorkbookPath="Data\Temp\Sleep Data.xlsx" />
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_SleepDataFromFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1420" sap2010:WorkflowViewState.IdRef="ForEachRow_24">
+        <ui:ForEachRow.Body>
+          <ActivityAction x:TypeArguments="sd:DataRow">
+            <ActivityAction.Argument>
+              <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentSleepRow" />
+            </ActivityAction.Argument>
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1162" sap2010:WorkflowViewState.IdRef="Sequence_148">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+              <If Condition="[IsNumeric(CurrentSleepRow.Item(0).ToString.Substring(0,2))]" sap:VirtualizedContainerService.HintSize="510,703" sap2010:WorkflowViewState.IdRef="If_14">
+                <If.Then>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_149">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[CurrentSleepRow(0)]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:DateTime">[CDate(CurrentSleepRow.item(0).ToString+" 00:00:00")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Then>
+                <If.Else>
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_110" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Sample data is not numeric: &quot;+CurrentSleepRow.item(0).ToString+&quot;. Default todays date will be assigned to this element.&quot;]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_52">
+                      <Assign.To>
+                        <OutArgument x:TypeArguments="x:Object">[CurrentSleepRow(0)]</OutArgument>
+                      </Assign.To>
+                      <Assign.Value>
+                        <InArgument x:TypeArguments="s:DateTime">[CDate(date_TodaysDate.ToShortDateString+" 00:00:00")]</InArgument>
+                      </Assign.Value>
+                    </Assign>
+                  </Sequence>
+                </If.Else>
+              </If>
+              <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="510,331" sap2010:WorkflowViewState.IdRef="CommentOut_54">
+                <ui:CommentOut.Body>
+                  <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,252" sap2010:WorkflowViewState.IdRef="Sequence_158">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_108" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sample data: &quot;+CurrentSleepRow.item(0).ToString+&quot; - &quot;+CurrentSleepRow.item(1).ToString+&quot; - &quot;+CurrentSleepRow.item(2).ToString+&quot; - &quot;+CurrentSleepRow.item(3).ToString]" />
+                  </Sequence>
+                </ui:CommentOut.Body>
+              </ui:CommentOut>
+            </Sequence>
+          </ActivityAction>
+        </ui:ForEachRow.Body>
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:ForEachRow>
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_97" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_SleepDataFromFile.RowCount.ToString+&quot; rows have been extracted from Sleep Data file&quot;]" />
+      <ui:JoinDataTables DataTable1="[dt_joined]" DataTable2="[dt_SleepDataFromFile]" DisplayName="Join Data Tables - join sleep data to the output file" sap:VirtualizedContainerService.HintSize="586,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_4" JoinType="Full" OutputDataTable="[dt_joined]">
+        <ui:JoinDataTables.Arguments>
+          <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
+            <ui:JoinOperationArgument Operand="{x:Null}" BooleanOperator="And" Operator="EQ">
+              <ui:JoinOperationArgument.Column1>
+                <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
+              </ui:JoinOperationArgument.Column1>
+              <ui:JoinOperationArgument.Column2>
+                <InArgument x:TypeArguments="x:String">["Date"]</InArgument>
+              </ui:JoinOperationArgument.Column2>
+            </ui:JoinOperationArgument>
+          </scg:List>
+        </ui:JoinDataTables.Arguments>
+      </ui:JoinDataTables>
+      <ui:SortDataTable ColumnName="{x:Null}" DataColumn="{x:Null}" DataTable="[dt_joined]" DisplayName="Sort Data Table" sap:VirtualizedContainerService.HintSize="586,80" sap2010:WorkflowViewState.IdRef="SortDataTable_5" Order="Decending" OutputDataTable="[dt_joined]" SortOrder="Descending">
+        <ui:SortDataTable.ColumnIndex>
+          <InArgument x:TypeArguments="s:Nullable(x:Int32)">
+            <Literal x:TypeArguments="s:Nullable(x:Int32)" Value="0" />
+          </InArgument>
+        </ui:SortDataTable.ColumnIndex>
+      </ui:SortDataTable>
+      <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="586,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_101" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Sleep Data sequence completed&quot;]" />
     </Sequence>
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_joined]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Fitbit Statistics.xlsx" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate final Table process complete&quot;]" />
