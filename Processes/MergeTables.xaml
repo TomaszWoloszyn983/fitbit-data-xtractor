@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1794,1755</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,6467</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MergeTables_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MergeTables" sap:VirtualizedContainerService.HintSize="512,1690" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MergeTables" sap:VirtualizedContainerService.HintSize="823,6402" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_finalTable" />
       <Variable x:TypeArguments="s:DateTime" Name="date_TodaysDate" />
@@ -137,22 +137,22 @@
         <x:Boolean x:Key="IsPinned">False</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate final Table process started&quot;]" />
-    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Returns the final table that contains 20 columns" DataTable="[dt_finalTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Weight_x0020__x0028_kg_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned_x0020__x0028_kcal_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Distance_x0020__x0028_km_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_consumed_x0020__x0028_kcal_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fiber_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Carbs_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sodium_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Protein_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Water_x0020__x0028_ml_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_from_x0020_Carbs_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_from_x0020_Fats_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_from_x0020_Proteins_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sleep_x0020_Duration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:duration&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Start_x0020_Time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;End_x0020_Time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="761,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate final Table process started&quot;]" />
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Returns the final table that contains 20 columns" DataTable="[dt_finalTable]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="761,91" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Weight_x0020__x0028_kg_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned_x0020__x0028_kcal_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Distance_x0020__x0028_km_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_consumed_x0020__x0028_kcal_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fiber_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Carbs_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sodium_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Protein_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Water_x0020__x0028_ml_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_from_x0020_Carbs_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_from_x0020_Fats_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_from_x0020_Proteins_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sleep_x0020_Duration&quot; msdata:Caption=&quot;&quot; type=&quot;xs:duration&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Start_x0020_Time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;End_x0020_Time&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Create dt_joined" DataTable="[dt_joined]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="450,91" sap2010:WorkflowViewState.IdRef="BuildDataTable_7" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
+    <ui:BuildDataTable sap2010:Annotation.AnnotationText="Create dt_joined" DataTable="[dt_joined]" DisplayName="Build Data Table" sap:VirtualizedContainerService.HintSize="761,91" sap2010:WorkflowViewState.IdRef="BuildDataTable_7" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:BuildDataTable>
-    <Sequence sap2010:Annotation.AnnotationText="Generates the dates starting from the todays date argument until start date.&#xA;&#xA;Add the results to test data table&#xA;&#xA;The expected format of the date must be MM/dd/yyyy whereas it is currently MM/dd/yyyy. I didn't know how to change it to the expected format. In result I have to adjust dates from other tables to this format, which is easier." DisplayName="Descending Autofill up the Date column" sap:VirtualizedContainerService.HintSize="450,198" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <Sequence sap2010:Annotation.AnnotationText="Generates the dates starting from the todays date argument until start date.&#xA;&#xA;Add the results to test data table&#xA;&#xA;The expected format of the date must be MM/dd/yyyy whereas it is currently MM/dd/yyyy. I didn't know how to change it to the expected format. In result I have to adjust dates from other tables to this format, which is easier." DisplayName="Descending Autofill up the Date column" sap:VirtualizedContainerService.HintSize="761,198" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="intNumberOfDays" />
         <Variable x:TypeArguments="scg:List(s:DateTime)" Name="listOfDays" />
@@ -334,7 +334,7 @@
       </Sequence>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_107" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate and assign Date column sequence Complete. &quot;+dt_Dates.RowCount.ToString+&quot; rows created.&quot;]" />
     </Sequence>
-    <Sequence sap2010:Annotation.AnnotationText="Reads data from the Weight Data excel file&#xA;&#xA;Build dt_ConvertedTable data table&#xA;&#xA;Join the Weight data table to the final output excel file.&#xA;&#xA;" DisplayName="Process Weight Data" sap:VirtualizedContainerService.HintSize="450,198" sap2010:WorkflowViewState.IdRef="Sequence_152">
+    <Sequence sap2010:Annotation.AnnotationText="Reads data from the Weight Data excel file&#xA;&#xA;Build dt_ConvertedTable data table&#xA;&#xA;Join the Weight data table to the final output excel file.&#xA;&#xA;" DisplayName="Process Weight Data" sap:VirtualizedContainerService.HintSize="761,198" sap2010:WorkflowViewState.IdRef="Sequence_152">
       <Sequence.Variables>
         <Variable x:TypeArguments="x:Int32" Name="counterTemp" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_Weight" />
@@ -595,7 +595,7 @@
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="496,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="496,141" sap2010:WorkflowViewState.IdRef="LogMessage_105" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Weight Data sequence started&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Process Activity Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_154">
+    <Sequence DisplayName="Process Activity Data" sap:VirtualizedContainerService.HintSize="761,4793" sap2010:WorkflowViewState.IdRef="Sequence_154">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_ActivityData" />
         <Variable x:TypeArguments="x:Int32" Name="int_StartYear" />
@@ -603,7 +603,7 @@
       </Sequence.Variables>
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
-          <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
           <x:Boolean x:Key="IsPinned">False</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
@@ -672,13 +672,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </Assign>
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_ActivityData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="699,3172" sap2010:WorkflowViewState.IdRef="ForEachRow_22">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_ActivityData]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="699,2991" sap2010:WorkflowViewState.IdRef="ForEachRow_22">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentActivity" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="665,2914" sap2010:WorkflowViewState.IdRef="Sequence_123">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="665,2733" sap2010:WorkflowViewState.IdRef="Sequence_123">
               <Sequence.Variables>
                 <Variable x:TypeArguments="s:String[]" Name="arr_Date" />
               </Sequence.Variables>
@@ -695,20 +695,20 @@
                   <InArgument x:TypeArguments="s:String[]">[CurrentActivity.Item(0).ToString.Split(" ")]</InArgument>
                 </Assign.Value>
               </Assign>
-              <If Condition="[arr_Date.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="623,1886" sap2010:WorkflowViewState.IdRef="If_13">
+              <If Condition="[arr_Date.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="623,1705" sap2010:WorkflowViewState.IdRef="If_13">
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="589,1353" sap2010:WorkflowViewState.IdRef="Sequence_134">
+                  <Sequence sap:VirtualizedContainerService.HintSize="589,1172" sap2010:WorkflowViewState.IdRef="Sequence_134">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:IfElseIf sap2010:Annotation.AnnotationText="This activity genrates the current year.&#xA;&#xA;int_StartDay represents the year of the first record that was extracted by this application&#xA;&#xA;flag_January is a boolean variable that defines if the int)StartDate can be incremented&#xA;&#xA;The year is incremented when two conditions are met. &#xA;The month is 'Jan' and the flag is True." DisplayName="Else If first day of January increment the startYear var" sap:VirtualizedContainerService.HintSize="547,1143" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
+                    <ui:IfElseIf sap2010:Annotation.AnnotationText="This activity genrates the current year.&#xA;&#xA;int_StartDay represents the year of the first record that was extracted by this application&#xA;&#xA;flag_January is a boolean variable that defines if the int)StartDate can be incremented&#xA;&#xA;The year is incremented when two conditions are met. &#xA;The month is 'Jan' and the flag is True." DisplayName="Else If first day of January increment the startYear var" sap:VirtualizedContainerService.HintSize="547,962" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
                       <ui:IfElseIf.ConditionBlocks>
                         <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
                           <ui:IfElseIfBlock BlockType="If" Condition="[(arr_Date(2).Trim = &quot;Jan&quot;) And  (flag_January)]">
                             <ui:IfElseIfBlock.Then>
-                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,496" sap2010:WorkflowViewState.IdRef="Sequence_129">
+                              <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,315" sap2010:WorkflowViewState.IdRef="Sequence_129">
                                 <sap:WorkflowViewStateService.ViewState>
                                   <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                     <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -730,7 +730,6 @@
                                     <InArgument x:TypeArguments="x:Boolean">False</InArgument>
                                   </Assign.Value>
                                 </Assign>
-                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_89" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Increment the year to &quot;+int_StartYear.ToString]" />
                               </Sequence>
                             </ui:IfElseIfBlock.Then>
                           </ui:IfElseIfBlock>
@@ -849,7 +848,7 @@
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="699,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_4" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="699,141" sap2010:WorkflowViewState.IdRef="LogMessage_86" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Join Activity Table sequence completed&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Process Nutrition Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_153">
+    <Sequence DisplayName="Process Nutrition Data" sap:VirtualizedContainerService.HintSize="761,81" sap2010:WorkflowViewState.IdRef="Sequence_153">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_NutritionData" />
         <Variable x:TypeArguments="sd:DataTable" Name="dt_NutritionData2" />
@@ -1055,7 +1054,7 @@
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="562,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_3" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="562,141" sap2010:WorkflowViewState.IdRef="LogMessage_103" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Nutrition Data sequence started&quot;]" />
     </Sequence>
-    <Sequence DisplayName="Process Sleep Data" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_157">
+    <Sequence DisplayName="Process Sleep Data" sap:VirtualizedContainerService.HintSize="761,81" sap2010:WorkflowViewState.IdRef="Sequence_157">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_SleepDataFromFile" />
       </Sequence.Variables>
@@ -1067,27 +1066,32 @@
       </sap:WorkflowViewStateService.ViewState>
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_100" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Sleep Data sequence started&quot;]" />
       <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_SleepDataFromFile]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="586,88" sap2010:WorkflowViewState.IdRef="ReadRange_9" SheetName="Sheet1" WorkbookPath="Data\Temp\Sleep Data.xlsx" />
-      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_SleepDataFromFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1420" sap2010:WorkflowViewState.IdRef="ForEachRow_24">
+      <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Nutrition Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_SleepDataFromFile]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1110" sap2010:WorkflowViewState.IdRef="ForEachRow_24">
         <ui:ForEachRow.Body>
           <ActivityAction x:TypeArguments="sd:DataRow">
             <ActivityAction.Argument>
               <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentSleepRow" />
             </ActivityAction.Argument>
-            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1162" sap2010:WorkflowViewState.IdRef="Sequence_148">
+            <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,852" sap2010:WorkflowViewState.IdRef="Sequence_148">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <If Condition="[IsNumeric(CurrentSleepRow.Item(0).ToString.Substring(0,2))]" sap:VirtualizedContainerService.HintSize="510,703" sap2010:WorkflowViewState.IdRef="If_14">
+              <If sap2010:Annotation.AnnotationText="Tha purpose of this conditional is to prevent occuring as error when the loop approaches values such as 'Today'" Condition="[IsNumeric(CurrentSleepRow.Item(0).ToString.Substring(0,2))]" DisplayName="If - THe date starts with a number" sap:VirtualizedContainerService.HintSize="510,393" sap2010:WorkflowViewState.IdRef="If_14">
+                <sap:WorkflowViewStateService.ViewState>
+                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                    <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  </scg:Dictionary>
+                </sap:WorkflowViewStateService.ViewState>
                 <If.Then>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_149">
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,169" sap2010:WorkflowViewState.IdRef="Sequence_149">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_51">
+                    <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_51">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[CurrentSleepRow(0)]</OutArgument>
                       </Assign.To>
@@ -1098,14 +1102,14 @@
                   </Sequence>
                 </If.Then>
                 <If.Else>
-                  <Sequence sap:VirtualizedContainerService.HintSize="476,351" sap2010:WorkflowViewState.IdRef="Sequence_150">
+                  <Sequence sap:VirtualizedContainerService.HintSize="476,350" sap2010:WorkflowViewState.IdRef="Sequence_150">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_110" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Sample data is not numeric: &quot;+CurrentSleepRow.item(0).ToString+&quot;. Default todays date will be assigned to this element.&quot;]" />
-                    <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_52">
+                    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_110" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Sample data '&quot;+CurrentSleepRow.item(0).ToString+&quot;' is not numeric. Todays date will be assigned to this element.&quot;]" />
+                    <Assign sap:VirtualizedContainerService.HintSize="434,81" sap2010:WorkflowViewState.IdRef="Assign_52">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Object">[CurrentSleepRow(0)]</OutArgument>
                       </Assign.To>
@@ -1139,7 +1143,13 @@
           </scg:Dictionary>
         </sap:WorkflowViewStateService.ViewState>
       </ui:ForEachRow>
-      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_97" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_SleepDataFromFile.RowCount.ToString+&quot; rows have been extracted from Sleep Data file&quot;]" />
+      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,172" sap2010:WorkflowViewState.IdRef="LogMessage_97" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[dt_SleepDataFromFile.RowCount.ToString+&quot; rows have been extracted from Sleep Data file&quot;]">
+        <sap:WorkflowViewStateService.ViewState>
+          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+            <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+          </scg:Dictionary>
+        </sap:WorkflowViewStateService.ViewState>
+      </ui:LogMessage>
       <ui:JoinDataTables DataTable1="[dt_joined]" DataTable2="[dt_SleepDataFromFile]" DisplayName="Join Data Tables - join sleep data to the output file" sap:VirtualizedContainerService.HintSize="586,60" sap2010:WorkflowViewState.IdRef="JoinDataTables_4" JoinType="Full" OutputDataTable="[dt_joined]">
         <ui:JoinDataTables.Arguments>
           <scg:List x:TypeArguments="ui:JoinOperationArgument" Capacity="4">
@@ -1164,7 +1174,7 @@
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="586,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_5" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_101" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Sleep Data sequence completed&quot;]" />
     </Sequence>
-    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_joined]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="450,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Fitbit Statistics.xlsx" />
+    <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_joined]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="761,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Fitbit Statistics.xlsx" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Generate final Table process complete&quot;]" />
   </Sequence>
 </Activity>
