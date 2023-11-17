@@ -171,8 +171,9 @@
       "Path": "Processes/MergeTables.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
-        "counterTemp&Sequence_114",
-        "dt_Weight&Sequence_114",
+        "dt_ActivityData&Sequence_120",
+        "counterTemp&Sequence_119",
+        "dt_Weight&Sequence_119",
         "DateDT&Sequence_1",
         "tempCounter&Sequence_86",
         "dt_joined2&Sequence_1",
