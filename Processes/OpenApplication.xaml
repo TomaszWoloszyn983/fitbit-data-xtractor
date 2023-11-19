@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1095,1817</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1187,2110</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>OpenApplication_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -45,6 +45,8 @@
       <x:String>System.ComponentModel</x:String>
       <x:String>System.Xml.Serialization</x:String>
       <x:String>System.Activities.Runtime.Collections</x:String>
+      <x:String>UiPath.UIAutomationNext.Activities.Models</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,21 +104,27 @@
       <AssemblyReference>System.Security.Permissions</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>System.Private.Uri</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="OpenApplication" sap:VirtualizedContainerService.HintSize="668,1752" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Open Application on Fitbit.com website&#xD;&#xA;&#xD;&#xA;Enter the 'is Dashboard Open' do/while loop.&#xD;&#xA;&#xD;&#xA;Check if Dashboard is displayed&#xD;&#xA;- If it is open, finalize and close the sequence&#xD;&#xA;- If it is not. Go To Url  Fitbit.com/login page&#xD;&#xA;&#xD;&#xA;Validate if the 'Sign In' page is properly open.&#xD;&#xA;&#xD;&#xA;Click 'Sign in with Google' option.&#xD;&#xA;&#xD;&#xA;Validate 'Choose Google account' page and choose the first matching account&#xD;&#xA;&#xD;&#xA;Repeat the 'is Dashboard Open' do/while loop.&#xD;&#xA;&#xD;&#xA;If the login sequence was succesful the dashboard should be displayed and the loop condition is no more met.&#xD;&#xA;&#xD;&#xA;The open dashboard sequence is completed&#xD;&#xA;&#xD;&#xA;&#xD;&#xA;" DisplayName="OpenApplication" sap:VirtualizedContainerService.HintSize="722,2045" sap2010:WorkflowViewState.IdRef="Sequence_1">
+    <Sequence.Variables>
+      <Variable x:TypeArguments="x:Boolean" Name="is_PageOpen" />
+    </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="606,1641" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V2">
+    <uix:NApplicationCard sap2010:Annotation.AnnotationText="Open Application on Fitbit.com website" AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="660,1592" sap2010:WorkflowViewState.IdRef="NApplicationCard_2" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Timeout="10" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="572,1424" sap2010:WorkflowViewState.IdRef="Sequence_5">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="626,1344" sap2010:WorkflowViewState.IdRef="Sequence_5">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="p_DashboardExists" />
             </Sequence.Variables>
@@ -125,60 +133,346 @@
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <TryCatch DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="510,385" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+            <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Enter the 'is Dashboard Open' do/while loop." DisplayName="Do While" sap:VirtualizedContainerService.HintSize="564,1095" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+              <ui:InterruptibleDoWhile.Body>
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="530,928" sap2010:WorkflowViewState.IdRef="Sequence_16">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <TryCatch sap2010:Annotation.AnnotationText="Check is Dashboard is displayed." DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="488,691" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <TryCatch.Try>
+                      <Sequence sap:VirtualizedContainerService.HintSize="450,432" sap2010:WorkflowViewState.IdRef="Sequence_29">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Dashboard'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NCheckElement_3" Result="[p_DashboardExists]" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
+                          <uix:NCheckElement.Target>
+                            <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/" CvTextArea="384, 155, 76, 13" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="385, 153, 74, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl class='selected' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='selected' tag='A' type='' aaname='Dashboard' check:innerText='Dashboard' /&gt;" Guid="b9eef60d-117d-4741-8cdc-fa9b2e62d5b6" InformativeScreenshot="aee46324924e370bb60f8c5511e8ff9f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                              <uix:TargetAnchorable.Anchors>
+                                <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                  <uix:Target CvTextArea="264, 147, 83, 32" CvTextArgument="fitbit" CvType="Text" DesignTimeRectangle="225, 147, 125, 32" ElementType="Text" FriendlyName="'Fitbit'" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='logo' aaname='                         Fitbit                     ' check:innerText='Fitbit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAkCAYAAACucVkNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUkSURBVHhe7Zg9zxVFFMefL8B3oLDC2saKQhMrGw0xoYBKChoTrTTBJ4GGGCugUoIfQCKJ0UQtMGLjCwRQExIMhATQBC19a54lP7Ln+r/nzszO7s7eOzfsLzm5987Lmdk5/zkze3eamaeeWQQz40Wwe+vXZv+X3zRHr/3U3P3r77Z0ZpsYJYIL9x40O5e+WNjBb39oa2a2iVEiYPerCLBNZYMLn3zW7J473xx9+9QT4/e6uPz9tY2MW4pRIrj86M8lASCKdUMA9r/4SrNz4PklO3jkeNtiehCfjcv3bWOUCNj1HAkcA9wN1s3d+w+XAq8WE8F3N39pv6XBN5bDlCL47dEfWfPoM1/P6IvhJvEZwNIxRobwHD/5/pN2z758uLn38Pe2dBUNak56n0oEF7/6euH3w48/bUtX0fFDz91FERHE7gGWKTg2SoPq7cGxLq5cvbHU/vV3T7c1qyAma7dJETzz0qGF333PvdCWrqLznUwEBJPznpTvA26XQ14TCbjBEaH3hdLHRd+F/+ff/xbtsY8ufd7WrFKLCI7tnl74ffWNd9rSVdYiAg2mvgb6twOEAP7V0epiGWMIQxb+59t3mtfePNGcvxhPrVCLCODEmQ+at9472+zt7bUlq0wuAv8GYIEGv9sxAs2u9+VWV4opF74mEeQwuQgIHIG3QOproN/xVkcfLTcrySyC/5lcBGC7W898sHJ7RdSdrtkAEZW8HHIp1Adn4e0VSW0I9OP10nwjgi6/KRHQnjIMX0OClAL/Ol/861yxLrJEMBREUTr49rBdFvqfQIXjF6ePbx/IkAi0LGTWLgXjxNprXZd1CaGICDQDKGQDjgifQRAG2YMMwWesv6fPg4dEoP8r+IXp4zslAoSmOzNlzMf7Usgc1ha/itZ1WbYILLVjHsosYLqz+W73BT61r7808hvoo+UYfXOEwMOwcGb6oFqOhXaa9vELE/PNd4Kq5vumdj3tqTfjt9bjPyaELhHkzNf3C7EQgb7u6eWP4PiAGdpH60KviJiKxltIfCl04fmegy5WanfoscFid6FzMWOsWHBNcNo2REoEis439VwxFiLQ4GigQwG1Xet3u9URUF+OxcSBqfByqF0EXTC+ZoXQM6xdBBog3ZU+E2iwfFBTKR/DV0g4GL76ULMIcvqA3kNC2WDtIgDb4R7b3T5lWzmZg0/tz+9QkGnjjwQTTx9qFkEfNBt4NiKC0hBwvUgalCOKkLByqVUEBLUP2tffIbZKBJoBFALM8dE31edQqwhSwQqxNSKw1E4a14Dr2W9HguHP/r4Xvy5qEoEGK3cuhvb1Y1UlAg2mnt9DXhFLUZMI9ILX9zjQsarNBKGbvhG66dt578utrhQ1iQBf1p4x+qAXQz+nqjKB7njdzV4glvIJtpZjliVKUZMIQH37HR1DMwjmqUoEENvFlBN8f8un3DKFv0uUYEoRqO/c9K6ByM0GmgVCQR4igty1ULJFUBtTikAX3/x37TDqtQ9jpfqoALAQuSLQdozL7675KkVEUHqX5zClCEDbeov19eLBB8GzoJD+mav3HTs+ckWA79h8Kfdc+fH60jOMFgGp3lL+FP8HxJhaBAQmtrCpvjqvHCPQMXJFACFxmSnM3fsaJQL7/2Cqy18KXaAhIsiBBSNt069PX+tn7UOGv64LZB8RAP5svjqOh3Y69igR+P8JsHXCYqd2pccevk+fMTAOgSSAGGLFhsx5SkaJgLuACsC/IcxsB0UuhjPbzSyCp56meQyZ8Da2sobCHQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                </scg:List>
+                              </uix:TargetAnchorable.Anchors>
+                            </uix:TargetAnchorable>
+                          </uix:NCheckElement.Target>
+                        </uix:NCheckElement>
+                        <If sap2010:Annotation.AnnotationText="If Dashboard is open assign variable is_PageOpen to 'True'.&#xD;&#xA;Otherwise assign it to 'False'" Condition="[p_DashboardExists]" DisplayName="If Dashboard page is open" sap:VirtualizedContainerService.HintSize="388,124" sap2010:WorkflowViewState.IdRef="If_6">
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <If.Then>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_30">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_4">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[is_PageOpen]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">True</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Then>
+                          <If.Else>
+                            <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_31">
+                              <sap:WorkflowViewStateService.ViewState>
+                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                </scg:Dictionary>
+                              </sap:WorkflowViewStateService.ViewState>
+                              <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
+                                <Assign.To>
+                                  <OutArgument x:TypeArguments="x:Boolean">[is_PageOpen]</OutArgument>
+                                </Assign.To>
+                                <Assign.Value>
+                                  <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                                </Assign.Value>
+                              </Assign>
+                            </Sequence>
+                          </If.Else>
+                        </If>
+                      </Sequence>
+                    </TryCatch.Try>
+                    <TryCatch.Catches>
+                      <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ActivityAction x:TypeArguments="s:Exception">
+                          <ActivityAction.Argument>
+                            <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                          </ActivityAction.Argument>
+                          <Sequence sap:VirtualizedContainerService.HintSize="496,623" sap2010:WorkflowViewState.IdRef="Sequence_10">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Open Page process failure.&quot;]" />
+                            <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The Page has not been opened properly.&quot;+Environment.NewLine+Environment.NewLine+&quot;Opent the Fitbit.com site on the Dashboard page and restart the application.&quot;]" />
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[is_PageOpen]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                            <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+                              <Assign.To>
+                                <OutArgument x:TypeArguments="x:Boolean">[out_PageOpen]</OutArgument>
+                              </Assign.To>
+                              <Assign.Value>
+                                <InArgument x:TypeArguments="x:Boolean">False</InArgument>
+                              </Assign.Value>
+                            </Assign>
+                          </Sequence>
+                        </ActivityAction>
+                      </Catch>
+                    </TryCatch.Catches>
+                  </TryCatch>
+                  <If sap2010:Annotation.AnnotationText="If Dashboard has not been opened, run the 'Sign In' sequence." Condition="[is_PageOpen = False]" DisplayName="If - Dashboard is not open, run the login sequence" sap:VirtualizedContainerService.HintSize="488,109" sap2010:WorkflowViewState.IdRef="If_7">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
+                    <If.Then>
+                      <Sequence sap:VirtualizedContainerService.HintSize="492,1235" sap2010:WorkflowViewState.IdRef="Sequence_32">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_26" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;'Sign In' sequence started&quot;]" />
+                        <Sequence DisplayName="Checking if the the user is Sign In" sap:VirtualizedContainerService.HintSize="450,781" sap2010:WorkflowViewState.IdRef="Sequence_20">
+                          <Sequence.Variables>
+                            <Variable x:TypeArguments="x:String" Name="is_SignIn" />
+                            <Variable x:TypeArguments="x:String" Name="is_ChooseAccount" />
+                            <Variable x:TypeArguments="scg:IEnumerable(ui:UiElement)" Name="numOfChidren" />
+                          </Sequence.Variables>
+                          <sap:WorkflowViewStateService.ViewState>
+                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                            </scg:Dictionary>
+                          </sap:WorkflowViewStateService.ViewState>
+                          <uix:NGoToUrl DisplayName="Go To URL" sap:VirtualizedContainerService.HintSize="388,82" sap2010:WorkflowViewState.IdRef="NGoToUrl_2" Url="https://www.fitbit.com/login/" Version="V3" />
+                          <TryCatch sap2010:Annotation.AnnotationText="Find 'Sign In' button" DisplayName="Try Catch" sap:VirtualizedContainerService.HintSize="388,83" sap2010:WorkflowViewState.IdRef="TryCatch_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <Sequence DisplayName="Sign In sequence" sap:VirtualizedContainerService.HintSize="450,449" sap2010:WorkflowViewState.IdRef="Sequence_21">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NGetText DisplayName="Get Text 'Sign In'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" TextString="[is_SignIn]" Timeout="5" Version="V3">
+                                  <uix:NGetText.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://accounts.fitbit.com/login?targetUrl=https%3A%2F%2Fwww.fitbit.com%2Flogin%2Ftransferpage%3Fredirect%3Dhttps%253A%252F%252Fwww.fitbit.com&amp;lcl=en_EU" CvTextArea="676, 400, 73, 24" CvType="AnyWordGroup" DesignTimeRectangle="549, 394, 328, 34" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Sign In'" FullSelectorArgument="&lt;webctrl tag='H1' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='H1' type='' class='pa0 ma0 midnight' /&gt;" Guid="10159683-9ab5-4c9b-a623-e8555354ff11" InformativeScreenshot="1873050006bbbd662446241c0e70e420.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Accounts' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CvTextArea="690, 331, 78, 31" CvTextArgument="fitbit" CvType="Text" DesignTimeRectangle="658, 333, 110, 29" ElementType="Icon" FriendlyName="'IMG logo'" FullSelectorArgument="&lt;webctrl id='logo' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logo' tag='IMG' type='' class='' aaname='Fitbit Home' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NGetText.Target>
+                                </uix:NGetText>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,141" sap2010:WorkflowViewState.IdRef="LogMessage_14" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[is_SignIn+&quot; button found.&quot;]" />
+                              </Sequence>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_4">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_15" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sign in page not found&quot;]" />
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <If sap2010:Annotation.AnnotationText="Find and click the 'Choose an account' option" Condition="[is_SignIn.Length &gt; 0 and is_SignIn = &quot;Sign In&quot;]" DisplayName="If 'Sign In' label exists" sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="If_4">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <If.Then>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,245" sap2010:WorkflowViewState.IdRef="Sequence_22">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Continue with Google'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
+                                  <uix:NClick.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://accounts.fitbit.com/login?targetUrl=https%3A%2F%2Fwww.fitbit.com%2Flogin%2Ftransferpage%3Fredirect%3Dhttps%253A%252F%252Fwww.fitbit.com&amp;lcl=en_EU" CvElementArea="605, 450, 218, 46" CvTextArea="654, 465, 154, 17" CvTextArgument="Continue with Google" CvType="Button" DesignTimeRectangle="655, 464, 152, 18" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Continue with Google'" FullSelectorArgument="&lt;webctrl class='btnText' parentid='ember534' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl class='btnText' parentid='ember534' tag='SPAN' type='' aaname='Continue with Google' check:innerText='Continue with Google' /&gt;" Guid="05b4f594-824a-4661-a0ec-d0a5f8aa5548" InformativeScreenshot="85a721e6a1839dab2dea803d5a606d97.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Accounts' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="2">
+                                          <uix:Target CvTextArea="620, 461, 23, 22" CvTextArgument="G" CvType="Text" DesignTimeRectangle="620, 461, 24, 24" ElementType="Icon" FriendlyName="'IMG'" FullSelectorArgument="&lt;webctrl parentid='ember534' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='ember534' tag='IMG' type='' class='' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAABwAAAAcCAYAAAByDd+UAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAGqSURBVEhL7ZMxS0JRGIZbmlv6Cf2EnJoqCSJsqSUbDbKloR8QFTTk4CRBLhE1mARBLkFiCS6FkYTREg4VioUVZkSlffFeztF7b9+591YiDT7wwr33HM9zvu8cO6jFtIVN5/8Kq4U8vWyEqRxYpLtBF5UmR+lxzq+9v+7HxCx7HAkhgsQq2MB7Ji1+ocZSiAWwECfggrnohBWWQpVMttP87U8VyrPSB601g4ogdwor/Hw4oufguEHmZPdOYIW13BJ9xDvp7aCfSt5htrLfwgsvfJpQk+52U+2pIEYarMTPaWI9YxkOVlhN9dSFCMdI6JIGlivKuAPXYqYRWyGeOeyECAcvPHU3KjzsovvKrRhpgJahCn30sh+1VF6ak9QQefamKJzdFiPW6IWzO2fiqxFWiL/FWtJHvZExLZ7YDKWLWTHKY24xLhUHKwSoSgqllKv0plwkbyRqkEGuQinMV4qaRC+VYmQ6MW8Y71vdrAujmSuxyneUQqCSquLa8lMwyZ+dxFIIIDW3lws2ZnfOwFYogTiWS9DCcajeTgSbcXqLgWNhs2gLm06LhURf868y/BTLp9kAAAAASUVORK5CYII=" SearchSteps="FuzzySelector, CV" />
+                                          <uix:Target CvTextArea="690, 333, 78, 31" CvTextArgument="fitbit" CvType="Text" DesignTimeRectangle="658, 335, 110, 29" ElementType="Icon" FriendlyName="'IMG logo'" FullSelectorArgument="&lt;webctrl id='logo' tag='IMG' /&gt;" FuzzySelectorArgument="&lt;webctrl id='logo' tag='IMG' type='' class='' aaname='Fitbit Home' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAHIAAAAhCAYAAAAFx/8kAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAYoSURBVGhD7ZpvTFZVHMd5w+bbelGvKteyrfUCIdNGtkjDrOEWtmhTKdrYjLKpiyWpBMHURCjNYWEGrSELR39Ykn8JEA1t/nkSgRQT81HxX0ikhm/81ffcc47nHp7n3vs8z70PN8dn+27e77n3nj/fc869z8UEGuOOYCzIO4SogzwdPEu3bt3iR/FjaGhIanh4mLvegTriWV+0RBXkx59V010TJtLdDyfTwcBR7npHS0sLpaWlUUJCgknwvUatt7i4mLv+I+Ige0+dZiEKzch6lZd4Q01NjSk8VaGCdHvVeBXkwMAA/5c7RBzk8M2bpiAXLivhJe7T19dnCk5o/PjxTChXqaqqosTEREpPT6erV69y14x+Tzu8CLKwsJDdLzs7mzsjycnJiajeqLbWA4cCbCUuWl7KHW9AB0RnEJzVVhoMBuW50Pz583mJmdEOsrm52VR/RUUFLzETlyDjRSSDiC1VnAsVFRXxEjOjHWRnZ6ep/traWl5iJm5B/trVQ4N/DfEjgxs3/qHyDZ/Tj7tbuRMbaoedvNi0t7dTamoq5efnc2ckftha6+vrKSkpicrKyrgzEleDPNLZTZOfy6R5eYvZs1FQWrFePiPbOg4w79r16zQ142XpV3y6ifmxIDoCufWG6ocgneBqkNNmz5XBLF9l7OXdx3ulB03LnMP81eurTD40MDjIyqJFdAQaC9Iay54sXbFGhlL//VbuEqVMz5B+Qelq5m3d9ZP0oOkvzWN+NGCw9QFHkMJXpdLb22uSDs7HfdT76veDVOyCxPn4iRTJRLNqp2iDXq/wVanYTslNtfX0w85mfmTQ9dsJmpu3iIrK1nLHQHwowBttz4mT3I2MtrY22QE76YOXkpIiy+rq6rhroM5wK+E8lVBBYhBVXxXeru1W0Lhx4+T5gUCAu8Z91XtZKeIgIwXPyljwe5BWHyhU4Tp9sAW+CrJ1337qOxPkRwbnL1ykpSvLafM3jdwxPiAseK+YJkx5hq3Ubc3Wb7R+DhKrTT1XeFarMxSeBrmztZ1mzculvQcOcoeoZW8HPZAylWa+kkMXL1/hLtGSktXyWdi0yxhMlCelvSD9D8rXMX9BQZH0oHsemUSXrvzJyuxQG+7kGWQVpEAfLDtChRRq+8R9sVr1sPWJAcIFqaJOPLutGsiePDjpaTbQydMyuEOmnxP5xSuZFzjWLT0I5wD1J4nQxUuX6aHJaSP8xm272DV2iI5Afgky3CoT4P76NXrbPQ0SWyIGeeXaSu4QrVq3QQ6+WHngqVlZ0i8p/4R5zXv2SQ/C6gZYzaoPHTp6jJXZIToC+SVIJ+3Q68A9VDwNEpzs+4P/6zaN23ezb6sqZ8/3s+fe2qpq7hh8sXkLW9lZuQvoXP8F5iHg+yamyhDFynaC6AjkhyBDbZPhUF+K9FXseZBe8fe1a7SjZQ8d++9nSySIjkB+CBLhOAXtFdf5IshwX2e+bdpOhzu7+JFBZ89xyl1cQOs2Ou+wFaIjkB+CdNIGgV4PjgVxD/K7ph1sO7z30cnUe+p2Q958t1BulVsam5j3++kzdH/yk9J/p2gF82NBdAT6vwWprki9nrgH+fiMF2Uw+BkB8F87hAdNmZnJ/GX8ZUlV8Fw/K4sW0RHID0E6GVCBr56RldVfyVD2dPzCXfOb6JrKjczbf+iI9KA5byxkfiyIjkB+CBKBqFukFep1CEVlVJ6RHQcPs21TBS8vhR9+RF9+3cAdA/w+fOL52fTWkvfZ3yZjRXQE8ipIu2DUQCA9lFBg4NVr9LZHGqSTOu2n5CgiOgK5FSTAyhLn2c12PUgI14dqDyaFfj6OdZwEqX/TtZtwUQeJ1dj6s/FHZa9QO+JmkPqKwWAL6cHqwahCGVYLrgl3Xqh2OwkSwakTDhJthPRgowrytbfz5bNQ317dRO2Em0ECfZCE9G1MDUiEpp4fTuFWLXASJLCqK+Yg9Zeax56dxUvcR22420FiINTnkJBVkGK12oWJa6xwGiQI9SEecmVFzn49TwaJN1uvQCeE9IaHoqGhwSQn4L6YJKIefcKEa4N6nVipTiYbUNtoF6QA91bbqRP1MxL/Ww5fd8bwB1EHOYa/GAvyjoDoX4+8Lm6u8S9nAAAAAElFTkSuQmCC" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NClick.Target>
+                                </uix:NClick>
+                              </Sequence>
+                            </If.Then>
+                            <If.Else>
+                              <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_23">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_16" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[is_SignIn+&quot; button not found.&quot;]" />
+                              </Sequence>
+                            </If.Else>
+                          </If>
+                          <TryCatch sap2010:Annotation.AnnotationText="Find and click the 'Choose an account' option" DisplayName="Try Catch " sap:VirtualizedContainerService.HintSize="388,94" sap2010:WorkflowViewState.IdRef="TryCatch_5">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                            <TryCatch.Try>
+                              <Sequence sap:VirtualizedContainerService.HintSize="450,781" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <uix:NGetText DisplayName="Get Text 'Choose an account'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NGetText_4" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" TextString="[is_ChooseAccount]" Version="V3">
+                                  <uix:NGetText.Target>
+                                    <uix:TargetAnchorable BrowserURL="https://accounts.google.com/AccountChooser/signinchooser?continue=https%3A%2F%2Ffitbit.google.com%2Fauth%2Fsignin%3Fredirect_url%3Dhttps%3A%2F%2Fwww.fitbit.com%2Flogin%2Ftransferpage%3Fredirect%253Dhttps%25253A%25252F%25252Fwww.fitbit.com%26hl%3Den-EU%26code_challenge%3D59hmOfb6zQjlTwT5lO12fEJKnQwf37-yegea-RHtG1c&amp;hl=en-EU&amp;faa=1&amp;theme=glif&amp;flowName=GlifWebSignIn&amp;flowEntry=AccountChooser" CvTextArea="607, 452, 212, 22" CvType="AnyWordGroup" DesignTimeRectangle="608, 449, 210, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Choose an account'" FullSelectorArgument="&lt;webctrl parentid='headingText' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='headingText' tag='SPAN' type='' class='' /&gt;" Guid="731f5042-e5d9-43d1-9b55-3e641d54acd8" InformativeScreenshot="fa0bdfb66a76e7b019bc0b4e6ca77cbf.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in – Google accounts' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
+                                      <uix:TargetAnchorable.Anchors>
+                                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                          <uix:Target CvTextArea="673, 406, 78, 29" CvTextArgument="Google" CvType="Text" DesignTimeRectangle="676, 409, 75, 24" ElementType="Icon" FriendlyName="'SVG'" FullSelectorArgument="&lt;webctrl tag='svg' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='svg' type='' class='l5Lhkf' aaname='' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAE8AAAAcCAYAAAAgLuLfAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAN6SURBVGhD7ZY/axRRFMVt/CZ+BP0Cam1jZ0oRbBVbCwULra3sAhb2aRKIICJWCrGwlWCRoPgPSYiazY77G+Y8z7y9b3bY7CITcuCQ3fcS5uT37r1vzlSnmlun8I6hTni7P8bV6svftW89PaguPtirrj3er80a+0PT5sfXycdVER5wgNVlQRySVjbuVOefXa1uPL/brMyvKXhUk6rMIbH2cO3X1B4eEsClwnM4QNvaHjU7ba2/O0xQh6SlwQOIwPWBMsSZtzR4AoeHCKaPlgLPq47Pi9Zod6f6s/Wm+dZP44PtavztRfOtnzj0roOfBY+c8iwleFwGi646AuytPqk+X7rQ8teVK53hjj7crw43z/7zq3O1gVmS55cpAl1yutRK8Mjz89G9qZzkLynBY/jroSUpTJclwniQ3FEw4NSgHJx7sgdYFwft2UtWtggeHRFllEsAEzw9hCAlEcADRZa+377ZejgB80oEoLfy6O3lBGr0/nrdsgBtVSIVaK3sbwfkAyZvCFSaQ+2C53nIR07s/0M0chI8heiCp0C5FRAT/mB9LT00OjWvSgKio53VBCivLlRXZbMPZORzOnrXZE37JXjeqq2DnGT0PeV0JXj+oNK7XUlekcgfWpJOldNGVJrglJQqc1J9yDOXpMOdBS/lyKBpLyqCBA9gCqIH9VUeMAcTydu3bpMe8Lx9qcQ+3aLfKcEjo7LqswzEqF2lBI928/nR93XFW0d/k59mpLw6E7ymqiLlgPOKjzQLns81ZY6qLFKChwCoMJxmNEdcXq1Y8qpi/kXSPhBRq6oK73a6iaOZFx22/z8leH6IpflcUgse8kCYk2NNc5BA2OcN9jnJA70d8kHsp609vxDyG5U9v4m1Rw6NDH7yXeKzd1IJHnmUhawOS1lL1TgFDwFLoWaZ34suGL9xFSxvEb67/MYVRIeGVXVSfogAi7KX4CHvFExW7Gu94aGounIrUElUVR6iKwyqATbtmTt6hUGlw3aQXfBQDtBdylqEJwERExCYOKq0kih9qhATAntrRKpfjCcQuSAAhlnrEhnJRT5AkRcJJOvo0/6X5FzKyhxU1i7NhDcEAQp4uVgTPMFcpAYNDzhqS1WWiwoUvAjucTX4yvNZx4wDIlXmN20EdhE6EW0bXRYyEJelEwEPqdr8dl3GnHOdGHj/Q6fw5lZV/QU8LLEwnvuumAAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
+                                        </scg:List>
+                                      </uix:TargetAnchorable.Anchors>
+                                    </uix:TargetAnchorable>
+                                  </uix:NGetText.Target>
+                                </uix:NGetText>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_17" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[is_ChooseAccount+&quot; label found&quot;]" />
+                                <ui:FindChildren Children="[numOfChidren]" DisplayName="Find Children 'Accounts panel'" Filter="&lt;webctrl /&gt;" sap:VirtualizedContainerService.HintSize="388,107" sap2010:WorkflowViewState.IdRef="FindChildren_2" Scope="FIND_CHILDREN">
+                                  <ui:FindChildren.Target>
+                                    <ui:Target ClippingRegion="{x:Null}" Element="{x:Null}" Id="b1a0ab8d-48ee-430f-a894-d445b101c99a" InformativeScreenshot="ef891a1786c6a67cd8f16bbc6d1f4f20" Selector="&lt;html app='chrome.exe' title='* – Google accounts' /&gt;&lt;webctrl aria-role='presentation' parentid='view_container' tag='DIV' idx='*' /&gt;">
+                                      <ui:Target.TimeoutMS>
+                                        <InArgument x:TypeArguments="x:Int32" />
+                                      </ui:Target.TimeoutMS>
+                                      <ui:Target.WaitForReady>
+                                        <InArgument x:TypeArguments="ui:WaitForReady" />
+                                      </ui:Target.WaitForReady>
+                                    </ui:Target>
+                                  </ui:FindChildren.Target>
+                                </ui:FindChildren>
+                                <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_18" Message="[numOfChidren.ToString+&quot; accounts found&quot;]" />
+                              </Sequence>
+                            </TryCatch.Try>
+                            <TryCatch.Catches>
+                              <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="454,21" sap2010:WorkflowViewState.IdRef="Catch`1_5">
+                                <sap:WorkflowViewStateService.ViewState>
+                                  <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                    <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                    <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                  </scg:Dictionary>
+                                </sap:WorkflowViewStateService.ViewState>
+                                <ActivityAction x:TypeArguments="s:Exception">
+                                  <ActivityAction.Argument>
+                                    <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
+                                  </ActivityAction.Argument>
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_19" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[is_ChooseAccount+&quot; label not found&quot;]" />
+                                </ActivityAction>
+                              </Catch>
+                            </TryCatch.Catches>
+                          </TryCatch>
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Choose an account'" sap:VirtualizedContainerService.HintSize="388,157" sap2010:WorkflowViewState.IdRef="NClick_4" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
+                            <uix:NClick.Target>
+                              <uix:TargetAnchorable BrowserURL="https://accounts.google.com/AccountChooser/signinchooser?continue=https%3A%2F%2Ffitbit.google.com%2Fauth%2Fsignin%3Fredirect_url%3Dhttps%3A%2F%2Fwww.fitbit.com%2Flogin%2Ftransferpage%3Fredirect%253Dhttps%25253A%25252F%25252Fwww.fitbit.com%26hl%3Den-EU%26code_challenge%3D59hmOfb6zQjlTwT5lO12fEJKnQwf37-yegea-RHtG1c&amp;hl=en-EU&amp;faa=1&amp;theme=glif&amp;flowName=GlifWebSignIn&amp;flowEntry=AccountChooser" DesignTimeRectangle="490, 505, 448, 60" DesignTimeScaleFactor="1" FriendlyName="'Tomasz Woloszyntomasz14…'" FullSelectorArgument="&lt;webctrl aria-role='link' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl aria-role='link' tag='DIV' type='' class='lCoei YZVTmd SmR8' aaname='' /&gt;" Guid="9f6b03f7-f0b6-40c4-9082-0335f37335f1" InformativeScreenshot="1c3f8bb133afa34aeafb7cfa58c2bb17.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Sign in – Google accounts' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
+                                <uix:TargetAnchorable.Anchors>
+                                  <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
+                                    <uix:Target CvTextArea="607, 452, 212, 22" CvTextArgument="Choose an account" CvType="Text" DesignTimeRectangle="608, 449, 210, 30" ElementType="Text" FriendlyName="'Choose an account'" FullSelectorArgument="&lt;webctrl parentid='headingText' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='headingText' tag='SPAN' type='' class='' aaname='Choose an account' check:innerText='Choose an account' /&gt;" ImageBase64="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" SearchSteps="FuzzySelector, CV" />
+                                  </scg:List>
+                                </uix:TargetAnchorable.Anchors>
+                              </uix:TargetAnchorable>
+                            </uix:NClick.Target>
+                          </uix:NClick>
+                        </Sequence>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,143" sap2010:WorkflowViewState.IdRef="LogMessage_27" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;'Sign In' sequence  complete&quot;]" />
+                      </Sequence>
+                    </If.Then>
+                    <If.Else>
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_33">
+                        <sap:WorkflowViewStateService.ViewState>
+                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                          </scg:Dictionary>
+                        </sap:WorkflowViewStateService.ViewState>
+                      </Sequence>
+                    </If.Else>
+                  </If>
+                </Sequence>
+              </ui:InterruptibleDoWhile.Body>
+              <ui:InterruptibleDoWhile.Condition>
+                <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="p_DashboardExists = False" />
+              </ui:InterruptibleDoWhile.Condition>
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                </scg:Dictionary>
+              </sap:WorkflowViewStateService.ViewState>
+            </ui:InterruptibleDoWhile>
+            <If sap2010:Annotation.AnnotationText="Assign the out_PageOpen argument" Condition="[p_DashboardExists]" DisplayName="If - Dashboard exists" sap:VirtualizedContainerService.HintSize="564,94" sap2010:WorkflowViewState.IdRef="If_2">
+              <sap:WorkflowViewStateService.ViewState>
+                <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                  <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                  <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                   <x:Boolean x:Key="IsPinned">False</x:Boolean>
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
-              <TryCatch.Try>
-                <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Dashboard'" sap:VirtualizedContainerService.HintSize="334,157" sap2010:WorkflowViewState.IdRef="NCheckElement_2" Result="[p_DashboardExists]" ScopeIdentifier="b6df3cb8-a09c-43d8-baa1-b8bc4890888d" Version="V3">
-                  <uix:NCheckElement.Target>
-                    <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/" CvTextArea="384, 155, 76, 13" CvTextArgument="Dashboard" CvType="Text" DesignTimeRectangle="385, 153, 74, 19" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Dashboard'" FullSelectorArgument="&lt;webctrl class='selected' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='selected' tag='A' type='' aaname='Dashboard' check:innerText='Dashboard' /&gt;" Guid="b9eef60d-117d-4741-8cdc-fa9b2e62d5b6" InformativeScreenshot="aee46324924e370bb60f8c5511e8ff9f.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
-                      <uix:TargetAnchorable.Anchors>
-                        <scg:List x:TypeArguments="uix:ITarget" Capacity="1">
-                          <uix:Target CvTextArea="264, 147, 83, 32" CvTextArgument="fitbit" CvType="Text" DesignTimeRectangle="225, 147, 125, 32" ElementType="Text" FriendlyName="'Fitbit'" FullSelectorArgument="&lt;webctrl tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl tag='A' type='' class='logo' aaname='                         Fitbit                     ' check:innerText='Fitbit' /&gt;" ImageBase64="iVBORw0KGgoAAAANSUhEUgAAAIEAAAAkCAYAAACucVkNAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAAUkSURBVHhe7Zg9zxVFFMefL8B3oLDC2saKQhMrGw0xoYBKChoTrTTBJ4GGGCugUoIfQCKJ0UQtMGLjCwRQExIMhATQBC19a54lP7Ln+r/nzszO7s7eOzfsLzm5987Lmdk5/zkze3eamaeeWQQz40Wwe+vXZv+X3zRHr/3U3P3r77Z0ZpsYJYIL9x40O5e+WNjBb39oa2a2iVEiYPerCLBNZYMLn3zW7J473xx9+9QT4/e6uPz9tY2MW4pRIrj86M8lASCKdUMA9r/4SrNz4PklO3jkeNtiehCfjcv3bWOUCNj1HAkcA9wN1s3d+w+XAq8WE8F3N39pv6XBN5bDlCL47dEfWfPoM1/P6IvhJvEZwNIxRobwHD/5/pN2z758uLn38Pe2dBUNak56n0oEF7/6euH3w48/bUtX0fFDz91FERHE7gGWKTg2SoPq7cGxLq5cvbHU/vV3T7c1qyAma7dJETzz0qGF333PvdCWrqLznUwEBJPznpTvA26XQ14TCbjBEaH3hdLHRd+F/+ff/xbtsY8ufd7WrFKLCI7tnl74ffWNd9rSVdYiAg2mvgb6twOEAP7V0epiGWMIQxb+59t3mtfePNGcvxhPrVCLCODEmQ+at9472+zt7bUlq0wuAv8GYIEGv9sxAs2u9+VWV4opF74mEeQwuQgIHIG3QOproN/xVkcfLTcrySyC/5lcBGC7W898sHJ7RdSdrtkAEZW8HHIp1Adn4e0VSW0I9OP10nwjgi6/KRHQnjIMX0OClAL/Ol/861yxLrJEMBREUTr49rBdFvqfQIXjF6ePbx/IkAi0LGTWLgXjxNprXZd1CaGICDQDKGQDjgifQRAG2YMMwWesv6fPg4dEoP8r+IXp4zslAoSmOzNlzMf7Usgc1ha/itZ1WbYILLVjHsosYLqz+W73BT61r7808hvoo+UYfXOEwMOwcGb6oFqOhXaa9vELE/PNd4Kq5vumdj3tqTfjt9bjPyaELhHkzNf3C7EQgb7u6eWP4PiAGdpH60KviJiKxltIfCl04fmegy5WanfoscFid6FzMWOsWHBNcNo2REoEis439VwxFiLQ4GigQwG1Xet3u9URUF+OxcSBqfByqF0EXTC+ZoXQM6xdBBog3ZU+E2iwfFBTKR/DV0g4GL76ULMIcvqA3kNC2WDtIgDb4R7b3T5lWzmZg0/tz+9QkGnjjwQTTx9qFkEfNBt4NiKC0hBwvUgalCOKkLByqVUEBLUP2tffIbZKBJoBFALM8dE31edQqwhSwQqxNSKw1E4a14Dr2W9HguHP/r4Xvy5qEoEGK3cuhvb1Y1UlAg2mnt9DXhFLUZMI9ILX9zjQsarNBKGbvhG66dt578utrhQ1iQBf1p4x+qAXQz+nqjKB7njdzV4glvIJtpZjliVKUZMIQH37HR1DMwjmqUoEENvFlBN8f8un3DKFv0uUYEoRqO/c9K6ByM0GmgVCQR4igty1ULJFUBtTikAX3/x37TDqtQ9jpfqoALAQuSLQdozL7675KkVEUHqX5zClCEDbeov19eLBB8GzoJD+mav3HTs+ckWA79h8Kfdc+fH60jOMFgGp3lL+FP8HxJhaBAQmtrCpvjqvHCPQMXJFACFxmSnM3fsaJQL7/2Cqy18KXaAhIsiBBSNt069PX+tn7UOGv64LZB8RAP5svjqOh3Y69igR+P8JsHXCYqd2pccevk+fMTAOgSSAGGLFhsx5SkaJgLuACsC/IcxsB0UuhjPbzSyCp56meQyZ8Da2sobCHQAAAABJRU5ErkJggg==" SearchSteps="FuzzySelector, CV" />
-                        </scg:List>
-                      </uix:TargetAnchorable.Anchors>
-                    </uix:TargetAnchorable>
-                  </uix:NCheckElement.Target>
-                </uix:NCheckElement>
-              </TryCatch.Try>
-              <TryCatch.Catches>
-                <Catch x:TypeArguments="s:Exception" sap:VirtualizedContainerService.HintSize="404,21" sap2010:WorkflowViewState.IdRef="Catch`1_1">
-                  <sap:WorkflowViewStateService.ViewState>
-                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                      <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                      <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                    </scg:Dictionary>
-                  </sap:WorkflowViewStateService.ViewState>
-                  <ActivityAction x:TypeArguments="s:Exception">
-                    <ActivityAction.Argument>
-                      <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
-                    </ActivityAction.Argument>
-                    <Sequence sap:VirtualizedContainerService.HintSize="496,417" sap2010:WorkflowViewState.IdRef="Sequence_10">
-                      <sap:WorkflowViewStateService.ViewState>
-                        <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                          <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                        </scg:Dictionary>
-                      </sap:WorkflowViewStateService.ViewState>
-                      <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_6" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Open Page process failure.&quot;]" />
-                      <ui:MessageBox Caption="{x:Null}" ChosenButton="{x:Null}" AutoCloseAfter="00:00:00" DisplayName="Message Box" sap:VirtualizedContainerService.HintSize="434,85" sap2010:WorkflowViewState.IdRef="MessageBox_1" Text="[&quot;The Page has not been opened properly.&quot;+Environment.NewLine+Environment.NewLine+&quot;Opent the Fitbit.com site on the Dashboard page and restart the application.&quot;]" />
-                      <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_3">
-                        <Assign.To>
-                          <OutArgument x:TypeArguments="x:Boolean">[out_PageOpen]</OutArgument>
-                        </Assign.To>
-                        <Assign.Value>
-                          <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                        </Assign.Value>
-                      </Assign>
-                    </Sequence>
-                  </ActivityAction>
-                </Catch>
-              </TryCatch.Catches>
-            </TryCatch>
-            <If Condition="[p_DashboardExists]" DisplayName="If - Dashboard exists" sap:VirtualizedContainerService.HintSize="510,888" sap2010:WorkflowViewState.IdRef="If_2">
               <If.Then>
                 <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_6">
                   <Sequence.Variables>
@@ -225,6 +519,11 @@
       <uix:NApplicationCard.TargetApp>
         <uix:TargetApp Area="-8, -8, 1936, 1168" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAo9JREFUWEflVztrFUEUXkVEUBsFUQTZ2dxEYyB2KhZio6WCjSBipaAEtFC0EnygRToL9Q8Yd+bM7uJFRG91BSEogqIpxICNhQ+00MIHKKzfmT2ruzeQ670huwE/GBa+b+fMmXPOvLx+0IiiERXSIxWaL35ob40QrRCpGvianvmhSQvtikjzj/Npulhp+llyQJu7IlcDpc39sgN0UqRqsClJViP3N1AHD1AHpzkqIv1HGCJar0y8c2OzuVIohwbRZmXsZbSLQRQNCt07smIz1xDij8hxOyDaIJKnjDmaFyL09yqKRpkfCO0O8D8KtfFV6WSL69QrgpAO/jHkBrKGeaz5pTD8raRpusMaf4u8a5omWOsZXFxFQyi4h8zDgVVFXrTHrPkhTc7QNLVY6xkuxyF9cIY0/YLxAyLxQPdKAxlzIuPN2RKPFmg67jr1A15ugbb7B3UyLJTDaKu1HBE6x+FFPRwS2tvVbi/BjMfh4Cd2HoNfSNN0kcj1gx3kc2QgSdYINTvQYZkfRds6O2QztUd4topot9DZyjH2FGb/HFF4iuiMieTxf4jYuzw16Ks5kqhcuwcdpkG8wE9b5X8utrUw8lo6fIe2VySu9tu5IW6BMceY9409U+RzbTiO16HP504NK+sq7+tv/hL0xI0AIMeXSj9rM8X8UBwHRV60V6zB4ZczNKwQTPJwJ581ersQHMhTYKY432yIwWErpsDXdp9IcI6aRUNzSsFs4CJs6Hh7X0WIS8s/FWGV6HkZdtuIkLab87YR1b4V134Y1X4c5xcSzieMVH8h6YauVzJsZHO6ki1ouGu5puucGi7Wyq/lqI36HiZZcdb8NMOM63ucMuR5PolI4ISjCewNfT7PPe83EbQvxsHAXhIAAAAASUVORK5CYII=" InformativeScreenshot="cd35aa39f1a89e9ff74087ba03751532.jpg" Selector="&lt;html app='chrome.exe' title='Fitbit Dashboard' /&gt;" Title="Fitbit Dashboard" Url="https://www.fitbit.com/" />
       </uix:NApplicationCard.TargetApp>
+      <sap:WorkflowViewStateService.ViewState>
+        <scg:Dictionary x:TypeArguments="x:String, x:Object">
+          <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+        </scg:Dictionary>
+      </sap:WorkflowViewStateService.ViewState>
     </uix:NApplicationCard>
   </Sequence>
 </Activity>
