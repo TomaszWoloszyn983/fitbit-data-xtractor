@@ -60,6 +60,11 @@
       "Path": "Processes/GetData/ReadWeightData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "flag_ExpandMore&Sequence_75",
+        "dt_Dates&Sequence_72",
+        "ExtractDataTable&Sequence_1",
+        "date_Today&Sequence_2",
+        "counter_rows&Sequence_2",
         "dt_TestingExtraction&Sequence_2",
         "clickCounter&Sequence_18",
         "strRow&Sequence_37",
@@ -74,8 +79,9 @@
         "pWeight&Sequence_2"
       ],
       "ArgumentsSectionElementsOrder": [
-        "out_ProcessSuccess",
-        "out_DayFirst"
+        "out_DayFirst",
+        "in_DayFirst",
+        "out_ProcessSuccess"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
@@ -112,6 +118,10 @@
       "Path": "Processes/OpenApplication.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "is_PageOpen&Sequence_1",
+        "is_SignIn&Sequence_20",
+        "is_ChooseAccount&Sequence_20",
+        "numOfChidren&Sequence_20",
         "p_DashboardExists&Sequence_5",
         "p_SeeMoreBtn_exists&Sequence_6"
       ],
@@ -200,6 +210,19 @@
       ],
       "ArgumentsSectionElementsOrder": [
         "in_startDate"
+      ],
+      "ConstantsSectionElementsOrder": [],
+      "AddedNamespaces": null
+    },
+    {
+      "Path": "Processes/Settings.xaml",
+      "SortBy": 0,
+      "VariablesSectionElementsOrder": [
+        "str_StartDate&Sequence_1",
+        "dt_fitbitStats&Sequence_1"
+      ],
+      "ArgumentsSectionElementsOrder": [
+        "out_StartDate"
       ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
