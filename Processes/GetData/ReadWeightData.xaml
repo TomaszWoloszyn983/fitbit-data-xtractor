@@ -8,7 +8,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1027,5867</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1053,5684</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>ReadData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -123,7 +123,7 @@
       <AssemblyReference>UiPath.Excel</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="ReadData" sap:VirtualizedContainerService.HintSize="958,5802" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="ReadData" sap:VirtualizedContainerService.HintSize="958,5619" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Default="[New System.Data.DataTable]" Name="ExtractDataTable" />
     </Sequence.Variables>
@@ -133,13 +133,13 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="896,141" sap2010:WorkflowViewState.IdRef="LogMessage_54" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Weight Data process started. Start date set to:: &quot;+in_DayFirst]" />
-    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="Never" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="896,5329" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V2">
+    <uix:NApplicationCard AttachMode="SingleWindow" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Application/Browser" sap:VirtualizedContainerService.HintSize="896,5146" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="862,5112" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="862,4929" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:String" Name="pWeightOutput" />
               <Variable x:TypeArguments="s:String[]" Name="pSplitRow" />
@@ -196,7 +196,7 @@
                 </scg:Dictionary>
               </sap:WorkflowViewStateService.ViewState>
             </ui:CommentOut>
-            <If sap2010:Annotation.AnnotationText="If the DayFirst/StartDate variable was not set, then expand the table.&#xD;&#xA;&#xD;&#xA;Otherwise find the DayFirst value in the table and start extracting data at the DayFirst value untill todays date." Condition="[in_DayFirst = &quot;None&quot;]" DisplayName="If Day First was not set in the settings section" sap:VirtualizedContainerService.HintSize="800,3114" sap2010:WorkflowViewState.IdRef="If_10">
+            <If sap2010:Annotation.AnnotationText="If the DayFirst/StartDate variable was not set, then expand the table.&#xA;&#xA;Otherwise find the DayFirst value in the table and start extracting data at the DayFirst value untill todays date." Condition="[in_DayFirst = &quot;None&quot;]" DisplayName="If Day First was not set in the settings section" sap:VirtualizedContainerService.HintSize="800,2931" sap2010:WorkflowViewState.IdRef="If_10">
               <sap:WorkflowViewStateService.ViewState>
                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                   <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -388,7 +388,7 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap:VirtualizedContainerService.HintSize="766,2664" sap2010:WorkflowViewState.IdRef="Sequence_75">
+                <Sequence sap:VirtualizedContainerService.HintSize="766,2481" sap2010:WorkflowViewState.IdRef="Sequence_75">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Boolean" Name="flag_ExpandMore" />
                   </Sequence.Variables>
@@ -397,13 +397,14 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <Sequence DisplayName="If Start Date set" sap:VirtualizedContainerService.HintSize="724,2576" sap2010:WorkflowViewState.IdRef="Sequence_72">
+                  <Sequence DisplayName="If Start Date set" sap:VirtualizedContainerService.HintSize="724,2393" sap2010:WorkflowViewState.IdRef="Sequence_72">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="sd:DataTable" Name="dt_Dates" />
                     </Sequence.Variables>
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
                     <Assign DisplayName="Assign " sap:VirtualizedContainerService.HintSize="662,82" sap2010:WorkflowViewState.IdRef="Assign_25">
@@ -414,32 +415,31 @@
                         <InArgument x:TypeArguments="x:Boolean">[False]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="662,2343" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[flag_ExpandMore]" DisplayName="Do While" sap:VirtualizedContainerService.HintSize="662,2160" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_3">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,2207" sap2010:WorkflowViewState.IdRef="Sequence_80">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="628,2024" sap2010:WorkflowViewState.IdRef="Sequence_80">
                           <sap:WorkflowViewStateService.ViewState>
                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Dates]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xD;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Date' ReferenceName='Column0'&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xD;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xD;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xD;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xD;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xD;&#xA;&#x9;&lt;/Column&gt;&#xD;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="586,157" sap2010:WorkflowViewState.IdRef="NExtractData_10" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V3">
+                          <uix:NExtractData AppendResults="False" ContinueOnError="True" DataTable="[dt_Dates]" DisplayName="Extract Table Data" ExtractDataSettings="&lt;Table xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance' xmlns:xsd='http://www.w3.org/2001/XMLSchema' Type='Structured' AddCvHeader='true' IsScrollEnabled='false'&gt;&#xA;&#x9;&lt;Column xsi:type='DataColumn' Name='Date' ReferenceName='Column0'&gt;&#xA;&#x9;&#x9;&lt;IsValidName&gt;true&lt;/IsValidName&gt;&#xA;&#x9;&#x9;&lt;ValidationErrorMessage /&gt;&#xA;&#x9;&#x9;&lt;IsExtra&gt;false&lt;/IsExtra&gt;&#xA;&#x9;&#x9;&lt;CanExtractSimilar&gt;false&lt;/CanExtractSimilar&gt;&#xA;&#x9;&#x9;&lt;Format xsi:type='TextColumnFormat' /&gt;&#xA;&#x9;&lt;/Column&gt;&#xA;&lt;/Table&gt;" ExtractMetadata="&lt;extract&gt;&lt;column exact='1' name='Column0' attr='fulltext'&gt;&lt;webctrl tag='div' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;webctrl tag='span' idx='1' /&gt;&lt;/column&gt;&lt;/extract&gt;" sap:VirtualizedContainerService.HintSize="586,157" sap2010:WorkflowViewState.IdRef="NExtractData_10" LimitExtractionTo="None" MaximumResults="0" ScopeIdentifier="c2a1e385-14cb-4d26-92ce-ba7d93af0e83" Version="V3">
                             <uix:NExtractData.Target>
                               <uix:TargetAnchorable DesignTimeRectangle="120, 466, 870, 1176" DesignTimeScaleFactor="1" FriendlyName="'This Week 71.6 kg Today'" FullSelectorArgument="&lt;webctrl tag='DIV' class='weight-history-list ember-view' css-selector='body&amp;gt;div&amp;gt;div&amp;gt;div&amp;gt;div' /&gt;" Guid="8cbc8437-7578-499d-a151-9fa7080fb523" InformativeScreenshot="86650da6d6cc7799569ea86118736ca6.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Fitbit - Weight' /&gt;" SearchSteps="Selector" Version="V2" Visibility="Interactive" />
                             </uix:NExtractData.Target>
                           </uix:NExtractData>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Dates]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1227" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
+                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" DataTable="[dt_Dates]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1044" sap2010:WorkflowViewState.IdRef="ForEachRow_3">
                             <ui:ForEachRow.Body>
                               <ActivityAction x:TypeArguments="sd:DataRow">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentDate" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1041" sap2010:WorkflowViewState.IdRef="Sequence_76">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,858" sap2010:WorkflowViewState.IdRef="Sequence_76">
                                   <sap:WorkflowViewStateService.ViewState>
                                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,143" sap2010:WorkflowViewState.IdRef="LogMessage_51" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Searching for start date &quot;+CurrentDate.Item(0).ToString]" />
                                   <If Condition="[CurrentDate.Item(0).ToString = in_DayFirst.Split(&quot; &quot;)(0)]" sap:VirtualizedContainerService.HintSize="510,770" sap2010:WorkflowViewState.IdRef="If_11">
                                     <If.Then>
                                       <Sequence sap:VirtualizedContainerService.HintSize="476,418" sap2010:WorkflowViewState.IdRef="Sequence_77">
@@ -448,7 +448,7 @@
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot; date found. Start extracting data from this date&quot;]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_49" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start date found. Start extracting data from this date&quot;]" />
                                         <Assign DisplayName="Assign " sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_26">
                                           <Assign.To>
                                             <OutArgument x:TypeArguments="x:Boolean">[flag_ExpandMore]</OutArgument>
@@ -522,7 +522,7 @@
                                         <ActivityAction.Argument>
                                           <DelegateInArgument x:TypeArguments="s:Exception" Name="exception" />
                                         </ActivityAction.Argument>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Did you forget to set DayFirst/StartDate, didn't you?&quot;]" />
+                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_53" Level="[UiPath.Core.Activities.LogLevel.Warn]" Message="[&quot;Did you forget to set DayFirst/StartDate, didn't you?&quot;]" />
                                       </ActivityAction>
                                     </Catch>
                                   </TryCatch.Catches>
@@ -535,9 +535,6 @@
                           </If>
                         </Sequence>
                       </ui:InterruptibleDoWhile.Body>
-                      <ui:InterruptibleDoWhile.Condition>
-                        <VisualBasicValue x:TypeArguments="x:Boolean" ExpressionText="flag_ExpandMore" />
-                      </ui:InterruptibleDoWhile.Condition>
                     </ui:InterruptibleDoWhile>
                   </Sequence>
                 </Sequence>
@@ -1044,7 +1041,7 @@
                   </sap:WorkflowViewStateService.ViewState>
                   <Assign DisplayName="Assign the First Day out argument" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_5">
                     <Assign.To>
-                      <OutArgument x:TypeArguments="x:String">[in_DayFirst]</OutArgument>
+                      <OutArgument x:TypeArguments="x:String">[out_DayFirst]</OutArgument>
                     </Assign.To>
                     <Assign.Value>
                       <InArgument x:TypeArguments="x:String">[pDate]</InArgument>
@@ -1053,7 +1050,21 @@
                 </Sequence>
               </If.Then>
               <If.Else>
-                <Sequence sap2010:WorkflowViewState.IdRef="Sequence_71" />
+                <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_71">
+                  <sap:WorkflowViewStateService.ViewState>
+                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                    </scg:Dictionary>
+                  </sap:WorkflowViewStateService.ViewState>
+                  <Assign DisplayName="Assign the First Day out argument" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_28">
+                    <Assign.To>
+                      <OutArgument x:TypeArguments="x:String">[out_DayFirst]</OutArgument>
+                    </Assign.To>
+                    <Assign.Value>
+                      <InArgument x:TypeArguments="x:String">[in_DayFirst]</InArgument>
+                    </Assign.Value>
+                  </Assign>
+                </Sequence>
               </If.Else>
             </If>
             <If sap2010:Annotation.AnnotationText="If any data extracted assign out_ProcessSuccess to True, otherwise assign it to False&#xA;" Condition="[dt_WeightData.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="800,124" sap2010:WorkflowViewState.IdRef="If_3">
