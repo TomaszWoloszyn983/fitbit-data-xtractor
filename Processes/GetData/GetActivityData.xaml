@@ -5,7 +5,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1053,8297</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1082,9006</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetActivityData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -126,7 +126,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="903,8232" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="903,8941" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:ICollection(x:Object)" Name="DataCollection" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Activities" />
@@ -136,6 +136,9 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
+    <ui:Comment sap:VirtualizedContainerService.HintSize="841,266" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Aby rozwiązać problem opisany w MergeTables trzeba zrobić jakoś tak, aby nowe odczyty były dodawane na końcu tabeli a nie na początku, jak to się dzieje teraz.&#xD;&#xA;&#xD;&#xA;W tym celu być może trzeba by odczytać istniejące dane z pliku excel do oddzielnej tabeli, a dane odczytywane aktualnie ze strony do innej. &#xD;&#xA;&#xD;&#xA;Następnie nowe odczyty dołaczyć do istniejącej tabeli na jej końcu." />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="841,171" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Alternatywnym rozwiażniem mogłoby być przypisywanie roku do daty malejąco zamiast tego jak się dzieje tutaj roznąco, od najstarszej.&#xA;&#xA;Trzeba by jednak wtedy odrwócić kolejność tabeli." />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="841,152" sap2010:WorkflowViewState.IdRef="Comment_4" Text="Tak czy inaczej tę sekwencję, i nie tylko tę warto by zbudować od nowa.&#xD;&#xA;&#xD;&#xA;Konwercję daty wykonać tutaj zamiast odkładac ją później, tak by można było ładnie zapisac datę w formacie DateTime do excela." />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="841,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process started&quot;]" />
     <ui:BuildDataTable DataTable="[dt_Activities]" DisplayName="Build Data Table for the activitiy statistics" sap:VirtualizedContainerService.HintSize="841,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Distance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
     <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="841,7080" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">

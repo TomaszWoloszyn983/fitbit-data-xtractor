@@ -24,6 +24,8 @@
       "Path": "Processes/GetData/GetCaloriesAndNutritions.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "str_StartURL&Sequence_3",
+        "arr_StartDate&Sequence_30",
         "pFromProtein&Sequence_6",
         "pFromFat&Sequence_6",
         "pFromCarbs&Sequence_6",
@@ -146,6 +148,8 @@
       "Path": "Processes/GetData/GetSleepData.xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "dt_Dates&Sequence_36",
+        "flag_ExpandMore&Sequence_26",
         "DataCounter&Sequence_1",
         "dt_FinalTable&Sequence_1",
         "pFinalStartTime&Sequence_9",
@@ -165,7 +169,9 @@
         "exist_LoadMore&Sequence_2",
         "exist_SleepPage&Sequence_2"
       ],
-      "ArgumentsSectionElementsOrder": [],
+      "ArgumentsSectionElementsOrder": [
+        "in_StartDay"
+      ],
       "ConstantsSectionElementsOrder": [],
       "AddedNamespaces": null
     },

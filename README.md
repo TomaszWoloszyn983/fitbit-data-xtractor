@@ -49,7 +49,8 @@ Proces all data from temporary files and generate the final ouput file.
 ### Future Features
 
 - Credentials
-- Add Read Activities Details process
+- Add Activities Details extraction
+- Add Sleep Details extraction
 
 
 ## Tools & Technologies Used
@@ -64,12 +65,23 @@ No data base is used at this stage of the application. It is considering to use 
 
 
 ## Deployment
+There is not deployment available at the moment.
 
 
 ## Local Deployment
 In order to make a local copy of this project, you can clone it. In your IDE Terminal, type the following command to clone my repository:
 
 git clone https://github.com/TomaszWoloszyn983/fitbit-data-xtractor
+
+
+## Testing
+
+### Unfixed errors and Bugs
+- Activity Data don't update properly.
+During updating previuosly exctracted data, an attempt of updating the data causes an issue that all data except of the Activity Data (Calories consumed, Steps, Floors and Distance) are not updated properly.
+The bug is caused by the fact that at the first extraction the data are writen to excel in ascending order, from the oldest to the newest, after an update the new data are added on the top of the table, above the oldest data.
+
+Potential solution is to add the new data at the end of the table.
 
 ## Credits
 
