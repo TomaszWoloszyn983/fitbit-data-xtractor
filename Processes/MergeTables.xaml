@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1082,8326</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1082,9015</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>MergeTables_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="MergeTables" sap:VirtualizedContainerService.HintSize="823,8261" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="MergeTables" sap:VirtualizedContainerService.HintSize="823,8950" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_finalTable" />
       <Variable x:TypeArguments="s:DateTime" Name="date_TodaysDate" />
@@ -595,6 +595,8 @@
       <ui:RemoveDataColumn Column="{x:Null}" ColumnIndex="{x:Null}" ColumnName="Date_1" DataTable="[dt_joined]" DisplayName="Remove Data Column" sap:VirtualizedContainerService.HintSize="450,186" sap2010:WorkflowViewState.IdRef="RemoveDataColumn_2" />
       <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="450,141" sap2010:WorkflowViewState.IdRef="LogMessage_105" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Process Weight Data sequence started&quot;]" />
     </Sequence>
+    <ui:Comment DisplayName="Error in Merge Activity Data table" sap:VirtualizedContainerService.HintSize="761,438" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Problem w przypadku tej sekwencji jest takiz że po odpaleniu aplikacji w celu zrobienia updatu i dodaniu nowych statystyk z nowych dni, zostają one dodane na samym początku tabeli.&#xA;&#xA;Tabela jest uporządkowana malejąca, więc najnowsze daty zostają dodane na samym początku tabeli, a powine być one dodane na samym końcu. &#xA;&#xA;Ponieważ pobrane ze strony daty mają format Mon 23 Jun, w tej sekwencji dodane są im lata (years)&#xA;&#xA;Czyli w rezultacie najnowszym odczytom ze strony zostają przypisane daty 2017. &#xA;&#xA;&#xA;Rozwiązaniem wydaje się być w sekwencji GetActivityData dodanie nowych odczytó na końcu tabeli." />
+    <ui:Comment sap:VirtualizedContainerService.HintSize="761,171" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Alternatywnym rozwiażniem mogłoby być przypisywanie roku do daty malejąco zamiast tego jak się dzieje tutaj roznąco, od najstarszej.&#xA;&#xA;Trzeba by jednak wtedy odrwócić kolejność tabeli." />
     <Sequence DisplayName="Process Activity Data" sap:VirtualizedContainerService.HintSize="761,6376" sap2010:WorkflowViewState.IdRef="Sequence_154">
       <Sequence.Variables>
         <Variable x:TypeArguments="sd:DataTable" Name="dt_ActivityData" />

@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Settings" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Settings" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="out_StartDate" Type="OutArgument(x:String)" />
     <x:Property Name="BreakTriggerScopeInArgument" Type="InArgument(x:String)" />
@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1027,2081</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>983,2547</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>Settings_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -43,6 +43,7 @@
       <x:String>UiPath.Excel.Activities.Business</x:String>
       <x:String>UiPath.Shared.Activities.Business</x:String>
       <x:String>UiPath.DataTableUtilities</x:String>
+      <x:String>Microsoft.VisualBasic.CompilerServices</x:String>
     </sco:Collection>
   </TextExpression.NamespacesForImplementation>
   <TextExpression.ReferencesForImplementation>
@@ -102,12 +103,14 @@
       <AssemblyReference>UiPath.UIAutomationNext.Activities</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.Design</AssemblyReference>
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Forms</AssemblyReference>
+      <AssemblyReference>Microsoft.VisualBasic.Core</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Check the date of last record in the Fitbit Statisctics excel file.&#xA;&#xA;Assign the extracted date as the start date of the next searching process." DisplayName="Settings" sap:VirtualizedContainerService.HintSize="724,2016" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Check the date of last record in the Fitbit Statisctics excel file.&#xA;&#xA;Assign the extracted date as the start date of the next searching process." DisplayName="Settings" sap:VirtualizedContainerService.HintSize="724,2482" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_fitbitStats" />
-      <Variable x:TypeArguments="x:String" Name="str_StartDate" />
+      <Variable x:TypeArguments="s:DateTime" Name="date_Today" />
     </Sequence.Variables>
     <sap:WorkflowViewStateService.ViewState>
       <scg:Dictionary x:TypeArguments="x:String, x:Object">
@@ -116,39 +119,44 @@
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
     <ui:ReadRange Range="{x:Null}" AddHeaders="True" DataTable="[dt_fitbitStats]" DisplayName="Read Range Workbook" sap:VirtualizedContainerService.HintSize="662,88" sap2010:WorkflowViewState.IdRef="ReadRange_1" SheetName="Sheet1" WorkbookPath="Data\Fitbit Statistics.xlsx" />
-    <Assign sap:VirtualizedContainerService.HintSize="662,82" sap2010:WorkflowViewState.IdRef="Assign_3">
+    <Assign sap:VirtualizedContainerService.HintSize="662,82" sap2010:WorkflowViewState.IdRef="Assign_5">
       <Assign.To>
-        <OutArgument x:TypeArguments="x:String">[str_StartDate]</OutArgument>
+        <OutArgument x:TypeArguments="s:DateTime">[date_Today]</OutArgument>
       </Assign.To>
       <Assign.Value>
-        <InArgument x:TypeArguments="x:String">
-          <Literal x:TypeArguments="x:String" Value="" />
-        </InArgument>
+        <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
       </Assign.Value>
     </Assign>
-    <If Condition="[dt_fitbitStats.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="662,1598" sap2010:WorkflowViewState.IdRef="If_2">
+    <If Condition="[dt_fitbitStats.RowCount &gt; 0]" sap:VirtualizedContainerService.HintSize="662,2064" sap2010:WorkflowViewState.IdRef="If_2">
       <If.Then>
-        <Sequence sap:VirtualizedContainerService.HintSize="628,1065" sap2010:WorkflowViewState.IdRef="Sequence_5">
+        <Sequence sap:VirtualizedContainerService.HintSize="628,1531" sap2010:WorkflowViewState.IdRef="Sequence_5">
           <sap:WorkflowViewStateService.ViewState>
             <scg:Dictionary x:TypeArguments="x:String, x:Object">
               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
             </scg:Dictionary>
           </sap:WorkflowViewStateService.ViewState>
-          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Search if previous records exist.&#xD;&#xA;&#xD;&#xA;If any previous records exist, set the Start Date to the first date that has no records" DataTable="[dt_fitbitStats]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,977" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
+          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="586,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Previous record found. &quot;]" />
+          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Search if previous records exist.&#xA;&#xA;If any previous records exist, set the Start Date to the first date that has no records" DataTable="[dt_fitbitStats]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="586,1262" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
             <ui:ForEachRow.Body>
               <ActivityAction x:TypeArguments="sd:DataRow">
                 <ActivityAction.Argument>
                   <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentRow" />
                 </ActivityAction.Argument>
-                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,734" sap2010:WorkflowViewState.IdRef="Sequence_2">
+                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="552,1019" sap2010:WorkflowViewState.IdRef="Sequence_2">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <If Condition="[CurrentRow.Item(1).ToString.Length = 0]" sap:VirtualizedContainerService.HintSize="510,646" sap2010:WorkflowViewState.IdRef="If_1">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="510,141" sap2010:WorkflowViewState.IdRef="LogMessage_4" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Checking values for &quot;+CurrentRow.item(0).ToString+&quot;.to: &quot;+date_Today.ToString]" />
+                  <If sap2010:Annotation.AnnotationText="If the ffirst elements from the table has the Date valuue lower than todays date. Assign the out_StartArgument to that value.&#xD;&#xA;&#xD;&#xA;So the next exctraction from the website will start from this date." Condition="[CDate(CurrentRow.Item(0)) &lt; date_Today]" sap:VirtualizedContainerService.HintSize="510,750" sap2010:WorkflowViewState.IdRef="If_1">
+                    <sap:WorkflowViewStateService.ViewState>
+                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                        <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                      </scg:Dictionary>
+                    </sap:WorkflowViewStateService.ViewState>
                     <If.Then>
-                      <Sequence sap:VirtualizedContainerService.HintSize="476,170" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                      <Sequence sap:VirtualizedContainerService.HintSize="476,416" sap2010:WorkflowViewState.IdRef="Sequence_3">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -162,17 +170,17 @@
                             <InArgument x:TypeArguments="x:String">[CurrentRow.Item(0).ToString]</InArgument>
                           </Assign.Value>
                         </Assign>
+                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,141" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Start Date set to &quot;+out_StartDate]" />
+                        <ui:Break sap:VirtualizedContainerService.HintSize="434,25" sap2010:WorkflowViewState.IdRef="Break_2" />
                       </Sequence>
                     </If.Then>
                     <If.Else>
-                      <Sequence sap:VirtualizedContainerService.HintSize="376,294" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                      <Sequence sap:VirtualizedContainerService.HintSize="300,80" sap2010:WorkflowViewState.IdRef="Sequence_4">
                         <sap:WorkflowViewStateService.ViewState>
                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                           </scg:Dictionary>
                         </sap:WorkflowViewStateService.ViewState>
-                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Previous record found. Start Date set to &quot;+str_StartDate]" />
-                        <ui:Break sap:VirtualizedContainerService.HintSize="334,25" sap2010:WorkflowViewState.IdRef="Break_1" />
                       </Sequence>
                     </If.Else>
                   </If>

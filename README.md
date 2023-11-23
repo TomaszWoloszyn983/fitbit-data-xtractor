@@ -85,5 +85,8 @@ Potential solution is to add the new data at the end of the table.
 
 ## Credits
 
+Fitbit Home Page - https://www.fitbit.com/global/ie/home
+UiPath Platform where you can download the latest version of the UiPath Studio as well as join the UiPath community - https://www.uipath.com
+ABP School Of Automation. Platform where you can start your automation career - https://www.schoolofautomation.tech/homemayproposal
 
 ### Acknowledgements
