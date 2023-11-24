@@ -237,6 +237,11 @@
       "Path": "Processes/GetData/GetActivityData - Copy (1).xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "flag_January&Sequence_28",
+        "str_finalDate&Sequence_28",
+        "arr_Date&Sequence_38",
+        "str_tempDate&Sequence_29",
+        "tempDate&Sequence_29",
         "date_Today&Sequence_1",
         "flag_January&Sequence_35",
         "int_StartYear&Sequence_4",
