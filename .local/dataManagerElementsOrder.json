@@ -237,6 +237,8 @@
       "Path": "Processes/GetData/GetActivityData - Copy (1).xaml",
       "SortBy": 0,
       "VariablesSectionElementsOrder": [
+        "int_DaysCounter&Sequence_4",
+        "str_ActivityData&Sequence_4",
         "flag_January&Sequence_28",
         "str_finalDate&Sequence_28",
         "arr_Date&Sequence_38",
@@ -252,8 +254,6 @@
         "exists_activityPage&Sequence_2",
         "pConvertedDate&Sequence_4",
         "pCheckedDate&Sequence_4",
-        "pActivityData&Sequence_4",
-        "pDaysCounter&Sequence_4",
         "arrActivityData&Sequence_8",
         "arrFilteredData&Sequence_8",
         "pCals&Sequence_8",

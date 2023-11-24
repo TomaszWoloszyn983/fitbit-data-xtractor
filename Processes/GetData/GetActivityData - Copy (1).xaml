@@ -1,11 +1,11 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="GetActivityData" this:GetActivityData.in_DayFirst="11/20/2023" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:this="clr-namespace:" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="GetActivityData" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:s="clr-namespace:System;assembly=System.Private.CoreLib" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:sc="clr-namespace:System.ComponentModel;assembly=System.ComponentModel.TypeConverter" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=System.Private.CoreLib" xmlns:sco="clr-namespace:System.Collections.ObjectModel;assembly=System.Private.CoreLib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data.Common" xmlns:uasc="clr-namespace:UiPath.Activities.System.Collections;assembly=UiPath.System.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:uix="http://schemas.uipath.com/workflow/activities/uix" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <x:Members>
     <x:Property Name="in_DayFirst" Type="InArgument(x:String)" />
   </x:Members>
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1047,11814</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1794,6213</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetActivityData_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -127,7 +127,7 @@
       <AssemblyReference>UiPath.System.Activities.ViewModels</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="1057,11749" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="GetActivityData" sap:VirtualizedContainerService.HintSize="995,6148" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="scg:ICollection(x:Object)" Name="DataCollection" />
       <Variable x:TypeArguments="sd:DataTable" Name="dt_Activities" />
@@ -140,11 +140,8 @@
         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:Comment sap:VirtualizedContainerService.HintSize="995,266" sap2010:WorkflowViewState.IdRef="Comment_2" Text="Aby rozwiązać problem opisany w MergeTables trzeba zrobić jakoś tak, aby nowe odczyty były dodawane na końcu tabeli a nie na początku, jak to się dzieje teraz.&#xA;&#xA;W tym celu być może trzeba by odczytać istniejące dane z pliku excel do oddzielnej tabeli, a dane odczytywane aktualnie ze strony do innej. &#xA;&#xA;Następnie nowe odczyty dołaczyć do istniejącej tabeli na jej końcu." />
-    <ui:Comment sap:VirtualizedContainerService.HintSize="995,171" sap2010:WorkflowViewState.IdRef="Comment_3" Text="Alternatywnym rozwiażniem mogłoby być przypisywanie roku do daty malejąco zamiast tego jak się dzieje tutaj roznąco, od najstarszej.&#xA;&#xA;Trzeba by jednak wtedy odrwócić kolejność tabeli." />
-    <ui:Comment sap:VirtualizedContainerService.HintSize="995,323" sap2010:WorkflowViewState.IdRef="Comment_4" Text="Zainicjalizowana na początku tabela ma daty w formacie String, a powinna mieć daty w typie DateTime.&#xA;&#xA;Problem jest w tym że najpierw pobieram dane ze strony i natychmiast zapisauje je w tabeli.&#xA;&#xA;Następnie przekonwertowuję datę, co sprawia że przekonwertowanej do innego formatu nie mogę jej zapisać w tej samej tabeli danych.&#xA;Zamiana kolejności pobierania danych oraz przekowertowania nie jest możliwa. Więc na output trzeba chyba utworzyć nową tabelę danych." />
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="995,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process started&quot;]" />
-    <Sequence sap2010:Annotation.AnnotationText="Build Data tables&#xA;Assign variables" DisplayName="Prepare process" sap:VirtualizedContainerService.HintSize="995,559" sap2010:WorkflowViewState.IdRef="Sequence_26">
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="933,141" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process started&quot;]" />
+    <Sequence sap2010:Annotation.AnnotationText="Build Data tables&#xA;Assign variables" DisplayName="Prepare process" sap:VirtualizedContainerService.HintSize="933,559" sap2010:WorkflowViewState.IdRef="Sequence_26">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -168,7 +165,7 @@
           <InArgument x:TypeArguments="s:DateTime">[DateTime.Now]</InArgument>
         </Assign.Value>
       </Assign>
-      <ui:BuildDataTable sap2010:Annotation.AnnotationText="Returns dt_Activities data table&#xA;This is the whole process output table.&#xA;&#xA;The date column is a String. To generate the final output the date should be of type DateTime. I don't know yet how to fix it." DataTable="[dt_Activities]" DisplayName="Build Data Table for the activitiy statistics" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xD;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xD;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xD;&#xA;      &lt;xs:complexType&gt;&#xD;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xD;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xD;&#xA;            &lt;xs:complexType&gt;&#xD;&#xA;              &lt;xs:sequence&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;                &lt;xs:element name=&quot;Distance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xD;&#xA;              &lt;/xs:sequence&gt;&#xD;&#xA;            &lt;/xs:complexType&gt;&#xD;&#xA;          &lt;/xs:element&gt;&#xD;&#xA;        &lt;/xs:choice&gt;&#xD;&#xA;      &lt;/xs:complexType&gt;&#xD;&#xA;    &lt;/xs:element&gt;&#xD;&#xA;  &lt;/xs:schema&gt;&#xD;&#xA;&lt;/NewDataSet&gt;">
+      <ui:BuildDataTable sap2010:Annotation.AnnotationText="Returns dt_Activities data table&#xA;This is the whole process output table.&#xA;&#xA;The date column is a String. To generate the final output the date should be of type DateTime. I don't know yet how to fix it." DataTable="[dt_Activities]" DisplayName="Build Data Table for the activitiy statistics" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:dateTime&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories_x0020_Burned&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Steps&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Floors&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Distance&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;">
         <sap:WorkflowViewStateService.ViewState>
           <scg:Dictionary x:TypeArguments="x:String, x:Object">
             <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
@@ -176,13 +173,13 @@
         </sap:WorkflowViewStateService.ViewState>
       </ui:BuildDataTable>
     </Sequence>
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="995,9218" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Track My Activities on Fitbit" sap:VirtualizedContainerService.HintSize="933,4497" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="961,9001" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="726,4280" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exists_activityPage" />
             </Sequence.Variables>
@@ -192,19 +189,19 @@
                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Today'" sap:VirtualizedContainerService.HintSize="899,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exists_activityPage]" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+            <uix:NCheckElement DelayBefore="0" DisplayName="Check Element 'Today'" sap:VirtualizedContainerService.HintSize="664,157" sap2010:WorkflowViewState.IdRef="NCheckElement_1" Result="[exists_activityPage]" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
               <uix:NCheckElement.Target>
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="339, 355, 59, 32" CvTextArea="348, 364, 43, 16" CvTextArgument="Today" CvType="Button" DesignTimeRectangle="342, 357, 55, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Today'" FullSelectorArgument="&lt;webctrl parentid='dateSelector' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateSelector' tag='A' type='' class='fitbit-date-button-active fitbit-date-day' aaname='Today' check:innerText='Today' /&gt;" Guid="bbaa888b-5491-40b6-829b-357f167fe715" InformativeScreenshot="68864d81ebf5790310d883cbcd3fb5b7.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[exists_activityPage]" sap:VirtualizedContainerService.HintSize="899,8689" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[exists_activityPage]" DisplayName="If - page exists" sap:VirtualizedContainerService.HintSize="664,3968" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="865,8276" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="630,3555" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:String" Name="pConvertedDate" />
-                    <Variable x:TypeArguments="x:String" Name="pCheckedDate" />
-                    <Variable x:TypeArguments="x:String" Name="pActivityData" />
-                    <Variable x:TypeArguments="x:Int32" Name="pDaysCounter" />
+                    <Variable x:TypeArguments="x:String" Name="str_CheckedDate" />
+                    <Variable x:TypeArguments="x:String" Name="str_ActivityData" />
+                    <Variable x:TypeArguments="x:Int32" Name="int_DaysCounter" />
                     <Variable x:TypeArguments="x:Int32" Name="int_StartYear" />
                   </Sequence.Variables>
                   <sap:WorkflowViewStateService.ViewState>
@@ -212,8 +209,8 @@
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="823,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Activities Page Open: &quot;+exists_activityPage.ToString]" />
-                  <Sequence sap2010:Annotation.AnnotationText="Type the start date so the exctraction will be stareted from that date." DisplayName="Type the start date in the box" sap:VirtualizedContainerService.HintSize="823,112" sap2010:WorkflowViewState.IdRef="Sequence_27">
+                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="588,143" sap2010:WorkflowViewState.IdRef="LogMessage_5" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Activities Page Open: &quot;+exists_activityPage.ToString]" />
+                  <Sequence sap2010:Annotation.AnnotationText="Type the start date so the exctraction will be stareted from that date." DisplayName="Type the start date in the box" sap:VirtualizedContainerService.HintSize="588,112" sap2010:WorkflowViewState.IdRef="Sequence_27">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -262,7 +259,7 @@
                       </uix:NClick.Target>
                     </uix:NClick>
                   </Sequence>
-                  <Sequence sap2010:Annotation.AnnotationText="Extracts data from the data table in the web page." DisplayName="Get Data from the page table" sap:VirtualizedContainerService.HintSize="823,7500" sap2010:WorkflowViewState.IdRef="Sequence_28">
+                  <Sequence sap2010:Annotation.AnnotationText="Extracts data from the data table in the web page." DisplayName="Get Data from the page table" sap:VirtualizedContainerService.HintSize="588,3132" sap2010:WorkflowViewState.IdRef="Sequence_28">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="s:DateTime" Name="str_finalDate" />
                       <Variable x:TypeArguments="x:Boolean" Name="flag_January" />
@@ -274,15 +271,15 @@
                         <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <Assign sap:VirtualizedContainerService.HintSize="761,82" sap2010:WorkflowViewState.IdRef="Assign_9">
+                    <Assign sap:VirtualizedContainerService.HintSize="526,82" sap2010:WorkflowViewState.IdRef="Assign_9">
                       <Assign.To>
-                        <OutArgument x:TypeArguments="x:Int32">[pDaysCounter]</OutArgument>
+                        <OutArgument x:TypeArguments="x:Int32">[int_DaysCounter]</OutArgument>
                       </Assign.To>
                       <Assign.Value>
                         <InArgument x:TypeArguments="x:Int32">1</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign DisplayName="Assign year of the olders record" sap:VirtualizedContainerService.HintSize="761,82" sap2010:WorkflowViewState.IdRef="Assign_22">
+                    <Assign DisplayName="Assign year of the olders record" sap:VirtualizedContainerService.HintSize="526,82" sap2010:WorkflowViewState.IdRef="Assign_22">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Int32">[int_StartYear]</OutArgument>
                       </Assign.To>
@@ -290,7 +287,7 @@
                         <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(DateTime.Parse(in_DayFirst).ToString("yyyy"))]</InArgument>
                       </Assign.Value>
                     </Assign>
-                    <Assign sap2010:Annotation.AnnotationText="This flag defines of int_StartDate is allowed to be incremented.&#xA;It is set to flase when the year was incemented and set back to True when the month is 'Dec'." sap:VirtualizedContainerService.HintSize="761,139" sap2010:WorkflowViewState.IdRef="Assign_23">
+                    <Assign sap2010:Annotation.AnnotationText="This flag defines of int_StartDate is allowed to be incremented.&#xA;&#xA;It is set to false  after the year is incremented, and set back to True when the month is 'Dec'." sap:VirtualizedContainerService.HintSize="526,154" sap2010:WorkflowViewState.IdRef="Assign_23">
                       <Assign.To>
                         <OutArgument x:TypeArguments="x:Boolean">[flag_January]</OutArgument>
                       </Assign.To>
@@ -303,9 +300,9 @@
                         </scg:Dictionary>
                       </sap:WorkflowViewStateService.ViewState>
                     </Assign>
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[pCheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While until the date is equals to 'Today'" sap:VirtualizedContainerService.HintSize="761,6935" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" Condition="[str_CheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While until the date is equals to 'Today'" sap:VirtualizedContainerService.HintSize="526,2552" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="727,6799" sap2010:WorkflowViewState.IdRef="Sequence_8">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="492,2416" sap2010:WorkflowViewState.IdRef="Sequence_8">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="s:String[]" Name="arrActivityData" />
                             <Variable x:TypeArguments="x:String" Name="arrFilteredData" />
@@ -321,7 +318,7 @@
                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                             </scg:Dictionary>
                           </sap:WorkflowViewStateService.ViewState>
-                          <uix:NGetText DisplayName="Get Text a row of data from the page" sap:VirtualizedContainerService.HintSize="685,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[pActivityData]" Version="V3">
+                          <uix:NGetText DisplayName="Get Text a row of data from the page" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NGetText_3" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[str_ActivityData]" Version="V3">
                             <uix:NGetText.Target>
                               <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" DesignTimeRectangle="356, 766, 875, 60" DesignTimeScaleFactor="1" FriendlyName="'Totals 8,567'" FullSelectorArgument="&lt;webctrl class='summary' parentid='summaryChartSection' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl class='summary' parentid='summaryChartSection' tag='DIV' type='' aaname=' ' /&gt;" Guid="1419ee15-df35-428a-ba04-9bd035e2910c" InformativeScreenshot="55e904cf05e2f10117cbebd527bf7b63.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector" Version="V2" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
@@ -332,15 +329,15 @@
                               </uix:TargetAnchorable>
                             </uix:NGetText.Target>
                           </uix:NGetText>
-                          <Assign DisplayName="Assign - Split extracted data row into an array of strings" sap:VirtualizedContainerService.HintSize="685,82" sap2010:WorkflowViewState.IdRef="Assign_6">
+                          <Assign DisplayName="Assign - Split extracted data row into an array of strings" sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_6">
                             <Assign.To>
                               <OutArgument x:TypeArguments="s:String[]">[arrActivityData]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="s:String[]">[pActivityData.Split(" "C)]</InArgument>
+                              <InArgument x:TypeArguments="s:String[]">[str_ActivityData.Split(" "C)]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <Assign sap2010:Annotation.AnnotationText="This collection contains the values fo Date, Steps, Floors, Distance and Caloris burned. This data are going to be converted into data row.&#xA;" DisplayName="Assign - Collection for captured data" sap:VirtualizedContainerService.HintSize="685,139" sap2010:WorkflowViewState.IdRef="Assign_5">
+                          <Assign sap2010:Annotation.AnnotationText="This collection contains the values fo Date, Steps, Floors, Distance and Caloris burned. This data are going to be converted into data row.&#xA;" DisplayName="Assign - Collection for captured data" sap:VirtualizedContainerService.HintSize="450,139" sap2010:WorkflowViewState.IdRef="Assign_5">
                             <Assign.To>
                               <OutArgument x:TypeArguments="scg:ICollection(x:Object)">[DataCollection]</OutArgument>
                             </Assign.To>
@@ -353,14 +350,14 @@
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
                           </Assign>
-                          <Sequence DisplayName="Display log messages on progress" sap:VirtualizedContainerService.HintSize="685,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
+                          <Sequence DisplayName="Display log messages on progress" sap:VirtualizedContainerService.HintSize="450,81" sap2010:WorkflowViewState.IdRef="Sequence_37">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                 <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <If Condition="[pDaysCounter MOD 25 = 0]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_5">
+                            <If Condition="[int_DaysCounter MOD 25 = 0]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_5">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -374,14 +371,14 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[pDaysCounter.ToString+&quot; elements extracted ...&quot;]" />
+                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_10" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[int_DaysCounter.ToString+&quot; elements extracted ...&quot;]" />
                                 </Sequence>
                               </If.Then>
                               <If.Else>
                                 <Sequence sap2010:WorkflowViewState.IdRef="Sequence_23" />
                               </If.Else>
                             </If>
-                            <If Condition="[pDaysCounter MOD 30 = 0]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_6">
+                            <If Condition="[int_DaysCounter MOD 30 = 0]" sap:VirtualizedContainerService.HintSize="388,52" sap2010:WorkflowViewState.IdRef="If_6">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">False</x:Boolean>
@@ -403,13 +400,13 @@
                               </If.Else>
                             </If>
                           </Sequence>
-                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - element in the array of extracted data." sap:VirtualizedContainerService.HintSize="685,685" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrActivityData]">
+                          <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through extracted data.&#xA;&#xA;Filter out all the not numeric values and leave only numeric values.&#xA;&#xA;Assign the filtered data to DataCollection list. So the list contains only numeric values extracted form the page.&#xA;&#xA;" DisplayName="For Each - element in the array of extracted data." sap:VirtualizedContainerService.HintSize="450,259" sap2010:WorkflowViewState.IdRef="ForEach`1_1" Values="[arrActivityData]">
                             <ui:ForEach.Body>
                               <ActivityAction x:TypeArguments="x:String">
                                 <ActivityAction.Argument>
                                   <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                                 </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,499" sap2010:WorkflowViewState.IdRef="Sequence_11">
+                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="300,140" sap2010:WorkflowViewState.IdRef="Sequence_11">
                                   <Sequence.Variables>
                                     <Variable x:TypeArguments="s:String[]" Name="arrData" />
                                   </Sequence.Variables>
@@ -418,7 +415,13 @@
                                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                     </scg:Dictionary>
                                   </sap:WorkflowViewStateService.ViewState>
-                                  <If Condition="[isNumeric(currentItem)]" DisplayName="If - filter if the element from the array is a numeric value" sap:VirtualizedContainerService.HintSize="410,411" sap2010:WorkflowViewState.IdRef="If_3">
+                                  <If Condition="[isNumeric(currentItem)]" DisplayName="If - filter if the element from the array is a numeric value" sap:VirtualizedContainerService.HintSize="258,52" sap2010:WorkflowViewState.IdRef="If_3">
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                     <If.Then>
                                       <Sequence sap:VirtualizedContainerService.HintSize="376,229" sap2010:WorkflowViewState.IdRef="Sequence_13">
                                         <sap:WorkflowViewStateService.ViewState>
@@ -448,11 +451,18 @@
                                 </Sequence>
                               </ActivityAction>
                             </ui:ForEach.Body>
-                          </ui:ForEach>
-                          <TryCatch DisplayName="Try Catch if error occured during assinging data" sap:VirtualizedContainerService.HintSize="685,1102" sap2010:WorkflowViewState.IdRef="TryCatch_1">
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
+                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                              </scg:Dictionary>
+                            </sap:WorkflowViewStateService.ViewState>
+                          </ui:ForEach>
+                          <TryCatch DisplayName="Try Catch if error occured during assinging data" sap:VirtualizedContainerService.HintSize="450,52" sap2010:WorkflowViewState.IdRef="TryCatch_1">
+                            <sap:WorkflowViewStateService.ViewState>
+                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
@@ -634,33 +644,32 @@
                               </Catch>
                             </TryCatch.Catches>
                           </TryCatch>
-                          <uix:NGetText DisplayName="Get Text From the Calendar" sap:VirtualizedContainerService.HintSize="685,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[pCheckedDate]" Version="V3">
+                          <uix:NGetText DisplayName="Get Text From the Calendar" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NGetText_1" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" TextString="[str_CheckedDate]" Version="V3">
                             <uix:NGetText.Target>
                               <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="914, 355, 160, 32" CvTextArea="950, 364, 69, 13" CvTextArgument="Sat 21 Oct" CvType="InputBox" DesignTimeRectangle="916, 356, 158, 30" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Sat 21 Oct'" FullSelectorArgument="&lt;webctrl parentid='dateSelector' tag='DIV' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='dateSelector' tag='DIV' type='' class='date fitbit-calendar-day' /&gt;" Guid="455fe20a-fdce-4c71-9ba0-4a0255c4acba" InformativeScreenshot="57aed378396d23a0e08c5c79347fe71a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
                             </uix:NGetText.Target>
                           </uix:NGetText>
-                          <ui:Comment sap:VirtualizedContainerService.HintSize="685,228" sap2010:WorkflowViewState.IdRef="Comment_7" Text="I to chyba jest to miejsce gdzie mogę przekonwertować datę&#xD;&#xA;&#xD;&#xA;Powyżej pobraliśmy ją ze strony i zaraz poniżej dodajemy ja tabeli.&#xD;&#xA;&#xD;&#xA;Plan:&#xD;&#xA;1. Przed pętlą trzeba zainicjalizować liczniki: Lat oraz i zwykły licznik jest już utworzony.&#xD;&#xA;2. Może uda się wkleić po prostru wcześniej utworzoną sekwencję konwertującą." />
-                          <Sequence sap2010:Annotation.AnnotationText="Extracted dates do not contain Years.&#xA;This sequence converts dates to add years to them.." DisplayName="Convert the Dates in the input data" sap:VirtualizedContainerService.HintSize="685,2762" sap2010:WorkflowViewState.IdRef="Sequence_38">
+                          <Sequence sap2010:Annotation.AnnotationText="Convert date from string format of Mon 01 Jan to DateTime format MM/dd/yyyy" DisplayName="Convert the Dates in the input data" sap:VirtualizedContainerService.HintSize="450,123" sap2010:WorkflowViewState.IdRef="Sequence_38">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="arr_Date" />
                             </Sequence.Variables>
                             <sap:WorkflowViewStateService.ViewState>
                               <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                <x:Boolean x:Key="IsExpanded">False</x:Boolean>
                                 <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
                                 <x:Boolean x:Key="IsPinned">False</x:Boolean>
                               </scg:Dictionary>
                             </sap:WorkflowViewStateService.ViewState>
-                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="623,143" sap2010:WorkflowViewState.IdRef="LogMessage_28" Message="[&quot;Converting: &quot;+pCheckedDate]" />
+                            <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="623,143" sap2010:WorkflowViewState.IdRef="LogMessage_28" Message="[&quot;Converting: &quot;+str_CheckedDate]" />
                             <Assign sap:VirtualizedContainerService.HintSize="623,82" sap2010:WorkflowViewState.IdRef="Assign_24">
                               <Assign.To>
                                 <OutArgument x:TypeArguments="s:String[]">[arr_Date]</OutArgument>
                               </Assign.To>
                               <Assign.Value>
-                                <InArgument x:TypeArguments="s:String[]">[pCheckedDate.Split(" ")]</InArgument>
+                                <InArgument x:TypeArguments="s:String[]">[str_CheckedDate.Split(" ")]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <If Condition="[arr_Date.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="623,2121" sap2010:WorkflowViewState.IdRef="If_9">
+                            <If Condition="[arr_Date.Length &gt; 1]" DisplayName="If - Date is not 'Today'" sap:VirtualizedContainerService.HintSize="623,2121" sap2010:WorkflowViewState.IdRef="If_9">
                               <sap:WorkflowViewStateService.ViewState>
                                 <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                   <x:Boolean x:Key="IsExpanded">True</x:Boolean>
@@ -739,10 +748,17 @@
                                         <sap:WorkflowViewStateService.ViewState>
                                           <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                             <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                            <x:Boolean x:Key="IsPinned">False</x:Boolean>
                                           </scg:Dictionary>
                                         </sap:WorkflowViewStateService.ViewState>
                                       </Sequence>
                                     </ui:CommentOut.Body>
+                                    <sap:WorkflowViewStateService.ViewState>
+                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
+                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
+                                        <x:Boolean x:Key="IsPinned">False</x:Boolean>
+                                      </scg:Dictionary>
+                                    </sap:WorkflowViewStateService.ViewState>
                                   </ui:CommentOut>
                                   <ui:Comment sap:VirtualizedContainerService.HintSize="547,152" sap2010:WorkflowViewState.IdRef="Comment_8" Text="Poniżej dodajesz godziny do daty.&#xA;&#xA;Wyświeltan się ona później, i probujesz ją później usunąć.&#xA;&#xA;Zastanó się jak to ma być." />
                                   <Assign sap:VirtualizedContainerService.HintSize="547,82" sap2010:WorkflowViewState.IdRef="Assign_28">
@@ -776,8 +792,8 @@
                             </If>
                             <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="623,143" sap2010:WorkflowViewState.IdRef="LogMessage_32" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Converted date looks like &quot;+str_finalDate.ToString]" />
                           </Sequence>
-                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new Object(){str_finalDate, pCals, pSteps, pFloors, pDistance}]" DataTable="[dt_Activities]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="685,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
-                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next' to go to the next page/day" sap:VirtualizedContainerService.HintSize="685,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
+                          <ui:AddDataRow DataRow="{x:Null}" ArrayRow="[new Object(){str_finalDate, pCals, pSteps, pFloors, pDistance}]" DataTable="[dt_Activities]" DisplayName="Add Data Row" sap:VirtualizedContainerService.HintSize="450,186" sap2010:WorkflowViewState.IdRef="AddDataRow_2" />
+                          <uix:NClick ActivateBefore="True" ClickType="Single" DisplayName="Click 'Next' to go to the next page/day" sap:VirtualizedContainerService.HintSize="450,157" sap2010:WorkflowViewState.IdRef="NClick_3" KeyModifiers="None" MouseButton="Left" ScopeIdentifier="11631f42-2ad5-4d6c-a8ac-804ade17cee3" Version="V3">
                             <uix:NClick.Target>
                               <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/activities" CvElementArea="1075, 355, 34, 32" CvType="Button" DesignTimeRectangle="1077, 357, 30, 28" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Next'" FullSelectorArgument="&lt;webctrl class='fitbit-calendar-next' parentid='dateSelector' tag='A' /&gt;" FuzzySelectorArgument="&lt;webctrl class='fitbit-calendar-next' parentid='dateSelector' tag='A' type='' aaname='Next' check:innerText='Next' /&gt;" Guid="4e796840-574e-4540-a306-c4246ad35754" InformativeScreenshot="b67a584303efc30b13bfb79d11cd5a7a.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive">
                                 <uix:TargetAnchorable.Anchors>
@@ -788,15 +804,15 @@
                               </uix:TargetAnchorable>
                             </uix:NClick.Target>
                           </uix:NClick>
-                          <Assign sap:VirtualizedContainerService.HintSize="685,82" sap2010:WorkflowViewState.IdRef="Assign_10">
+                          <Assign sap:VirtualizedContainerService.HintSize="450,82" sap2010:WorkflowViewState.IdRef="Assign_10">
                             <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[pDaysCounter]</OutArgument>
+                              <OutArgument x:TypeArguments="x:Int32">[int_DaysCounter]</OutArgument>
                             </Assign.To>
                             <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[pDaysCounter + 1]</InArgument>
+                              <InArgument x:TypeArguments="x:Int32">[int_DaysCounter + 1]</InArgument>
                             </Assign.Value>
                           </Assign>
-                          <If Condition="[pCheckedDate = &quot;Today&quot;]" DisplayName="If currently checked data is today display log message" sap:VirtualizedContainerService.HintSize="685,413" sap2010:WorkflowViewState.IdRef="If_2">
+                          <If Condition="[str_CheckedDate = &quot;Today&quot;]" DisplayName="If currently checked data is today display log message" sap:VirtualizedContainerService.HintSize="450,413" sap2010:WorkflowViewState.IdRef="If_2">
                             <If.Then>
                               <Sequence sap:VirtualizedContainerService.HintSize="376,231" sap2010:WorkflowViewState.IdRef="Sequence_9">
                                 <sap:WorkflowViewStateService.ViewState>
@@ -828,217 +844,6 @@
                       </sap:WorkflowViewStateService.ViewState>
                     </ui:InterruptibleDoWhile>
                   </Sequence>
-                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="823,313" sap2010:WorkflowViewState.IdRef="CommentOut_4">
-                    <ui:CommentOut.Body>
-                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="512,234" sap2010:WorkflowViewState.IdRef="Sequence_45">
-                        <sap:WorkflowViewStateService.ViewState>
-                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                          </scg:Dictionary>
-                        </sap:WorkflowViewStateService.ViewState>
-                        <Sequence sap2010:Annotation.AnnotationText="Extracted dates do not contain Years.&#xA;This sequence converts dates to add years to them.." DisplayName="Convert the Dates in the input data" sap:VirtualizedContainerService.HintSize="450,123" sap2010:WorkflowViewState.IdRef="Sequence_35">
-                          <Sequence.Variables>
-                            <Variable x:TypeArguments="x:Boolean" Name="flag_January" />
-                          </Sequence.Variables>
-                          <sap:WorkflowViewStateService.ViewState>
-                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                              <x:Boolean x:Key="IsExpanded">False</x:Boolean>
-                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                            </scg:Dictionary>
-                          </sap:WorkflowViewStateService.ViewState>
-                          <Assign DisplayName="Assign year of the olders record" sap:VirtualizedContainerService.HintSize="699,82" sap2010:WorkflowViewState.IdRef="Assign_19">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Int32">[int_StartYear]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Int32">[Convert.ToInt32(DateTime.Parse(in_DayFirst).ToString("yyyy"))]</InArgument>
-                            </Assign.Value>
-                          </Assign>
-                          <Assign sap2010:Annotation.AnnotationText="This flag defines of int_StartDate is allowed to be incremented.&#xA;It is set to flase when the year was incemented and set back to True when the month is 'Dec'." sap:VirtualizedContainerService.HintSize="699,139" sap2010:WorkflowViewState.IdRef="Assign_20">
-                            <Assign.To>
-                              <OutArgument x:TypeArguments="x:Boolean">[flag_January]</OutArgument>
-                            </Assign.To>
-                            <Assign.Value>
-                              <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                            </Assign.Value>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </Assign>
-                          <ui:ForEachRow ColumnNames="{x:Null}" CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the Activities Data.&#xA;&#xA;Convert date from Date format to DateTime format. This operation is necessary to join this table to the Final Table with the dates synchronization." DataTable="[dt_Activities]" DisplayName="For Each Row in Data Table" sap:VirtualizedContainerService.HintSize="699,3775" sap2010:WorkflowViewState.IdRef="ForEachRow_1">
-                            <ui:ForEachRow.Body>
-                              <ActivityAction x:TypeArguments="sd:DataRow">
-                                <ActivityAction.Argument>
-                                  <DelegateInArgument x:TypeArguments="sd:DataRow" Name="CurrentActivity" />
-                                </ActivityAction.Argument>
-                                <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="665,3517" sap2010:WorkflowViewState.IdRef="Sequence_29">
-                                  <Sequence.Variables>
-                                    <Variable x:TypeArguments="s:String[]" Name="arr_Date" />
-                                    <Variable x:TypeArguments="s:DateTime" Name="tempDate" />
-                                    <Variable x:TypeArguments="x:String" Name="str_tempDate" />
-                                  </Sequence.Variables>
-                                  <sap:WorkflowViewStateService.ViewState>
-                                    <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                      <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                    </scg:Dictionary>
-                                  </sap:WorkflowViewStateService.ViewState>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="623,143" sap2010:WorkflowViewState.IdRef="LogMessage_21" Message="[&quot;Converting: &quot;+CurrentActivity.item(0).ToString]" />
-                                  <Assign sap:VirtualizedContainerService.HintSize="623,82" sap2010:WorkflowViewState.IdRef="Assign_12">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="s:String[]">[arr_Date]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="s:String[]">[CurrentActivity.Item(0).ToString.Split(" ")]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                  <If Condition="[arr_Date.Length &gt; 1]" sap:VirtualizedContainerService.HintSize="623,2121" sap2010:WorkflowViewState.IdRef="If_7">
-                                    <If.Then>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="589,1586" sap2010:WorkflowViewState.IdRef="Sequence_32">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:IfElseIf sap2010:Annotation.AnnotationText="This activity generates the current year.&#xA;&#xA;int_StartDay represents the year of the first record that was extracted by this application&#xA;&#xA;flag_January is a boolean variable that defines if the int)StartDate can be incremented&#xA;&#xA;The year is incremented when two conditions are met. &#xA;The month is 'Jan' and the flag is True." DisplayName="Else If first day of January increment the startYear var" sap:VirtualizedContainerService.HintSize="547,962" sap2010:WorkflowViewState.IdRef="IfElseIf_1">
-                                          <ui:IfElseIf.ConditionBlocks>
-                                            <sc:BindingList x:TypeArguments="ui:IfElseIfBlock" AllowEdit="True" AllowNew="True" AllowRemove="True" RaiseListChangedEvents="True">
-                                              <ui:IfElseIfBlock BlockType="If" Condition="[(arr_Date(2).Trim = &quot;Jan&quot;) And  (flag_January)]">
-                                                <ui:IfElseIfBlock.Then>
-                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,315" sap2010:WorkflowViewState.IdRef="Sequence_30">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign DisplayName="Assign invrement the year" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_13">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:Int32">[int_StartYear]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:Int32">[int_StartYear + 1]</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
-                                                    <Assign DisplayName="Assign date incremented" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_14">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:Boolean">[flag_January]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:Boolean">False</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
-                                                  </Sequence>
-                                                </ui:IfElseIfBlock.Then>
-                                              </ui:IfElseIfBlock>
-                                              <ui:IfElseIfBlock BlockType="ElseIf" Condition="[arr_Date(2).Trim = &quot;Dec&quot;]">
-                                                <ui:IfElseIfBlock.Then>
-                                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="496,193" sap2010:WorkflowViewState.IdRef="Sequence_31">
-                                                    <sap:WorkflowViewStateService.ViewState>
-                                                      <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                        <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                      </scg:Dictionary>
-                                                    </sap:WorkflowViewStateService.ViewState>
-                                                    <Assign DisplayName="Assign date incremented" sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_15">
-                                                      <Assign.To>
-                                                        <OutArgument x:TypeArguments="x:Boolean">[flag_January]</OutArgument>
-                                                      </Assign.To>
-                                                      <Assign.Value>
-                                                        <InArgument x:TypeArguments="x:Boolean">True</InArgument>
-                                                      </Assign.Value>
-                                                    </Assign>
-                                                  </Sequence>
-                                                </ui:IfElseIfBlock.Then>
-                                              </ui:IfElseIfBlock>
-                                            </sc:BindingList>
-                                          </ui:IfElseIf.ConditionBlocks>
-                                          <sap:WorkflowViewStateService.ViewState>
-                                            <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                              <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                              <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                              <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                                            </scg:Dictionary>
-                                          </sap:WorkflowViewStateService.ViewState>
-                                        </ui:IfElseIf>
-                                        <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="547,182" sap2010:WorkflowViewState.IdRef="CommentOut_2">
-                                          <ui:CommentOut.Body>
-                                            <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,103" sap2010:WorkflowViewState.IdRef="Sequence_36">
-                                              <sap:WorkflowViewStateService.ViewState>
-                                                <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                                  <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                                </scg:Dictionary>
-                                              </sap:WorkflowViewStateService.ViewState>
-                                            </Sequence>
-                                          </ui:CommentOut.Body>
-                                        </ui:CommentOut>
-                                        <ui:Comment sap:VirtualizedContainerService.HintSize="547,152" sap2010:WorkflowViewState.IdRef="Comment_6" Text="Poniżej dodajesz godziny do daty.&#xA;&#xA;Wyświeltan się ona później, i probujesz ją później usunąć.&#xA;&#xA;Zastanó się jak to ma być." />
-                                        <Assign sap:VirtualizedContainerService.HintSize="547,82" sap2010:WorkflowViewState.IdRef="Assign_16">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Object">[CurrentActivity(0)]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Object">[arr_Date(1)+" "+arr_Date(2)+" "+int_StartYear.ToString+" 00:00:00"]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                      </Sequence>
-                                    </If.Then>
-                                    <If.Else>
-                                      <Sequence sap:VirtualizedContainerService.HintSize="476,353" sap2010:WorkflowViewState.IdRef="Sequence_33">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <Assign sap:VirtualizedContainerService.HintSize="434,82" sap2010:WorkflowViewState.IdRef="Assign_17">
-                                          <Assign.To>
-                                            <OutArgument x:TypeArguments="x:Object">[CurrentActivity.item(0)]</OutArgument>
-                                          </Assign.To>
-                                          <Assign.Value>
-                                            <InArgument x:TypeArguments="x:Object">[date_Today]</InArgument>
-                                          </Assign.Value>
-                                        </Assign>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="434,143" sap2010:WorkflowViewState.IdRef="LogMessage_22" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;The Dates have been successfully processed&quot;]" />
-                                      </Sequence>
-                                    </If.Else>
-                                  </If>
-                                  <Assign DisplayName="Assign the final date" sap:VirtualizedContainerService.HintSize="623,82" sap2010:WorkflowViewState.IdRef="Assign_18">
-                                    <Assign.To>
-                                      <OutArgument x:TypeArguments="x:Object">[CurrentActivity.Item(0)]</OutArgument>
-                                    </Assign.To>
-                                    <Assign.Value>
-                                      <InArgument x:TypeArguments="x:Object">[CDate(CurrentActivity.Item(0).ToString)]</InArgument>
-                                    </Assign.Value>
-                                  </Assign>
-                                  <ui:Comment sap:VirtualizedContainerService.HintSize="623,285" sap2010:WorkflowViewState.IdRef="Comment_5" Text="No to teraz będzie bardzo ciekawie.&#xA;&#xA;Trzeba przekonwertowac datę z formatu 'Wed 24 May' do formatu 'MM/dd/yyyy hh:mm:ss.&#xA;Przede wszystkim trzeba dodać rok, co niekoniecznie musi być trudne.&#xA;Trzeba będzie przeiterować dt_Activities i jak się pojawi styczeń zinkrementować licznik lat. &#xA;Przypisać rok do daty.&#xA;Dodać godziny&#xA;&#xA;Rok rozpoczęcia można pobrac chyba nawet ze zmiennej startDate.&#xA;Także może będzie pełna automatyzacja tego procesu." />
-                                  <ui:CommentOut DisplayName="Comment Out" sap:VirtualizedContainerService.HintSize="623,333" sap2010:WorkflowViewState.IdRef="CommentOut_1">
-                                    <ui:CommentOut.Body>
-                                      <Sequence DisplayName="Ignored Activities" sap:VirtualizedContainerService.HintSize="450,254" sap2010:WorkflowViewState.IdRef="Sequence_34">
-                                        <sap:WorkflowViewStateService.ViewState>
-                                          <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                            <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                          </scg:Dictionary>
-                                        </sap:WorkflowViewStateService.ViewState>
-                                        <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="388,143" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Sample Activity data: &quot;+CurrentActivity.item(0).ToString+&quot; - &quot;+CurrentActivity.item(1).ToString+&quot; - &quot;+CurrentActivity.item(2).ToString+&quot; - &quot;+CurrentActivity.item(3).ToString+&quot; - &quot;+CurrentActivity.item(4).ToString]" />
-                                      </Sequence>
-                                    </ui:CommentOut.Body>
-                                  </ui:CommentOut>
-                                  <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="623,143" sap2010:WorkflowViewState.IdRef="LogMessage_24" Message="[&quot;To: &quot;+CurrentActivity.item(0).ToString]" />
-                                </Sequence>
-                              </ActivityAction>
-                            </ui:ForEachRow.Body>
-                            <sap:WorkflowViewStateService.ViewState>
-                              <scg:Dictionary x:TypeArguments="x:String, x:Object">
-                                <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
-                                <x:Boolean x:Key="IsExpanded">True</x:Boolean>
-                                <x:Boolean x:Key="IsPinned">False</x:Boolean>
-                              </scg:Dictionary>
-                            </sap:WorkflowViewStateService.ViewState>
-                          </ui:ForEachRow>
-                        </Sequence>
-                      </Sequence>
-                    </ui:CommentOut.Body>
-                  </ui:CommentOut>
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -1059,14 +864,14 @@
         <uix:TargetApp Area="61, 266, 1605, 982" BrowserType="Chrome" IconBase64="iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAo9JREFUWEflVztrFUEUXkVEUBsFUQTZ2dxEYyB2KhZio6WCjSBipaAEtFC0EnygRToL9Q8Yd+bM7uJFRG91BSEogqIpxICNhQ+00MIHKKzfmT2ruzeQ670huwE/GBa+b+fMmXPOvLx+0IiiERXSIxWaL35ob40QrRCpGvianvmhSQvtikjzj/Npulhp+llyQJu7IlcDpc39sgN0UqRqsClJViP3N1AHD1AHpzkqIv1HGCJar0y8c2OzuVIohwbRZmXsZbSLQRQNCt07smIz1xDij8hxOyDaIJKnjDmaFyL09yqKRpkfCO0O8D8KtfFV6WSL69QrgpAO/jHkBrKGeaz5pTD8raRpusMaf4u8a5omWOsZXFxFQyi4h8zDgVVFXrTHrPkhTc7QNLVY6xkuxyF9cIY0/YLxAyLxQPdKAxlzIuPN2RKPFmg67jr1A15ugbb7B3UyLJTDaKu1HBE6x+FFPRwS2tvVbi/BjMfh4Cd2HoNfSNN0kcj1gx3kc2QgSdYINTvQYZkfRds6O2QztUd4topot9DZyjH2FGb/HFF4iuiMieTxf4jYuzw16Ks5kqhcuwcdpkG8wE9b5X8utrUw8lo6fIe2VySu9tu5IW6BMceY9409U+RzbTiO16HP504NK+sq7+tv/hL0xI0AIMeXSj9rM8X8UBwHRV60V6zB4ZczNKwQTPJwJ581ersQHMhTYKY432yIwWErpsDXdp9IcI6aRUNzSsFs4CJs6Hh7X0WIS8s/FWGV6HkZdtuIkLab87YR1b4V134Y1X4c5xcSzieMVH8h6YauVzJsZHO6ki1ouGu5puucGi7Wyq/lqI36HiZZcdb8NMOM63ucMuR5PolI4ISjCewNfT7PPe83EbQvxsHAXhIAAAAASUVORK5CYII=" InformativeScreenshot="cc52265b460eef7634a8189bc35d3f33.jpg" Selector="&lt;html app='chrome.exe' title='Track My Activities on Fitbit' /&gt;" Title="Track My Activities on Fitbit" Url="https://www.fitbit.com/activities" />
       </uix:NApplicationCard.TargetApp>
     </uix:NApplicationCard>
-    <ui:Comment sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="995,202" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// It would be good to change the order the data are written in the data table to descending, so the todays date would be on the top.&#xA;&#xA;This change would have to be applied to all the data tables">
+    <ui:Comment sap2010:Annotation.AnnotationText="" sap:VirtualizedContainerService.HintSize="933,202" sap2010:WorkflowViewState.IdRef="Comment_1" Text="// It would be good to change the order the data are written in the data table to descending, so the todays date would be on the top.&#xA;&#xA;This change would have to be applied to all the data tables">
       <sap:WorkflowViewStateService.ViewState>
         <scg:Dictionary x:TypeArguments="x:String, x:Object">
           <x:Boolean x:Key="IsAnnotationDocked">True</x:Boolean>
         </scg:Dictionary>
       </sap:WorkflowViewStateService.ViewState>
     </ui:Comment>
-    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="995,141" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Writing &quot;+dt_Activities.RowCount.ToString+&quot; datarow to excel file.&quot;]" />
+    <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="933,141" sap2010:WorkflowViewState.IdRef="LogMessage_18" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Writing &quot;+dt_Activities.RowCount.ToString+&quot; datarow to excel file.&quot;]" />
     <ui:WriteRange StartingCell="{x:Null}" AddHeaders="True" DataTable="[dt_Activities]" DisplayName="Write Range Workbook" sap:VirtualizedContainerService.HintSize="933,116" sap2010:WorkflowViewState.IdRef="WriteRange_1" SheetName="Sheet1" WorkbookPath="Data\Temp\Activities Data.xlsx" />
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="933,141" sap2010:WorkflowViewState.IdRef="LogMessage_2" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Get Activities Data process Complete&quot;]" />
   </Sequence>

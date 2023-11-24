@@ -76,17 +76,21 @@ git clone https://github.com/TomaszWoloszyn983/fitbit-data-xtractor
 
 ## Testing
 
-### Unfixed errors and Bugs
+### Unfixed errors and bugs
 - Activity Data don't update properly.
 During updating previuosly exctracted data, an attempt of updating the data causes an issue that all data except of the Activity Data (Calories consumed, Steps, Floors and Distance) are not updated properly.
 The bug is caused by the fact that at the first extraction the data are writen to excel in ascending order, from the oldest to the newest, after an update the new data are added on the top of the table, above the oldest data.
 
 Potential solution is to add the new data at the end of the table.
 
+### Fixed errors and bugs
+
 ## Credits
 
-Fitbit Home Page - https://www.fitbit.com/global/ie/home
-UiPath Platform where you can download the latest version of the UiPath Studio as well as join the UiPath community - https://www.uipath.com
-ABP School Of Automation. Platform where you can start your automation career - https://www.schoolofautomation.tech/homemayproposal
+*Fitbit Home Page* - https://www.fitbit.com/global/ie/home
+
+*UiPath Platform* where you can download the latest version of the UiPath Studio as well as join the UiPath community - https://www.uipath.com
+
+*ABP School Of Automation.* Platform where you can start your automation career - https://www.schoolofautomation.tech/homemayproposal
 
 ### Acknowledgements
