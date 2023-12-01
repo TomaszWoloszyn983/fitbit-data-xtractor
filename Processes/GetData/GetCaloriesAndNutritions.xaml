@@ -6,7 +6,7 @@
   <VisualBasic.Settings>
     <x:Null />
   </VisualBasic.Settings>
-  <sap:VirtualizedContainerService.HintSize>1062,10583</sap:VirtualizedContainerService.HintSize>
+  <sap:VirtualizedContainerService.HintSize>1062,10400</sap:VirtualizedContainerService.HintSize>
   <sap2010:WorkflowViewState.IdRef>GetCaloriesAndNutritions_1</sap2010:WorkflowViewState.IdRef>
   <TextExpression.NamespacesForImplementation>
     <sco:Collection x:TypeArguments="x:String">
@@ -120,7 +120,7 @@
       <AssemblyReference>System.Text.RegularExpressions</AssemblyReference>
     </sco:Collection>
   </TextExpression.ReferencesForImplementation>
-  <Sequence sap2010:Annotation.AnnotationText="Retrieve data from the 'Foot' page.&#xA;&#xA;It is to consider if the data should be sent as argument or written to the excel file in this sequence." DisplayName="GetCaloriesAndNutritions" sap:VirtualizedContainerService.HintSize="1072,10518" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence sap2010:Annotation.AnnotationText="Retrieve data from the 'Foot' page.&#xA;&#xA;It is to consider if the data should be sent as argument or written to the excel file in this sequence." DisplayName="GetCaloriesAndNutritions" sap:VirtualizedContainerService.HintSize="1072,10335" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="sd:DataTable" Name="dt_calsAndNutritions" />
     </Sequence.Variables>
@@ -132,13 +132,13 @@
     </sap:WorkflowViewStateService.ViewState>
     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="1010,141" sap2010:WorkflowViewState.IdRef="LogMessage_3" Level="[UiPath.Core.Activities.LogLevel.Info]" Message="[&quot;Start reading calories and nutritions sequence. &quot;]" />
     <ui:BuildDataTable DataTable="[dt_calsAndNutritions]" DisplayName="Build Data Table for Calories and Nutrition data" sap:VirtualizedContainerService.HintSize="1010,60" sap2010:WorkflowViewState.IdRef="BuildDataTable_1" TableInfo="&lt;NewDataSet&gt;&#xA;  &lt;xs:schema id=&quot;NewDataSet&quot; xmlns=&quot;&quot; xmlns:xs=&quot;http://www.w3.org/2001/XMLSchema&quot; xmlns:msdata=&quot;urn:schemas-microsoft-com:xml-msdata&quot;&gt;&#xA;    &lt;xs:element name=&quot;NewDataSet&quot; msdata:IsDataSet=&quot;true&quot; msdata:MainDataTable=&quot;TableName&quot; msdata:UseCurrentLocale=&quot;true&quot;&gt;&#xA;      &lt;xs:complexType&gt;&#xA;        &lt;xs:choice minOccurs=&quot;0&quot; maxOccurs=&quot;unbounded&quot;&gt;&#xA;          &lt;xs:element name=&quot;TableName&quot;&gt;&#xA;            &lt;xs:complexType&gt;&#xA;              &lt;xs:sequence&gt;&#xA;                &lt;xs:element name=&quot;Date&quot; msdata:Caption=&quot;&quot; type=&quot;xs:string&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Calories&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fat_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Fiber_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Carbs_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Sodium_x0020__x0028_mg_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Protein_x0020__x0028_g_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Water_x0020__x0028_ml_x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:double&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_From_x0020_Carbs_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_From_x0020_Fat_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;                &lt;xs:element name=&quot;Energy_x0020_From_x0020_Protein_x0020__x0028__x0025__x0029_&quot; msdata:Caption=&quot;&quot; type=&quot;xs:int&quot; minOccurs=&quot;0&quot; /&gt;&#xA;              &lt;/xs:sequence&gt;&#xA;            &lt;/xs:complexType&gt;&#xA;          &lt;/xs:element&gt;&#xA;        &lt;/xs:choice&gt;&#xA;      &lt;/xs:complexType&gt;&#xA;    &lt;/xs:element&gt;&#xA;  &lt;/xs:schema&gt;&#xA;&lt;/NewDataSet&gt;" />
-    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="1010,9732" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V2">
+    <uix:NApplicationCard AttachMode="ByInstance" CloseMode="IfOpenedByAppBrowser" DisplayName="Use Browser Chrome: Fitbit Dashboard" sap:VirtualizedContainerService.HintSize="1010,9549" sap2010:WorkflowViewState.IdRef="NApplicationCard_1" InteractionMode="DebuggerApi" OpenMode="IfNotOpen" ScopeGuid="5b56ea69-55fe-44c8-9a73-370d71ed87a8" Version="V2">
       <uix:NApplicationCard.Body>
         <ActivityAction x:TypeArguments="x:Object">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="x:Object" Name="WSSessionData" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="976,9515" sap2010:WorkflowViewState.IdRef="Sequence_3">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="976,9332" sap2010:WorkflowViewState.IdRef="Sequence_3">
             <Sequence.Variables>
               <Variable x:TypeArguments="x:Boolean" Name="exists_FoodTab" />
               <Variable x:TypeArguments="x:String" Name="pOutputDate" />
@@ -183,9 +183,9 @@
                 <uix:TargetAnchorable BrowserURL="https://www.fitbit.com/foods/log/2017/05/17" CvElementArea="334, 250, 75, 42" CvTextArea="344, 258, 53, 21" CvTextArgument="Food" CvType="Button" DesignTimeRectangle="335, 251, 72, 39" DesignTimeScaleFactor="1" ElementType="Text" FriendlyName="'Food'" FullSelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' /&gt;" FuzzySelectorArgument="&lt;webctrl parentid='trackerNav' tag='SPAN' type='' class='' aaname='                         Food                     ' check:innerText='Food' /&gt;" Guid="c8e6c450-2ed1-4923-bbad-f9ec7b5cb852" InformativeScreenshot="369741ed384a2190b51ae17d8b5f4be9.png" ScopeSelectorArgument="&lt;html app='chrome.exe' title='Track My Food on Fitbit' /&gt;" SearchSteps="FuzzySelector, CV" Version="V2" Visibility="Interactive" />
               </uix:NCheckElement.Target>
             </uix:NCheckElement>
-            <If Condition="[exists_FoodTab]" sap:VirtualizedContainerService.HintSize="914,8722" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[exists_FoodTab]" sap:VirtualizedContainerService.HintSize="914,8539" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="880,8540" sap2010:WorkflowViewState.IdRef="Sequence_4">
+                <Sequence sap:VirtualizedContainerService.HintSize="880,8357" sap2010:WorkflowViewState.IdRef="Sequence_4">
                   <Sequence.Variables>
                     <Variable x:TypeArguments="x:Int32" Name="pCals" />
                   </Sequence.Variables>
@@ -195,7 +195,7 @@
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
                   <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="838,143" sap2010:WorkflowViewState.IdRef="LogMessage_1" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Food tab: &quot;+exists_FoodTab.ToString]" />
-                  <Sequence sap2010:Annotation.AnnotationText="Extract all data from Daily Total panel. " DisplayName="Read Calories and all the Nutrition statistics" sap:VirtualizedContainerService.HintSize="838,8086" sap2010:WorkflowViewState.IdRef="Sequence_6">
+                  <Sequence sap2010:Annotation.AnnotationText="Extract all data from Daily Total panel. " DisplayName="Read Calories and all the Nutrition statistics" sap:VirtualizedContainerService.HintSize="838,7903" sap2010:WorkflowViewState.IdRef="Sequence_6">
                     <Sequence.Variables>
                       <Variable x:TypeArguments="x:Double" Name="pFat" />
                       <Variable x:TypeArguments="x:String" Name="pComposition" />
@@ -225,9 +225,9 @@
                       </Assign.Value>
                     </Assign>
                     <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="776,143" sap2010:WorkflowViewState.IdRef="LogMessage_24" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[&quot;Start reading data from &quot;+in_StartDate.ToString.Split(&quot; &quot;)(0)]" />
-                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the food page. &#xA;Read all data from the page and click 'Next' button skip to next date, until &quot;Today' keyword is displayed. That causes finishing loop." Condition="[CheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While - Iterate through data untill 'Today' keyword is reached" sap:VirtualizedContainerService.HintSize="776,7639" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
+                    <ui:InterruptibleDoWhile CurrentIndex="{x:Null}" sap2010:Annotation.AnnotationText="Iterate through the food page. &#xA;Read all data from the page and click 'Next' button skip to next date, until &quot;Today' keyword is displayed. That causes finishing loop." Condition="[CheckedDate &lt;&gt; &quot;Today&quot;]" DisplayName="Do While - Iterate through data untill 'Today' keyword is reached" sap:VirtualizedContainerService.HintSize="776,7456" sap2010:WorkflowViewState.IdRef="InterruptibleDoWhile_1">
                       <ui:InterruptibleDoWhile.Body>
-                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="742,7461" sap2010:WorkflowViewState.IdRef="Sequence_7">
+                        <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="742,7278" sap2010:WorkflowViewState.IdRef="Sequence_7">
                           <Sequence.Variables>
                             <Variable x:TypeArguments="x:String" Name="pUrl" />
                           </Sequence.Variables>
@@ -553,7 +553,7 @@
                               </ui:MultipleAssign.AssignOperations>
                             </ui:MultipleAssign>
                           </Sequence>
-                          <Sequence DisplayName="Extract Composition Information" sap:VirtualizedContainerService.HintSize="572,1630" sap2010:WorkflowViewState.IdRef="Sequence_24">
+                          <Sequence DisplayName="Extract Composition Information" sap:VirtualizedContainerService.HintSize="700,1447" sap2010:WorkflowViewState.IdRef="Sequence_24">
                             <Sequence.Variables>
                               <Variable x:TypeArguments="s:String[]" Name="aarComposition" />
                               <Variable x:TypeArguments="scg:List(x:String)" Name="listComposition" />
@@ -585,27 +585,26 @@
                                 <InArgument x:TypeArguments="scg:List(x:String)">[new list(of string)]</InArgument>
                               </Assign.Value>
                             </Assign>
-                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - filter composition information" sap:VirtualizedContainerService.HintSize="486,860" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[aarComposition]">
+                            <ui:ForEach x:TypeArguments="x:String" CurrentIndex="{x:Null}" DisplayName="For Each - filter composition information" sap:VirtualizedContainerService.HintSize="486,677" sap2010:WorkflowViewState.IdRef="ForEach`1_3" Values="[aarComposition]">
                               <ui:ForEach.Body>
                                 <ActivityAction x:TypeArguments="x:String">
                                   <ActivityAction.Argument>
                                     <DelegateInArgument x:TypeArguments="x:String" Name="currentItem" />
                                   </ActivityAction.Argument>
-                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,674" sap2010:WorkflowViewState.IdRef="Sequence_25">
+                                  <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="452,491" sap2010:WorkflowViewState.IdRef="Sequence_25">
                                     <sap:WorkflowViewStateService.ViewState>
                                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                       </scg:Dictionary>
                                     </sap:WorkflowViewStateService.ViewState>
-                                    <If Condition="[System.Text.RegularExpressions.regex.IsMatch(currentItem.Substring(0),&quot;[0-9]&quot;)]" sap:VirtualizedContainerService.HintSize="410,586" sap2010:WorkflowViewState.IdRef="If_6">
+                                    <If Condition="[System.Text.RegularExpressions.regex.IsMatch(currentItem.Substring(0),&quot;[0-9]&quot;)]" sap:VirtualizedContainerService.HintSize="410,403" sap2010:WorkflowViewState.IdRef="If_6">
                                       <If.Then>
-                                        <Sequence sap:VirtualizedContainerService.HintSize="376,404" sap2010:WorkflowViewState.IdRef="Sequence_26">
+                                        <Sequence sap:VirtualizedContainerService.HintSize="376,221" sap2010:WorkflowViewState.IdRef="Sequence_26">
                                           <sap:WorkflowViewStateService.ViewState>
                                             <scg:Dictionary x:TypeArguments="x:String, x:Object">
                                               <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                                             </scg:Dictionary>
                                           </sap:WorkflowViewStateService.ViewState>
-                                          <ui:LogMessage DisplayName="Log Message" sap:VirtualizedContainerService.HintSize="334,143" sap2010:WorkflowViewState.IdRef="LogMessage_23" Level="[UiPath.Core.Activities.LogLevel.Trace]" Message="[currentItem]" />
                                           <uasa:AppendItemToList x:TypeArguments="x:String" ItemIndex="{x:Null}" DisplayName="Append Item to List" sap:VirtualizedContainerService.HintSize="334,133" sap2010:WorkflowViewState.IdRef="AppendItemToList`1_3" ItemToAppend="[currentItem]" List="[listComposition]" />
                                         </Sequence>
                                       </If.Then>
